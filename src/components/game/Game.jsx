@@ -5,9 +5,7 @@ import { withGameProps } from './withGameProps';
 const GameComponent = ({
   player1,
   player2,
-  squares,
   gameStatus,
-  handlePlayerMove,
   handlePlayer1,
   handlePlayer2,
   reset,
@@ -17,7 +15,7 @@ const GameComponent = ({
   <div className={styles.game}>
     <div className={styles.gameStatus}>{gameStatus}</div>
     <div className={styles['game-board']}>
-      <Board squares={squares} onSquareClick={handlePlayerMove} />
+      <Board/>
     </div>
     <div className={styles.wrapper}>
       <div className={styles.row}>
