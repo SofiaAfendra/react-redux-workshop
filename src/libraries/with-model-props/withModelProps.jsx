@@ -74,6 +74,8 @@ const stateProps = (props, ownProps) => (state) =>
  *
  */
 export const withModelProps = (props) => (WrappedComponent) => {
+  const dispatch = useDispatch();
+
   const EnhancedComponent = (componentProps) => {
     // Add 'shallowEqual' to useSelector to prevent unnecessary re-renders of components
     // https://react-redux.js.org/api/hooks#equality-comparisons-and-updates
@@ -82,13 +84,11 @@ export const withModelProps = (props) => (WrappedComponent) => {
       shallowEqual,
     );
 
-    const dispatch = useDispatch();
-
-    // Add 'useMemo' to prevent unnecessary re-renders of components
+    // Add 'useMemo' to prevent the bound action creators from being re-created on every render
     // https://redux.js.org/api/bindactioncreators
     const boundActionProps = useMemo(
       () => bindActionCreators(actionProps(props), dispatch),
-      [dispatch],
+      [],
     );
 
     return (
@@ -100,7 +100,6 @@ export const withModelProps = (props) => (WrappedComponent) => {
     );
   };
 
-  // Add 'memo' to prevent unnecessary re-renders of components
-  // https://reactjs.org/docs/react-api.html#reactmemo
+  // This prevents unnecessary re-renders of components in case the parent component re-renders
   return memo(EnhancedComponent);
 };
