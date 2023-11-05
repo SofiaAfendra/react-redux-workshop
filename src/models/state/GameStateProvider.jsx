@@ -1,6 +1,7 @@
 import { createContext, useEffect, useReducer } from 'react';
-import { usePersistState } from '@/models';
+import { usePersistState } from '@/libraries';
 import { initialState, reducer } from './reducer';
+import { config } from '@/config/config';
 
 export const gameState = createContext({});
 
@@ -8,7 +9,7 @@ const { Provider } = gameState;
 
 export const GameStateProvider = ({ children }) => {
   const { persistedState, setPersistedState } = usePersistState(
-    'tic-tac-toe',
+    config.PERSIST_KEY,
     initialState,
   );
 
