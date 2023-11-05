@@ -1,1 +1,1 @@
-export { calculateWinner } from './calculateWinner';
+export { calculateWinner } from './calculate-winner';

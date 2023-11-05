@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -100,5 +100,7 @@ export const withModelProps = (props) => (WrappedComponent) => {
     );
   };
 
-  return EnhancedComponent;
+  // Add 'memo' to prevent unnecessary re-renders of components
+  // https://reactjs.org/docs/react-api.html#reactmemo
+  return memo(EnhancedComponent);
 };
