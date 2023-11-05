@@ -3,6 +3,28 @@
  * wins (X or O), null if there is no winner and 'draw...' if it is a draw.
  */
 
+/**
+ *
+ * @function calculateWinner
+ *
+ * @param {Array} squares
+ *
+ * @returns {(String|Null)} **'X' or 'O'** if there is a winner, **null** if there is no winner and **'draw...'** if it is a draw
+ *
+ * @example
+ *
+ * const squares = [
+ *  'X', null, 'O',
+ *  'X', 'O', null,
+ *  'X', null, null,
+ * ];
+ *
+ * const winner = calculateWinner(squares);
+ *
+ * console.log(winner); // 'X'
+ *
+ *
+ */
 export const calculateWinner = (squares) => {
   const lines = [
     [0, 1, 2],

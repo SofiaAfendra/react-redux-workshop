@@ -1,13 +1,23 @@
+import { calculateWinner } from '@/utils';
 import { useRef } from 'react';
-import { useGameState } from '@/models';
 
 export const withGameProps = (WrappedComponent) => (props) => {
-  const { state, dispatch } = useGameState();
+  const {
+    player1,
+    player2,
+    squares,
+    winner,
+    xIsNext,
+    setPlayer1,
+    setPlayer2,
+    setSquares,
+    setWinner,
+    setXIsNext,
+    resetGame,
+  } = props;
 
   const player1Ref = useRef(null);
   const player2Ref = useRef(null);
-
-  const { player1, player2, xIsNext, winner } = state || {};
 
   if (player1Ref.current && winner === 'X') {
     player1Ref.current.style.border = '2px solid green';
@@ -17,18 +27,30 @@ export const withGameProps = (WrappedComponent) => (props) => {
     player2Ref.current.style.border = '2px solid green';
   }
 
+  const handlePlayerMove = (squareIndex) => {
+    if (!player1 || !player2) {
+      alert("Please provide players' names.");
+      return;
+    }
+
+    if (squares[squareIndex] || winner) {
+      return;
+    }
+
+    const nextSquares = [...squares];
+    nextSquares[squareIndex] = xIsNext ? 'X' : 'O';
+    const newWinner = calculateWinner(nextSquares);
+    setSquares(nextSquares);
+    setXIsNext(!xIsNext);
+    setWinner(newWinner);
+  };
+
   const handlePlayer1 = (event) => {
-    dispatch({
-      type: 'SET_PLAYER1',
-      payload: event?.target?.value,
-    });
+    setPlayer1(event?.target?.value);
   };
 
   const handlePlayer2 = (event) => {
-    dispatch({
-      type: 'SET_PLAYER2',
-      payload: event?.target?.value,
-    });
+    setPlayer2(event?.target?.value);
   };
 
   const reset = () => {
@@ -39,9 +61,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
       player2Ref.current.style.border = '';
     }
 
-    dispatch({
-      type: 'RESET',
-    });
+    resetGame();
   };
 
   const gameStatus = winner
@@ -52,11 +72,8 @@ export const withGameProps = (WrappedComponent) => (props) => {
 
   return (
     <WrappedComponent
-      player1={player1}
-      player2={player2}
-      xIsNext={xIsNext}
-      winner={winner}
       gameStatus={gameStatus}
+      handlePlayerMove={handlePlayerMove}
       handlePlayer1={handlePlayer1}
       handlePlayer2={handlePlayer2}
       reset={reset}

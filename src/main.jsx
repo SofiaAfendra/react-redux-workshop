@@ -1,10 +1,11 @@
 import ReactDOM from 'react-dom/client';
-import { Game } from '@/components';
+import { Game, UISetup } from '@/components';
 import './main.css';
-import { GameStateProvider } from '@/models';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <GameStateProvider>
+const App = () => (
+  <UISetup>
     <Game />
-  </GameStateProvider>,
+  </UISetup>
 );
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);

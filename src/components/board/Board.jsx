@@ -1,4 +1,7 @@
+import { compose } from 'redux';
 import { withBoardProps } from './withBoardProps';
+import { withModelProps } from '@/libraries';
+import { squares } from '@/models';
 
 export const Board = ({ renderRow }) => {
   return (
@@ -10,4 +13,4 @@ export const Board = ({ renderRow }) => {
   );
 };
 
-export default withBoardProps(Board);
+export default compose(withModelProps({ squares }), withBoardProps)(Board);

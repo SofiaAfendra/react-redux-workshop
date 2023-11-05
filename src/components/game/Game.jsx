@@ -1,11 +1,27 @@
-import { Board } from '@/components';
-import styles from './styles.module.css';
 import { withGameProps } from './withGameProps';
+import { compose } from 'redux';
+import {
+  setPlayer1,
+  setPlayer2,
+  setSquares,
+  setXIsNext,
+  setWinner,
+  resetGame,
+  player1,
+  player2,
+  winner,
+  xIsNext,
+  squares,
+} from '@/models';
+import styles from './styles.module.css';
+import { Board } from '../board';
+import { withModelProps } from '@/libraries';
 
 const GameComponent = ({
   player1,
   player2,
   gameStatus,
+  handlePlayerMove,
   handlePlayer1,
   handlePlayer2,
   reset,
@@ -15,7 +31,7 @@ const GameComponent = ({
   <div className={styles.game}>
     <div className={styles.gameStatus}>{gameStatus}</div>
     <div className={styles['game-board']}>
-      <Board/>
+      <Board onSquareClick={handlePlayerMove} />
     </div>
     <div className={styles.wrapper}>
       <div className={styles.row}>
@@ -47,4 +63,19 @@ const GameComponent = ({
   </div>
 );
 
-export const Game = withGameProps(GameComponent);
+export const Game = compose(
+  withModelProps({
+    player1,
+    player2,
+    squares,
+    winner,
+    xIsNext,
+    setPlayer1,
+    setPlayer2,
+    setSquares,
+    setWinner,
+    setXIsNext,
+    resetGame,
+  }),
+  withGameProps,
+)(GameComponent);

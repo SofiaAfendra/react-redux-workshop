@@ -1,0 +1,1 @@
+export { withModelProps } from './withModelProps';
