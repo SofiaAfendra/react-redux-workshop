@@ -1,57 +1,55 @@
 # Agile Actors Academy
 
-Welcome to React Workshop!
+## React Workshop: Tic Tac Toe Game
 
-## Introduction
+This is a simple Tic Tac Toe game built with React. It allows two players to play against each other on a 3x3 grid. The game keeps track of the current player, the squares that have been filled, and the winner of the game.
 
-In this workshop we introduce the core concepts of React and how we can use them to develop a modern web application.
+Description
+The app is built using JavaScript and React.
+It uses a custom hook called `useGameState` to manage the game state, and a higher-order component called `withGameProps` to provide game props to other components.
 
-We will go from the fundamentals of React to building a whole application using React, Redux and RxJS.
+The `calculateWinner` utility function is used to determine the winner of the game, and the `handlePlayerMove` function is used to handle player moves on the game board.
 
-## What We Will Build
-
-We are going to build a multi player tic tac toe game using React.
-
-We have split the steps in several branches. Each branch has its own tasks which you have to complete in order to proceed to the next branch.
-
-![Tick Tac Toe](/src/assets/tictactoe.png 'Tick Tac Toe')
-
-## Getting Started
-
-Open a terminal and clone the repository to your local machine using the following command:
+File Structure
+The project has the following file structure:
 
 ```bash
-git clone https://replace-with-correct-repo
+tic-tac-toe/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── Board.jsx
+│   │   ├── Square.jsx
+│   │   └── ...
+│   ├── models/
+│   │   ├── gameState.js
+│   │   └── ...
+│   ├── utils/
+│   │   ├── calculateWinner.js
+│   │   └── ...
+│   ├── withGameProps.jsx
+│   ├── index.js
+│   └── ...
+├── package.json
+├── README.md
+└── ...
 ```
 
-_If you do not have git install follow this link [How to install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) to install it_
+- public/ contains the public assets for the application, such as the HTML file.
+- src/ contains the source code for the project.
+- src/components/ contains the React components used to build the game.
+- src/models/ contains the context and reducer used to manage the game state.
+- src/utils/ contains utility functions used in the game.
+- src/withGameProps.jsx is a higher-order component that provides game props to other components.
+- src/index.js is the entry point for the application.
 
-Navigate into the root directory and install application dependencies using pnpm:
-
-```bash
-cd academy-react-workshop
-```
+Usage
+To start the game, run the following command in your terminal:
 
 ```bash
 pnpm dev
 ```
 
-Run the application using the command:
-
-```bash
-pnpm dev
-```
-
-## Branch Description
-
-This is the starting branch. Preview the application files and open **src/main.jsx** to start your first task.
-
-**Branch Tasks:**
-
-1. Create a simple React Component
-2. Render the Component into the DOM
-
-**Covers:**
-
-- React core concepts
-- React Component creation
+This will start the development server and open the game in your default browser. You can now play the game by clicking on the squares to fill them with X or O.

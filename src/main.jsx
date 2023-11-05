@@ -1,8 +1,11 @@
-// import * as React from 'react'
-// import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
-// import styles from './index.css'
+import ReactDOM from 'react-dom/client';
+import { Game, UISetup } from '@/components';
+import './main.css';
 
-/* TODO: - Create a simple component named "Square" that returns a button, and add a class named 'square'
- *       - Initialize React
- */
+const App = () => (
+  <UISetup>
+    <Game />
+  </UISetup>
+);
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
