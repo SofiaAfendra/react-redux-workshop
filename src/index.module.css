@@ -16,3 +16,8 @@
 .square:focus {
   outline: none;
 }
+
+.board {
+  display: flex;
+  flex-direction: column;
+}

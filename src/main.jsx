@@ -3,18 +3,19 @@ import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import styles from './index.module.css';
 
-/* TODO: 
-- Change component so when clicked it updates its state and draws 'X' or 'O' alternately
-Hint: A functional component can use multiple state hooks
+/* TODO:  
+- Lift the state from the Square component to the new Board component, and add a class named 'board'.
+- Update renderSquare and renderRow functions to render all the squares needed for the game.
+- Modify handleClick so that a square that already has a value does not change.
  */
 
 const Square = () => {
-  const [isPlayer1, setIsPlayer1] = useState(true);
-  const [value, setValue] = useState('');
+  const [isNextX, setIsNextX] = useState(true);
+  const [value, setValue] = useState(null);
 
   const handleClick = () => {
-    isPlayer1 ? setValue('X') : setValue('O');
-    setIsPlayer1(!isPlayer1);
+    isNextX ? setValue('X') : setValue('O');
+    setIsNextX(!isNextX);
   };
   return (
     <button onClick={handleClick} className={styles.square}>
@@ -24,12 +25,17 @@ const Square = () => {
 };
 
 const Board = () => {
+
   const renderSquare = () => {
-    //Hint- return the Square Component
+    //Hint - returns the Square Component.
   };
 
-  const renderRow = () => {};
+  const renderRow = () => {
+    //Hint - returns 3 Squares in a row.
+  };
   return <div></div>;
 };
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(<Square />);

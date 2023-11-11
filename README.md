@@ -4,14 +4,17 @@ React Workshop!
 
 ## Branch Description
 
-In this branch, you will be introduced to the concept of state. Your goal is to add state to the **Square** component.
+In this branch, you will be introduced to the concept of lifting state up. Your goal is to move the state for the **Square** component inside the new **Board** component.
 
 **Branch Task:**
 
-1. Add logic to the Square component so when it's clicked it updates it's state and draws an 'X' or an 'O'.
+1. Find a way to lift the state so that the **Board** has all the state for each **Sqaure** component.
+2. Utilize the renderSquare to return a **Square** component with a value and an onClick as props.
+3. Utilize renderRow to return three **Square** components inside the **Board** component.
+4. Make sure that if a square has a value it no longer changes when clicked.
 
 **Covers:**
 
-- React core concepts
-- [React Component state](https://react.dev/learn/managing-stat)
-- [React event handling](https://react.dev/learn/responding-to-events#adding-event-handler)
+- [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)
+- [Lifting State](https://react.dev/learn/sharing-state-between-components)
+
