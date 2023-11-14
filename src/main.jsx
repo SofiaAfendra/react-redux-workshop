@@ -4,10 +4,15 @@ import ReactDOM from 'react-dom/client';
 import styles from './index.module.css';
 
 /* TODO:  
-- Lift the state from the Square component to the new Board component, and add a class named 'board'.
-- Update renderSquare and renderRow functions to render all the squares needed for the game.
-- Modify handleClick so that a square that already has a value does not change.
- */
+- Create a new folder structure. 
+- Use the new Game component το render:
+  - The Board component.
+  - Two inputs with labels for the player names.
+  - A status showing which player is next.
+  - A button that resets the games. 
+- Lift the state up for the Board to the Game component.
+- Create new state for the input elements and connect them with it.
+*/
 
 const Square = ({ value, onClick }) => {
   return (
@@ -48,5 +53,33 @@ const Board = () => {
     </div>
   );
 };
+
+// const Game = () => {
+//   const handleClick = () => {};
+
+//   const handleReset = () => {};
+
+//   return (
+//     <div className={styles.gameWrapper}>
+//       <div className={styles.boardAndStatusWrapper}>
+//         {/* render the Status*/}
+//         <div className={styles.boardWrapper}>{/*render the board */}</div>
+//       </div>
+//       <div className={styles.inputWrapper}>
+//         <div className={styles.input}>
+//           <label>First Player:</label>
+//           <input />
+//         </div>
+
+//         <div className={styles.input}>
+//           <label>Second Player:</label>
+//           <input />
+//         </div>
+
+//         <div className={styles.resetBtnWrapper}></div>
+//       </div>
+//     </div>
+//   );
+// };
 
 ReactDOM.createRoot(document.getElementById('root')).render(<Board />);
