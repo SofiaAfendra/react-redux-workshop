@@ -50,29 +50,13 @@ const Board = () => {
 };
 
 // const Game = () => {
-//   const handleClick = () => {};
 
 //   const handleReset = () => {};
 
 //   return (
 //     <div className={styles.gameWrapper}>
-//       <div className={styles.boardAndStatusWrapper}>
-//         {/* render the Status*/}
-//         <div className={styles.boardWrapper}>{/*render the board */}</div>
-//       </div>
-//       <div className={styles.inputWrapper}>
-//         <div className={styles.input}>
-//           <label>First Player:</label>
-//           <input />
-//         </div>
-
-//         <div className={styles.input}>
-//           <label>Second Player:</label>
-//           <input />
-//         </div>
-
-//         <div className={styles.resetBtnWrapper}></div>
-//       </div>
+//        {/* render the Board here */}
+//        <Board />
 //     </div>
 //   );
 // };
