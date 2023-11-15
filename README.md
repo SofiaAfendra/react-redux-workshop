@@ -4,7 +4,7 @@ React Workshop!
 
 ## Branch Description
 
-In this branch, you will create the **Game** component. You should change the folder structure in order to enhance code organization, readability, and maintainability.
+In this branch, you will use the **Game** component. You should change the folder structure in order to enhance code organization, readability, and maintainability.
 The file structure should be like this:
 
 ```
@@ -33,9 +33,8 @@ In each component folder, you'll find an `index.js` file. This file serves a spe
 **Branch Task:**
 
 1. Change the folder structure
-2. Lift the state to the **Game** component.
-3. The **Game** component should render which player is cur. For now it can be just a constant. Ideally it will show which player is currently playing. Also should render the **Board** , two inputs for the names of the players and a reset button that will reset the board and the names of the players.
-4. the classes need for the `styles.modules.css` files are inside the `index.module.css`. once you copy paste all the classes remove the `index.module.css` file.
+2. The **Game** component should render the **Board** component.
+3. the classes need for the `styles.modules.css` files are inside the `index.module.css`. once you copy paste all the classes remove the `index.module.css` file.
 
 **Covers:**
 
