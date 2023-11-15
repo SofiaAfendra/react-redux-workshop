@@ -56,7 +56,6 @@ const Board = () => {
 //   return (
 //     <div className={styles.gameWrapper}>
 //        {/* render the Board here */}
-//        <Board />
 //     </div>
 //   );
 // };
