@@ -5,13 +5,8 @@ import styles from './index.module.css';
 
 /* TODO:  
 - Create a new folder structure. 
-- Use the new Game component το render:
-  - The Board component.
-  - Two inputs with labels for the player names.
-  - A status showing which player is next.
-  - A button that resets the games. 
-- Lift the state up for the Board to the Game component.
-- Create new state for the input elements and connect them with it.
+- Use the new Game component and render the Board inside it.
+  hint: apply what you learned in the previous branch. 
 */
 
 const Square = ({ value, onClick }) => {
