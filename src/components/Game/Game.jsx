@@ -34,21 +34,21 @@ export const Game = () => {
         <Board squares={squares} onClick={handleClick} />
       </div>
 
-      <div className={styles.inputWrapper}>
+      {/* <div className={styles.inputWrapper}>
         <div className={styles.input}>
-          {/* <label>Player 1:</label>
-          <input /> */}
+          <label>Player 1:</label>
+          <input />
         </div>
 
         <div className={styles.input}>
-          {/* <label>Player 2:</label>
-          <input /> */}
+          <label>Player 2:</label>
+          <input />
         </div>
+      </div> */}
 
-      </div>
-      <div className={styles.resetBtnWrapper}>
-        {/* render button and add resetButton css class */}
-      </div>
+      {/* <div className={styles.resetBtnWrapper}>
+        render button and add resetButton css class
+      </div> */}
     </div>
   );
 };
