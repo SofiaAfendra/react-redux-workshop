@@ -3,10 +3,13 @@ import styles from './styles.module.css';
 
 import { useState } from 'react';
 
+// TO-DO: Use classes from previous state.
+
 export const Game = () => {
   const emptySquares = Array(9).fill('');
   const [isNextX, setIsNextX] = useState(true);
   const [squares, setSquares] = useState(emptySquares);
+  //split players into two states
   const [{ player1, player2 }, setPlayers] = useState({
     player1: '',
     player2: '',
@@ -36,7 +39,8 @@ export const Game = () => {
           <input
             value={player1}
             onChange={(event) =>
-              setPlayers({ player1: event.target.value, player2 })
+              // setPlayers({ player1: event.target.value, player2 })
+              setPlayers((prevPs)=> ({...prevPs, player1: event.target.value}))
             }
           />
         </div>
