@@ -2,20 +2,20 @@ import { Board } from '../Board';
 import styles from './styles.module.css';
 
 import { useState, useEffect } from 'react';
+import { config } from '../../config';
 
 // TO-DO: Use classes from previous state.
 
-const EMPTY_VALUE = '';
 export const initialState = {
-  player1: EMPTY_VALUE,
-  player2: EMPTY_VALUE,
-  squares: Array(9).fill(EMPTY_VALUE),
+  player1: '',
+  player2: '',
+  squares: Array(9).fill(''),
   isNextX: true,
 };
 
 export const Game = () => {
   const [gameState, setGameState] = useState(
-    JSON.parse(localStorage.getItem('ticTacToeGameState')) ?? initialState,
+    JSON.parse(localStorage.getItem(config.PERSIST_KEY)) ?? initialState,
   );
 
   const { player1, player2, squares, isNextX } = gameState;
@@ -44,7 +44,7 @@ export const Game = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem('ticTacToeGameState', JSON.stringify(gameState));
+    localStorage.setItem(config.PERSIST_KEY, JSON.stringify(gameState));
   }, [gameState]);
 
   return (
