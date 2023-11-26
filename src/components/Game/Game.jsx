@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 
 import { useState, useEffect } from 'react';
 import { config } from '../../config';
+import { calculateWinner, getStatus } from '../../util';
 
 // TO-DO: Use classes from previous state.
 
@@ -11,6 +12,7 @@ export const initialState = {
   player2: '',
   squares: Array(9).fill(''),
   isNextX: true,
+  winner: null,
 };
 
 export const Game = () => {
@@ -18,9 +20,11 @@ export const Game = () => {
     JSON.parse(localStorage.getItem(config.PERSIST_KEY)) ?? initialState,
   );
 
-  const { player1, player2, squares, isNextX } = gameState;
+  const { player1, player2, squares, isNextX, winner } = gameState;
 
-  const status = `It's ${isNextX ? player1 : player2} 's turn`;
+  const status = !winner
+    ? `It's ${isNextX ? player1 : player2} 's turn`
+    : getStatus(winner, player1, player2);
 
   const handleClick = (squareIndex) => () => {
     if (!(player1 && player2)) {
@@ -36,6 +40,7 @@ export const Game = () => {
       ...gameState,
       isNextX: !isNextX,
       squares: newSquares,
+      winner: calculateWinner(newSquares),
     });
   };
 
