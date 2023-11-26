@@ -6,22 +6,33 @@ import { useState } from 'react';
 // TO-DO: Use classes from previous state.
 
 export const Game = () => {
-  const emptySquares = Array(9).fill('');
+  const EMPTY_VALUE = '';
+  const emptySquares = Array(9).fill(EMPTY_VALUE);
   const [isNextX, setIsNextX] = useState(true);
   const [squares, setSquares] = useState(emptySquares);
-  //split players into two states
-  const [{ player1, player2 }, setPlayers] = useState({
-    player1: '',
-    player2: '',
-  });
+  const [player1, setPlayer1] = useState(EMPTY_VALUE);
+  const [player2, setPlayer2] = useState(EMPTY_VALUE);
+
   const status = `It's ${isNextX ? player1 : player2} 's turn`;
 
   const handleClick = (squareIndex) => () => {
+    if (!(player1 && player2)) {
+      alert('Please, set the names of both players.');
+      return;
+    }
+
     if (squares[squareIndex]) return;
+
     const newSquares = [...squares];
     newSquares[squareIndex] = isNextX ? 'X' : 'O';
     setSquares(newSquares);
     setIsNextX(!isNextX);
+  };
+
+  const handleReset = () => {
+    setSquares(emptySquares);
+    setPlayer1(EMPTY_VALUE);
+    setPlayer2(EMPTY_VALUE);
   };
 
   return (
@@ -38,10 +49,7 @@ export const Game = () => {
           <label>First Player:</label>
           <input
             value={player1}
-            onChange={(event) =>
-              // setPlayers({ player1: event.target.value, player2 })
-              setPlayers((prevPs)=> ({...prevPs, player1: event.target.value}))
-            }
+            onChange={(event) => setPlayer1(event.target.value)}
           />
         </div>
 
@@ -49,17 +57,12 @@ export const Game = () => {
           <label>Second Player:</label>
           <input
             value={player2}
-            onChange={(event) =>
-              setPlayers({ player1, player2: event.target.value })
-            }
+            onChange={(event) => setPlayer2(event.target.value)}
           />
         </div>
 
         <div className={styles.resetBtnWrapper}>
-          <button
-            onClick={() => setSquares(emptySquares)}
-            className={styles.resetButton}
-          >
+          <button onClick={handleReset} className={styles.resetButton}>
             Reset
           </button>
         </div>
