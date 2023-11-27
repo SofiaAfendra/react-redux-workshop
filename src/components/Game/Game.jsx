@@ -1,7 +1,7 @@
 import { Board } from '../Board';
 import styles from './styles.module.css';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { config } from '../../config';
 import { calculateWinner, getStatus } from '../../util';
 
@@ -19,8 +19,17 @@ export const Game = () => {
   const [gameState, setGameState] = useState(
     JSON.parse(localStorage.getItem(config.PERSIST_KEY)) ?? initialState,
   );
-
   const { player1, player2, squares, isNextX, winner } = gameState;
+  const player1Ref = useRef(null);
+  const player2Ref = useRef(null);
+
+  if (player1Ref.current && winner === 'X') {
+    player1Ref.current.style.border = '2px solid green';
+  }
+
+  if (player2Ref.current && winner === 'O') {
+    player2Ref.current.style.border = '2px solid green';
+  }
 
   const status = !winner
     ? `It's ${isNextX ? player1 : player2} 's turn`
@@ -45,6 +54,13 @@ export const Game = () => {
   };
 
   const handleReset = () => {
+    if (player1Ref.current) {
+      player1Ref.current.style.border = '';
+    }
+    if (player2Ref.current) {
+      player2Ref.current.style.border = '';
+    }
+
     setGameState(initialState);
   };
 
@@ -66,6 +82,7 @@ export const Game = () => {
           <label>First Player:</label>
           <input
             value={player1}
+            ref={player1Ref}
             onChange={(event) =>
               setGameState({
                 ...gameState,
@@ -79,6 +96,7 @@ export const Game = () => {
           <label>Second Player:</label>
           <input
             value={player2}
+            ref={player2Ref}
             onChange={(event) =>
               setGameState({
                 ...gameState,
