@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
-import { config } from '../../config';
+import { useRef } from 'react';
+
+import { usePersistState } from '../../libraries';
 import { calculateWinner, getStatus } from '../../util';
 
 // TO-DO: Use classes from previous state.
@@ -13,9 +14,7 @@ export const initialState = {
 };
 
 export const withGameProps = (WrappedComponent) => (props) => {
-  const [gameState, setGameState] = useState(
-    JSON.parse(localStorage.getItem(config.PERSIST_KEY)) ?? initialState,
-  );
+  const [gameState, setGameState] = usePersistState(initialState);
   const { player1, player2, squares, isNextX, winner } = gameState;
   const player1Ref = useRef(null);
   const player2Ref = useRef(null);
@@ -38,7 +37,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
       return;
     }
 
-    if (squares[squareIndex]) return;
+    if (squares[squareIndex] || winner) return;
 
     const newSquares = [...squares];
     newSquares[squareIndex] = isNextX ? 'X' : 'O';
@@ -60,10 +59,6 @@ export const withGameProps = (WrappedComponent) => (props) => {
 
     setGameState(initialState);
   };
-
-  useEffect(() => {
-    localStorage.setItem(config.PERSIST_KEY, JSON.stringify(gameState));
-  }, [gameState]);
 
   return (
     <WrappedComponent
