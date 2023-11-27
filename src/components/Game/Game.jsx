@@ -41,7 +41,7 @@ export const Game = () => {
       return;
     }
 
-    if (squares[squareIndex]) return;
+    if (squares[squareIndex] || winner) return;
 
     const newSquares = [...squares];
     newSquares[squareIndex] = isNextX ? 'X' : 'O';
