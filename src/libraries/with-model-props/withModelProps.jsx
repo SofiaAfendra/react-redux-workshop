@@ -3,23 +3,13 @@ import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 /**
- * Negates a function
- * @param {function} fn - function
- * @returns {function} negate - negate function
- */
-const negate =
-  (fn) =>
-  (...args) =>
-    !fn(...args);
-
-/**
  * Takes an object of selectors and action creators,
  * and returns only the action creators by checking the type property
- * @param {object} propCreators - model props
+ * @param {function} prop - action creator or selector
  * @param {string} key - key for model props
  * @returns {boolean} isAction - is action
  */
-const isAction = (propCreators) => (key) => propCreators[key]?.type;
+const isAction = (prop) => prop?.type;
 
 /**
  * Takes an object of selectors and action creators,
@@ -30,12 +20,10 @@ const isAction = (propCreators) => (key) => propCreators[key]?.type;
  *
  */
 const actionProps = (props) =>
-  Object.keys(props)
-    .filter(isAction(props))
-    .reduce((result, key) => {
-      result[key] = props[key];
-      return result;
-    }, {});
+  Object.entries(props).reduce((result, [key, value]) => {
+    if (isAction(value)) result[key] = value;
+    return result;
+  }, {});
 
 /**
  * Takes an object of selectors and action creators,
@@ -49,12 +37,10 @@ const actionProps = (props) =>
  *
  */
 const stateProps = (props, ownProps) => (state) =>
-  Object.keys(props)
-    .filter(negate(isAction(props)))
-    .reduce((result, key) => {
-      result[key] = props[key](state, ownProps);
-      return result;
-    }, {});
+  Object.entries(props).reduce((result, [key, value]) => {
+    if (!isAction(value)) result[key] = value(state, ownProps);
+    return result;
+  }, {});
 
 /**
  * Add model props to component
@@ -74,9 +60,8 @@ const stateProps = (props, ownProps) => (state) =>
  *
  */
 export const withModelProps = (props) => (WrappedComponent) => {
-  const dispatch = useDispatch();
-
   const EnhancedComponent = (componentProps) => {
+    const dispatch = useDispatch();
     // Add 'shallowEqual' to useSelector to prevent unnecessary re-renders of components
     // https://react-redux.js.org/api/hooks#equality-comparisons-and-updates
     const mappedStateProps = useSelector(
