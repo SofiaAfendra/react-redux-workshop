@@ -1,1 +1,1 @@
-export * from './persistState';
+export { usePersistState } from './persist-state';

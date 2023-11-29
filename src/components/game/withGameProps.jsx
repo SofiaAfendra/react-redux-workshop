@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { calculateWinner } from '@/utils';
 import { useGameState } from '@/models';
 
 export const withGameProps = (WrappedComponent) => (props) => {
@@ -7,7 +8,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
   const player1Ref = useRef(null);
   const player2Ref = useRef(null);
 
-  const { player1, player2, xIsNext, winner } = state || {};
+  const { player1, player2, squares, xIsNext, winner } = state || {};
 
   if (player1Ref.current && winner === 'X') {
     player1Ref.current.style.border = '2px solid green';
@@ -16,6 +17,36 @@ export const withGameProps = (WrappedComponent) => (props) => {
   if (player2Ref.current && winner === 'O') {
     player2Ref.current.style.border = '2px solid green';
   }
+
+  const handlePlayerMove = (squareIndex) => {
+    if (!player1 || !player2) {
+      alert("Please provide players' names.");
+      return;
+    }
+
+    if (squares[squareIndex] || winner) {
+      return;
+    }
+
+    const nextSquares = [...squares];
+    nextSquares[squareIndex] = xIsNext ? 'X' : 'O';
+    const newWinner = calculateWinner(nextSquares);
+
+    dispatch({
+      type: 'SET_SQUARES',
+      payload: nextSquares,
+    });
+
+    dispatch({
+      type: 'SET_X_IS_NEXT',
+      payload: !xIsNext,
+    });
+
+    dispatch({
+      type: 'SET_WINNER',
+      payload: newWinner,
+    });
+  };
 
   const handlePlayer1 = (event) => {
     dispatch({
@@ -54,9 +85,11 @@ export const withGameProps = (WrappedComponent) => (props) => {
     <WrappedComponent
       player1={player1}
       player2={player2}
+      squares={squares}
       xIsNext={xIsNext}
       winner={winner}
       gameStatus={gameStatus}
+      handlePlayerMove={handlePlayerMove}
       handlePlayer1={handlePlayer1}
       handlePlayer2={handlePlayer2}
       reset={reset}

@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import { Game } from '@/components';
 import './main.css';
-import { GameStateProvider } from '@/models';
+import { GameStateProvider } from '@/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <GameStateProvider>
