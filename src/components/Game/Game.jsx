@@ -13,6 +13,7 @@ export const Game = () => {
   const [player1, setPlayer1] = useState(EMPTY_VALUE);
   const [player2, setPlayer2] = useState(EMPTY_VALUE);
 
+  const hasPlayers = player1  &&  player2 ;
   const status = `It's ${isNextX ? player1 : player2} 's turn`;
 
   const handleClick = (squareIndex) => () => {
@@ -38,7 +39,7 @@ export const Game = () => {
   return (
     <div className={styles.gameWrapper}>
       <div className={styles.boardAndStatusWrapper}>
-        <div>Game Status: {status}</div>
+        <div>Game Status: {hasPlayers ? status : null}</div>
         <div className={styles.boardWrapper}>
           <Board squares={squares} onClick={handleClick} />
         </div>
