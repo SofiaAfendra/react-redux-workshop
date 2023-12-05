@@ -46,7 +46,7 @@ export const Game = () => {
 
       <div className={styles.inputWrapper}>
         <div className={styles.input}>
-          <label>First Player:</label>
+          <label>Player 1:</label>
           <input
             value={player1}
             onChange={(event) => setPlayer1(event.target.value)}
@@ -54,7 +54,7 @@ export const Game = () => {
         </div>
 
         <div className={styles.input}>
-          <label>Second Player:</label>
+          <label>Player 2:</label>
           <input
             value={player2}
             onChange={(event) => setPlayer2(event.target.value)}
