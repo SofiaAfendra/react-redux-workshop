@@ -4,6 +4,12 @@ import styles from './styles.module.css';
 import { useState } from 'react';
 
 // TO-DO: Use classes from previous state.
+/* TODO:  
+- Add the useEffect hook inside the Game component to load/update state from/to localStorage.
+- Create winner state.
+- Use the provided helper function calculateWinner to display the result in 'status'.  
+- Update handleReset so that it now clears the localStorage.
+*/
 
 export const Game = () => {
   const EMPTY_VALUE = '';
