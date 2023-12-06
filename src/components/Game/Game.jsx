@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 
 import { useState, useEffect } from 'react';
 import { config } from '../../config';
+import { calculateWinner } from '../../utils/calculateWinner';
 
 // TO-DO: Use classes from previous state.
 
@@ -11,6 +12,7 @@ export const initialState = {
   player2: '',
   squares: Array(9).fill(''),
   isNextX: true,
+  winner: null
 };
 
 export const Game = () => {
@@ -18,9 +20,13 @@ export const Game = () => {
     JSON.parse(localStorage.getItem(config.PERSIST_KEY)) ?? initialState,
   );
 
-  const { player1, player2, squares, isNextX } = gameState;
+  const { player1, player2, squares, isNextX, winner } = gameState || {};
 
-  const status = `It's ${isNextX ? player1 : player2} 's turn`;
+  const status = winner
+    ? `Winner is: ${
+        winner === 'X' ? player1 : winner === 'O' ? player2 : winner
+      }`
+    : `Next player: ${isNextX ? player1 : player2}`;
 
   const handleClick = (squareIndex) => () => {
     if (!(player1 && player2)) {
@@ -28,17 +34,17 @@ export const Game = () => {
       return;
     }
 
-    if (squares[squareIndex]) return;
-
+    if (squares[squareIndex] || winner) return;
     const newSquares = [...squares];
     newSquares[squareIndex] = isNextX ? 'X' : 'O';
     setGameState({
       ...gameState,
       isNextX: !isNextX,
       squares: newSquares,
+      winner: calculateWinner(newSquares),
     });
   };
-
+  
   const handleReset = () => {
     setGameState(initialState);
   };
@@ -50,7 +56,7 @@ export const Game = () => {
   return (
     <div className={styles.gameWrapper}>
       <div className={styles.boardAndStatusWrapper}>
-        <div>Game Status: {status}</div>
+        <div>{status}</div>
         <div className={styles.boardWrapper}>
           <Board squares={squares} onClick={handleClick} />
         </div>
@@ -58,7 +64,7 @@ export const Game = () => {
 
       <div className={styles.inputWrapper}>
         <div className={styles.input}>
-          <label>First Player:</label>
+          <label>Player 1:</label>
           <input
             value={player1}
             onChange={(event) =>
@@ -71,7 +77,7 @@ export const Game = () => {
         </div>
 
         <div className={styles.input}>
-          <label>Second Player:</label>
+          <label>Player 2:</label>
           <input
             value={player2}
             onChange={(event) =>
