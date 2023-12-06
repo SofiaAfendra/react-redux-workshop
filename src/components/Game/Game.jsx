@@ -7,7 +7,7 @@ import { useState } from 'react';
 /* TODO:  
 - Add the useEffect hook inside the Game component to load/update state from/to localStorage.
 - Create winner state.
-- Use the provided helper function calculateWinner to display the result in 'status'.  
+- Use the provided utility function calculateWinner to display the result in 'status'.  
 - Update handleReset so that it now clears the localStorage.
 */
 
