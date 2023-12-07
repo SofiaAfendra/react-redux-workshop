@@ -11,12 +11,12 @@ import styles from './index.module.css';
  */
 
 const Square = () => {
-  const [isNextX, setIsNextX] = useState(true);
+  const [xIsNext, setXIsNext] = useState(true);
   const [value, setValue] = useState(null);
 
   const handleClick = () => {
-    isNextX ? setValue('X') : setValue('O');
-    setIsNextX(!isNextX);
+    xIsNext ? setValue('X') : setValue('O');
+    setXIsNext(!xIsNext);
   };
   return (
     <button onClick={handleClick} className={styles.square}>
