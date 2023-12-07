@@ -14,12 +14,12 @@ import { useState } from 'react';
 export const Game = () => {
   const EMPTY_VALUE = '';
   const emptySquares = Array(9).fill(EMPTY_VALUE);
-  const [isNextX, setIsNextX] = useState(true);
+  const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(emptySquares);
   const [player1, setPlayer1] = useState(EMPTY_VALUE);
   const [player2, setPlayer2] = useState(EMPTY_VALUE);
 
-  const status = `Next player: ${isNextX ? player1 : player2}`;
+  const status = `Next player: ${xIsNext ? player1 : player2}`;
 
   const handleClick = (squareIndex) => () => {
     if (!(player1 && player2)) {
@@ -30,9 +30,9 @@ export const Game = () => {
     if (squares[squareIndex]) return;
 
     const newSquares = [...squares];
-    newSquares[squareIndex] = isNextX ? 'X' : 'O';
+    newSquares[squareIndex] = xIsNext ? 'X' : 'O';
     setSquares(newSquares);
-    setIsNextX(!isNextX);
+    setXIsNext(!xIsNext);
   };
 
   const handleReset = () => {
