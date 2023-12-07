@@ -11,7 +11,7 @@ export const initialState = {
   player1: '',
   player2: '',
   squares: Array(9).fill(''),
-  isNextX: true,
+  xIsNext: true,
   winner: null,
 };
 
@@ -19,7 +19,7 @@ export const Game = () => {
   const [gameState, setGameState] = useState(
     JSON.parse(localStorage.getItem(config.PERSIST_KEY)) ?? initialState,
   );
-  const { player1, player2, squares, isNextX, winner } = gameState;
+  const { player1, player2, squares, xIsNext, winner } = gameState;
   const player1Ref = useRef(null);
   const player2Ref = useRef(null);
 
@@ -32,7 +32,7 @@ export const Game = () => {
   }
 
   const status = !winner
-    ? `It's ${isNextX ? player1 : player2} 's turn`
+    ? `It's ${xIsNext ? player1 : player2} 's turn`
     : getStatus(winner, player1, player2);
 
   const handleClick = (squareIndex) => () => {
@@ -44,10 +44,10 @@ export const Game = () => {
     if (squares[squareIndex] || winner) return;
 
     const newSquares = [...squares];
-    newSquares[squareIndex] = isNextX ? 'X' : 'O';
+    newSquares[squareIndex] = xIsNext ? 'X' : 'O';
     setGameState({
       ...gameState,
-      isNextX: !isNextX,
+      xIsNext: !xIsNext,
       squares: newSquares,
       winner: calculateWinner(newSquares),
     });
