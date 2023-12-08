@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 
 import { useState, useEffect } from 'react';
 import { config } from '../../config';
-import { calculateWinner } from '../../utils/calculateWinner';
+import { calculateWinner, getStatus } from '../../utils';
 
 // TODO: DEV - rethink how we get the status, the nesting is too damnh high.
 
@@ -23,9 +23,7 @@ export const Game = () => {
   const { player1, player2, squares, xIsNext, winner } = gameState || {};
 
   const status = winner
-    ? `Winner is: ${
-        winner === 'X' ? player1 : winner === 'O' ? player2 : winner
-      }`
+    ? getStatus(winner, player1, player2)
     : `Next player: ${xIsNext ? player1 : player2}`;
 
   const handleClick = (squareIndex) => () => {
