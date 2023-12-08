@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 
 import { useState, useEffect, useRef } from 'react';
 import { config } from '../../config';
-import { calculateWinner, getStatus } from '../../util';
+import { calculateWinner, getStatus } from '../../utils';
 
 // TO-DO: Use classes from previous state.
 
@@ -79,7 +79,7 @@ export const Game = () => {
 
       <div className={styles.inputWrapper}>
         <div className={styles.input}>
-          <label>First Player:</label>
+          <label>Player 1:</label>
           <input
             value={player1}
             ref={player1Ref}
@@ -93,7 +93,7 @@ export const Game = () => {
         </div>
 
         <div className={styles.input}>
-          <label>Second Player:</label>
+          <label>Player 2:</label>
           <input
             value={player2}
             ref={player2Ref}
