@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { config } from '../../config';
 import { calculateWinner } from '../../utils/calculateWinner';
 
-// TO-DO: Use classes from previous state.
+// TODO: DEV - rethink how we get the status, the nesting is too damnh high.
 
 export const initialState = {
   player1: '',
