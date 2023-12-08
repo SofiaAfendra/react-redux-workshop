@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import { usePersistState } from '../../libraries';
-import { calculateWinner, getStatus } from '../../util';
+import { calculateWinner, getStatus } from '../../utils';
 
 // TO-DO: Use classes from previous state.
 
@@ -15,7 +15,7 @@ export const initialState = {
 
 export const withGameProps = (WrappedComponent) => (props) => {
   const [gameState, setGameState] = usePersistState(initialState);
-  const { player1, player2, squares, xIsNext, winner } = gameState;
+  const { player1, player2, squares, xIsNext, winner } = gameState || {};
   const player1Ref = useRef(null);
   const player2Ref = useRef(null);
 
@@ -27,11 +27,12 @@ export const withGameProps = (WrappedComponent) => (props) => {
     player2Ref.current.style.border = '2px solid green';
   }
 
-  const gameStatus = !winner
-    ? `It's ${xIsNext ? player1 : player2} 's turn`
-    : getStatus(winner, player1, player2);
+  const status = winner
+  ? getStatus(winner, player1, player2)
+  : `Next player: ${xIsNext ? player1 : player2}`;
 
-  const handleClick = (squareIndex) => () => {
+
+  const handleClick = (squareIndex) => {
     if (!(player1 && player2)) {
       alert('Please, set the names of both players.');
       return;
@@ -66,7 +67,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
       player2={player2}
       squares={squares}
       winner={winner}
-      gameStatus={gameStatus}
+      status={status}
       player1Ref={player1Ref}
       player2Ref={player2Ref}
       reset={handleReset}
