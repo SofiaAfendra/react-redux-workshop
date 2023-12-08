@@ -3,21 +3,20 @@ import styles from './styles.module.css';
 
 import { useState } from 'react';
 
-// TO-DO: Use classes from previous state.
-/* TODO:  
+//UPDATE README!
+
+/* TODO:
 - Add the useEffect hook inside the Game component to load/update state from/to localStorage.
 - Create winner state.
-- Use the provided utility function calculateWinner to display the result in 'status'.  
+- Use the provided utility function calculateWinner to display the result in 'status'.
 - Update handleReset so that it now clears the localStorage.
 */
 
 export const Game = () => {
-  const EMPTY_VALUE = '';
-  const emptySquares = Array(9).fill(EMPTY_VALUE);
   const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(emptySquares);
-  const [player1, setPlayer1] = useState(EMPTY_VALUE);
-  const [player2, setPlayer2] = useState(EMPTY_VALUE);
+  const [squares, setSquares] = useState(Array(9).fill(''));
+  const [player1, setPlayer1] = useState('');
+  const [player2, setPlayer2] = useState('');
 
   const status = `Next player: ${xIsNext ? player1 : player2}`;
 
@@ -36,9 +35,9 @@ export const Game = () => {
   };
 
   const handleReset = () => {
-    setSquares(emptySquares);
-    setPlayer1(EMPTY_VALUE);
-    setPlayer2(EMPTY_VALUE);
+    setSquares(Array(9).fill(''));
+    setPlayer1('');
+    setPlayer2('');
   };
 
   return (
