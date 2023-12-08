@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import { withGameProps } from './withGameProps';
 
 const GameComponent = ({
-  gameStatus,
+  status,
   player1,
   player1Ref,
   player2,
@@ -17,7 +17,7 @@ const GameComponent = ({
   return (
     <div className={styles.gameWrapper}>
       <div className={styles.boardAndStatusWrapper}>
-        <div>Game Status: {gameStatus}</div>
+        <div>{status}</div>
         <div className={styles.boardWrapper}>
           <Board squares={squares} onClick={handleClick} />
         </div>
@@ -25,7 +25,7 @@ const GameComponent = ({
 
       <div className={styles.inputWrapper}>
         <div className={styles.input}>
-          <label>First Player:</label>
+          <label>Player 1:</label>
           <input
             value={player1}
             ref={player1Ref}
@@ -39,7 +39,7 @@ const GameComponent = ({
         </div>
 
         <div className={styles.input}>
-          <label>Second Player:</label>
+          <label>Player 2:</label>
           <input
             value={player2}
             ref={player2Ref}
