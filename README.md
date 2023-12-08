@@ -16,5 +16,3 @@ In this branch, you will be introduced to the concept handling user input.
 **Covers:**
 
 - [Reacting to input with state](https://react.dev/learn/reacting-to-input-with-state)
-- [Conditional Rendering](https://react.dev/learn/conditional-rendering)
-
