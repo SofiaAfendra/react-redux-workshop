@@ -31,9 +31,9 @@ export const Game = () => {
     player2Ref.current.style.border = '2px solid green';
   }
 
-  const status = !winner
-    ? `It's ${xIsNext ? player1 : player2} 's turn`
-    : getStatus(winner, player1, player2);
+  const status = winner
+    ? getStatus(winner, player1, player2)
+    : `Next player: ${xIsNext ? player1 : player2}`;
 
   const handleClick = (squareIndex) => () => {
     if (!(player1 && player2)) {
