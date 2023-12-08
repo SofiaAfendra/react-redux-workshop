@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 
 import { useState } from 'react';
 
-//UPDATE README!
+//UPDATE README! Maybe useMemo useCallback?
 
 /* TODO:
 - Add the useEffect hook inside the Game component to load/update state from/to localStorage.
