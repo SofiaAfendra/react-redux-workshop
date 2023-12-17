@@ -26,20 +26,20 @@ git clone https://replace-with-correct-repo
 
 _If you do not have git install follow this link [How to install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) to install it_
 
-Navigate into the root directory and install application dependencies using pnpm:
+Navigate into the root directory and install application dependencies using npm:
 
 ```bash
-cd academy-react-workshop
+cd aa-react-training
 ```
 
 ```bash
-pnpm dev
+npm i
 ```
 
 Run the application using the command:
 
 ```bash
-pnpm dev
+npm start
 ```
 
 ## Branch Description
