@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import styles from './index.module.css';
@@ -8,7 +7,7 @@ import styles from './index.module.css';
 - Update renderSquare and renderRow functions to render all the squares needed for the game.
   Hint: Think of each square as an array element that holds a value. 
 - Modify handleClick so that a square that already has a value does not change.
- */
+*/
 
 const Square = () => {
   const [xIsNext, setXIsNext] = useState(true);
@@ -26,8 +25,8 @@ const Square = () => {
   );
 };
 
+/*
 const Board = () => {
-
   const renderSquare = () => {
     //Hint - returns the Square Component.
   };
@@ -37,7 +36,6 @@ const Board = () => {
   };
   return <div></div>;
 };
-
-
+*/
 
 ReactDOM.createRoot(document.getElementById('root')).render(<Square />);
