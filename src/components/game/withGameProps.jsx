@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { calculateWinner } from 'utils';
+import { calculateWinner, getStatus } from 'utils';
 import { useGameState } from 'store';
 
 /* TODO: - Move logic and business data from the HOC into the
@@ -86,11 +86,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
     setPersistedState.reset();
   };
 
-  const status = winner
-    ? `Winner is: ${
-        winner === 'X' ? player1 : winner === 'O' ? player2 : winner
-      }`
-    : `Next player: ${xIsNext ? player1 : player2}`;
+  const status = getStatus(winner, player1, player2);
 
   return (
     <WrappedComponent
