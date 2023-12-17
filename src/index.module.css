@@ -1,4 +1,4 @@
-/* use square class to the Squares component */
+/* Use square class to the Squares component */
 .square {
   background: #fff;
   border: 1px solid #999;
@@ -18,16 +18,16 @@
   outline: none;
 }
 
-/* use the board class to the Board component */
+/* Use the board class to the Board component */
 .board {
   display: flex;
   flex-direction: column;
 }
 
-/* use the classes below to the Game component */
+/* Use the classes below to the Game component */
 
 .gameWrapper {
-  width:357px;
+  width: 357px;
   height: 100vh;
   display: flex;
   flex-direction: column;

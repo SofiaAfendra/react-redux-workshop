@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import styles from './index.module.css';
 
 /* TODO:  
-- Create a new folder structure. 
-- Use the new Game component and render the Board inside it.
-  Hint: apply what you learned in the previous branch. 
+- Create a new folder structure
+- Use the new Game component and render the Board inside it
+  Hint: apply what you learned in the previous branch
 */
 
 const Square = ({ value, onClick }) => {
