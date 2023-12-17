@@ -1,9 +1,9 @@
-import { Board } from '../Board';
-import styles from './styles.module.css';
-
 import { useState, useEffect } from 'react';
-import { config } from '../../config';
-import { calculateWinner, getStatus } from '../../utils';
+import { config } from 'config';
+import { Board } from 'components/Board';
+import { calculateWinner, getStatus } from 'utils';
+
+import styles from './styles.module.css';
 
 // TODO: DEV - rethink how we get the status, the nesting is too damnh high.
 
@@ -12,7 +12,7 @@ export const initialState = {
   player2: '',
   squares: Array(9).fill(''),
   xIsNext: true,
-  winner: null
+  winner: null,
 };
 
 export const Game = () => {
