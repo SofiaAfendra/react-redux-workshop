@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import styles from './index.module.css';
@@ -6,7 +5,7 @@ import styles from './index.module.css';
 /* TODO:  
 - Create a new folder structure. 
 - Use the new Game component and render the Board inside it.
-  hint: apply what you learned in the previous branch. 
+  Hint: apply what you learned in the previous branch. 
 */
 
 const Square = ({ value, onClick }) => {
@@ -50,13 +49,10 @@ const Board = () => {
 };
 
 // const Game = () => {
-
 //   const handleReset = () => {};
 
 //   return (
-//     <div className={styles.gameWrapper}>
-//        {/* render the Board here */}
-//     </div>
+//     <div className={styles.gameWrapper}>{/* render the Board here */}</div>
 //   );
 // };
 
