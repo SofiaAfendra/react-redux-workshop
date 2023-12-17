@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { config } from '../../config';
-import { calculateWinner, getStatus } from '../../utils';
+import { config } from 'config';
+import { calculateWinner, getStatus } from 'utils';
 
 // TO-DO: Use classes from previous state.
 
@@ -25,13 +25,12 @@ export const withGameProps = (WrappedComponent) => (props) => {
   }
 
   if (player2Ref.current && winner === 'O') {
-
     player2Ref.current.style.border = '2px solid green';
   }
 
   const status = winner
-  ? getStatus(winner, player1, player2)
-  : `Next player: ${xIsNext ? player1 : player2}`;
+    ? getStatus(winner, player1, player2)
+    : `Next player: ${xIsNext ? player1 : player2}`;
 
   const handleClick = (squareIndex) => {
     if (!(player1 && player2)) {
