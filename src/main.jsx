@@ -1,7 +1,10 @@
-import * as React from 'react';
-
 import ReactDOM from 'react-dom/client';
+import { Game } from '@/components';
+import './main.css';
+import { GameStateProvider } from './utils/contextProvider';
 
-import { Game } from './components/Game';
-
-ReactDOM.createRoot(document.getElementById('root')).render(<Game />);
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <GameStateProvider persistKey='tic-tac-toe'>
+    <Game />
+  </GameStateProvider>,
+);

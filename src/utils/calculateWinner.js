@@ -37,5 +37,5 @@ export const calculateWinner = (squares) => {
     return complete;
   }, true);
 
-  return gameComplete && !winner ? 'Draw' : winner;
+  return gameComplete && !winner ? 'draw...' : winner;
 };
