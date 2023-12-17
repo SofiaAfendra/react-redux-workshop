@@ -20,7 +20,7 @@ export const Game = () => {
 
   const status = `Next player: ${xIsNext ? player1 : player2}`;
 
-  const handleClick = (squareIndex) => () => {
+  const handleClick = (squareIndex) =>  {
     if (!(player1 && player2)) {
       alert('Please, set the names of both players.');
       return;
