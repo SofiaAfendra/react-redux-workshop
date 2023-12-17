@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import { usePersistState } from '../../libraries';
-import { calculateWinner, getStatus } from '../../utils';
+import { usePersistState } from 'libraries';
+import { calculateWinner, getStatus } from 'utils';
 
 // TO-DO: Use classes from previous state.
 
@@ -28,9 +28,8 @@ export const withGameProps = (WrappedComponent) => (props) => {
   }
 
   const status = winner
-  ? getStatus(winner, player1, player2)
-  : `Next player: ${xIsNext ? player1 : player2}`;
-
+    ? getStatus(winner, player1, player2)
+    : `Next player: ${xIsNext ? player1 : player2}`;
 
   const handleClick = (squareIndex) => {
     if (!(player1 && player2)) {

@@ -1,4 +1,4 @@
-import { Board } from '../Board';
+import { Board } from 'components/Board';
 import styles from './styles.module.css';
 import { withGameProps } from './withGameProps';
 
