@@ -25,17 +25,15 @@ const Square = () => {
   );
 };
 
-/*
-const Board = () => {
-  const renderSquare = () => {
-    //Hint - returns the Square Component.
-  };
+// const Board = () => {
+//   const renderSquare = () => {
+//     //Hint - returns the Square Component.
+//   };
 
-  const renderRow = () => {
-    //Hint - returns 3 Squares in a row.
-  };
-  return <div></div>;
-};
-*/
+//   const renderRow = () => {
+//     //Hint - returns 3 Squares in a row.
+//   };
+//   return <div></div>;
+// };
 
 ReactDOM.createRoot(document.getElementById('root')).render(<Square />);
