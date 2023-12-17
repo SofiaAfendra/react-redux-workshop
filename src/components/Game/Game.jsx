@@ -2,10 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { config } from 'config';
 import { calculateWinner, getStatus } from 'utils';
 import { Board } from 'components/Board';
-
 import styles from './styles.module.css';
-
-// TO-DO: Use classes from previous state.
 
 export const initialState = {
   player1: '',
