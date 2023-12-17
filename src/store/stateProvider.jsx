@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from 'react';
-import { usePersistState } from '@/libraries';
+import { usePersistState } from 'libraries';
 import { Provider } from './store';
-import { initialState, gameReducer } from '@/models';
+import { initialState, gameReducer } from 'models';
 
 export const GameStateProvider = ({ children }) => {
   const { persistedState, setPersistedState } = usePersistState(
