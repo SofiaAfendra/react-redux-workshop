@@ -20,12 +20,14 @@
 
 /* Use the board class to the Board component */
 .board {
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Use the classes below to the Game component */
-
 .gameWrapper {
   width: 357px;
   height: 100vh;
