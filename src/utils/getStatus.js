@@ -1,7 +1,4 @@
-/*
- * Utility function that take as input the 'winner' and return the status of the game when the game has finished.
- */
-
+// Utility function that take as input the 'winner' and return the status of the game when the game has finished.
 
 export const getStatus = (winner, player1, player2) => {
   if (winner === 'X') {
@@ -12,6 +9,3 @@ export const getStatus = (winner, player1, player2) => {
   }
   return 'Draw...';
 };
-
-
-

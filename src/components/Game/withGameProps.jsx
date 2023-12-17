@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-
 import { usePersistState } from 'libraries';
 import { calculateWinner, getStatus } from 'utils';
 
