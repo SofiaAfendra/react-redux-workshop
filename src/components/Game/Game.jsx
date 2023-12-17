@@ -1,4 +1,4 @@
-import { Board } from '../Board';
+import { Board } from 'components/Board';
 import styles from './styles.module.css';
 
 import { useState } from 'react';
@@ -20,7 +20,7 @@ export const Game = () => {
 
   const status = `Next player: ${xIsNext ? player1 : player2}`;
 
-  const handleClick = (squareIndex) =>  {
+  const handleClick = (squareIndex) => {
     if (!(player1 && player2)) {
       alert('Please, set the names of both players.');
       return;
