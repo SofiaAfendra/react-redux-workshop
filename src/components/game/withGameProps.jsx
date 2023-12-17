@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { calculateWinner } from 'utils/calculateWinner';
-import { useGameState } from 'utils/contextProvider';
+import { calculateWinner } from 'utils';
+import { useGameState } from 'store';
 
 /* TODO: - Move logic and business data from the HOC into the
  *        'usePersistStateHook' custom hook that you'll create.

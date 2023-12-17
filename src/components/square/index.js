@@ -1,1 +1,1 @@
-export { default as Square } from './Square';
+export { Square } from './Square';

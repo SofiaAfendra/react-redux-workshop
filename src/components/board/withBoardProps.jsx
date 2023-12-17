@@ -1,5 +1,5 @@
-import { useGameState } from '../../utils/contextProvider';
-import Square from '../square/Square';
+import { useGameState } from 'store';
+import { Square } from 'components/square';
 import styles from './styles.module.css';
 
 export const withBoardProps =

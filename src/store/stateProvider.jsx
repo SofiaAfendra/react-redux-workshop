@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-import { usePersistStateHook } from './persistState';
+import { usePersistState } from 'libraries';
 
 const gameState = createContext({});
 
@@ -13,7 +13,7 @@ const initState = {
   winner: null,
 };
 export const GameStateProvider = ({ children, persistKey }) => {
-  const { persistedState, setPersistedState } = usePersistStateHook(
+  const { persistedState, setPersistedState } = usePersistState(
     persistKey,
     initState,
   );
