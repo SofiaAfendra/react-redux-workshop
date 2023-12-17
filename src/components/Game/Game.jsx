@@ -15,7 +15,7 @@ export const Game = () => {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(''));
 
-  const handleClick = (squareIndex) => () => {
+  const handleClick = (squareIndex) => {
     if (squares[squareIndex]) return;
     const newSquares = [...squares];
     newSquares[squareIndex] = xIsNext ? 'X' : 'O';
