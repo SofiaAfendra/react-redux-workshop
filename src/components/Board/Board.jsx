@@ -1,9 +1,9 @@
-import { Square } from '../Square';
+import { Square } from 'components/Square';
 import styles from './styles.module.css';
 
 export const Board = ({ onClick, squares }) => {
   const renderSquare = (index) => (
-    <Square value={squares[index]} onClick={onClick(index)} />
+    <Square value={squares[index]} onClick={() => onClick(index)} />
   );
 
   const renderRow = (index1, index2, index3) => (
