@@ -1,5 +1,5 @@
 .gameWrapper {
-  width:357px;
+  width: 357px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,10 +15,10 @@
 }
 
 .inputWrapper {
-  width:100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap:10px;
+  gap: 10px;
   justify-content: flex-end;
 }
 
