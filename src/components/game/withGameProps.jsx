@@ -36,6 +36,10 @@ export const withGameProps = (WrappedComponent) => (props) => {
     player2Ref.current.style.border = '2px solid green';
   }
 
+  const status = winner
+    ? getStatus(winner, player1, player2)
+    : `Next player: ${xIsNext ? player1 : player2}`;
+
   const makeMove = (squareIndex) => {
     if (!player1 || !player2) {
       alert("Please provide players' names.");
@@ -85,8 +89,6 @@ export const withGameProps = (WrappedComponent) => (props) => {
 
     setPersistedState.reset();
   };
-
-  const status = getStatus(winner, player1, player2);
 
   return (
     <WrappedComponent
