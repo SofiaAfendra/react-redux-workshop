@@ -26,7 +26,7 @@ export const Game = () => {
     ? getStatus(winner, player1, player2)
     : `Next player: ${xIsNext ? player1 : player2}`;
 
-  const handleClick = (squareIndex) => () => {
+  const handleClick = (squareIndex) => {
     if (!(player1 && player2)) {
       alert('Please, set the names of both players.');
       return;
@@ -42,7 +42,7 @@ export const Game = () => {
       winner: calculateWinner(newSquares),
     });
   };
-  
+
   const handleReset = () => {
     setGameState(initialState);
   };
