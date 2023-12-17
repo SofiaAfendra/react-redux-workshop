@@ -20,7 +20,7 @@ const Board = () => {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(''));
 
-  const handleClick = (squareIndex) => () => {
+  const handleClick = (squareIndex) => {
     if (squares[squareIndex]) return;
     const newSquares = [...squares];
     newSquares[squareIndex] = xIsNext ? 'X' : 'O';
@@ -29,7 +29,7 @@ const Board = () => {
   };
 
   const renderSquare = (index) => (
-    <Square value={squares[index]} onClick={handleClick(index)} />
+    <Square value={squares[index]} onClick={() => handleClick(index)} />
   );
 
   const renderRow = (index1, index2, index3) => (
