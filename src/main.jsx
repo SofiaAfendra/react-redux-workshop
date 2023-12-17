@@ -1,7 +1,5 @@
-// import * as React from 'react'
-// import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
-// import styles from './index.css'
+// import ReactDOM from 'react-dom/client';
+// import styles from './index.module.css';
 
 /* TODO: - Create a simple component named "Square" that returns a button, and add a class named 'square'
  *       - Initialize React
