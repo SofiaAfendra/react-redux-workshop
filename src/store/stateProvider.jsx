@@ -1,9 +1,6 @@
-import { createContext, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { usePersistState } from 'libraries';
-
-const gameState = createContext({});
-
-const { Provider } = gameState;
+import { Provider, gameState } from './store';
 
 const initState = {
   player1: '',
