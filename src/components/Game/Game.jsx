@@ -1,13 +1,13 @@
-import { Board } from '../Board';
+import { Board } from 'components/Board';
 import styles from './styles.module.css';
 
 import { useState } from 'react';
 
-/* TODO:  
+/* TODO:
 - Add the following inside the Game component:
   - Two inputs with labels for the player names.
   - A status showing which player is next.
-  - A button that resets the games. 
+  - A button that resets the games.
 - Create new state for the input elements and connect them with it.
 */
 
