@@ -1,5 +1,5 @@
-import { useGameState } from 'models';
 import { Square } from 'components/square';
+import { useGameState } from 'models';
 
 export const withBoardProps =
   (WrappedComponent) =>
