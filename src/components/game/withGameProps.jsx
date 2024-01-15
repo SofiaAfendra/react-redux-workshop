@@ -18,7 +18,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
     player2Ref.current.style.border = '2px solid green';
   }
 
-  const handlePlayerMove = (squareIndex) => {
+  const handleClick = (squareIndex) => {
     if (!player1 || !player2) {
       alert("Please provide players' names.");
       return;
@@ -28,13 +28,13 @@ export const withGameProps = (WrappedComponent) => (props) => {
       return;
     }
 
-    const nextSquares = [...squares];
-    nextSquares[squareIndex] = xIsNext ? 'X' : 'O';
-    const newWinner = calculateWinner(nextSquares);
+    const newSquares = [...squares];
+    newSquares[squareIndex] = xIsNext ? 'X' : 'O';
+    const newWinner = calculateWinner(newSquares);
 
     dispatch({
       type: 'SET_SQUARES',
-      payload: nextSquares,
+      payload: newSquares,
     });
 
     dispatch({
@@ -62,7 +62,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
     });
   };
 
-  const reset = () => {
+  const handleReset = () => {
     if (player1Ref.current) {
       player1Ref.current.style.border = '';
     }
@@ -75,7 +75,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
     });
   };
 
-  const gameStatus = winner
+  const status = winner
     ? getStatus(winner, player1, player2)
     : `Next player: ${xIsNext ? player1 : player2}`;
 
@@ -86,13 +86,13 @@ export const withGameProps = (WrappedComponent) => (props) => {
       squares={squares}
       xIsNext={xIsNext}
       winner={winner}
-      gameStatus={gameStatus}
-      handlePlayerMove={handlePlayerMove}
-      handlePlayer1={handlePlayer1}
-      handlePlayer2={handlePlayer2}
-      reset={reset}
+      status={status}
       player1Ref={player1Ref}
       player2Ref={player2Ref}
+      reset={handleReset}
+      handleClick={handleClick}
+      handlePlayer1={handlePlayer1}
+      handlePlayer2={handlePlayer2}
       {...props}
     />
   );
