@@ -1,7 +1,7 @@
-import { Board } from 'components/Board';
-import styles from './styles.module.css';
 import { useState } from 'react';
+import { Board } from 'components/Board';
 // import { calculateWinner } from 'utils';
+import styles from './styles.module.css';
 
 /* TODO:
 - Add the useEffect hook inside the Game component to load/update state from/to localStorage
