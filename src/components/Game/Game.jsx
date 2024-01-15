@@ -55,6 +55,20 @@ export const Game = () => {
     });
   };
 
+  const handlePlayer1 = (event) => {
+    setGameState({
+      ...gameState,
+      player1: event.target?.value,
+    });
+  };
+
+  const handlePlayer2 = (event) => {
+    setGameState({
+      ...gameState,
+      player2: event.target?.value,
+    });
+  };
+
   const handleReset = () => {
     if (player1Ref.current) {
       player1Ref.current.style.border = '';
@@ -82,30 +96,12 @@ export const Game = () => {
       <div className={styles.inputWrapper}>
         <div className={styles.input}>
           <label>Player 1:</label>
-          <input
-            value={player1}
-            ref={player1Ref}
-            onChange={(event) =>
-              setGameState({
-                ...gameState,
-                player1: event.target.value,
-              })
-            }
-          />
+          <input value={player1} ref={player1Ref} onChange={handlePlayer1} />
         </div>
 
         <div className={styles.input}>
           <label>Player 2:</label>
-          <input
-            value={player2}
-            ref={player2Ref}
-            onChange={(event) =>
-              setGameState({
-                ...gameState,
-                player2: event.target.value,
-              })
-            }
-          />
+          <input value={player2} ref={player2Ref} onChange={handlePlayer2} />
         </div>
 
         <div className={styles.resetBtnWrapper}>
