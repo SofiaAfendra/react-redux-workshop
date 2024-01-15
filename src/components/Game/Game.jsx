@@ -2,10 +2,13 @@ import { useState, useEffect } from 'react';
 import { config } from 'config';
 import { Board } from 'components/Board';
 import { calculateWinner, getStatus } from 'utils';
-
 import styles from './styles.module.css';
 
-// TODO: DEV - rethink how we get the status, the nesting is too damnh high.
+/*
+TODO: 
+- Enhance component so when there is a winner, the corresponding input element change style
+  HINT: Do not forget to reset the style when the game resets
+*/
 
 export const initialState = {
   player1: '',
