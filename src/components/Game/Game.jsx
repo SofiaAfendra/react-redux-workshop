@@ -1,14 +1,13 @@
 import { Board } from 'components/Board';
 import styles from './styles.module.css';
-
 import { useState } from 'react';
 
 /* TODO:
 - Add the following inside the Game component:
-  - Two inputs with labels for the player names.
-  - A status showing which player is next.
-  - A button that resets the games.
-- Create new state for the input elements and connect them with it.
+  a) two inputs with labels for the player names
+  b) a status showing which player is next
+  c) a button that resets the games
+- Create new state for the input elements and connect them with it
 */
 
 export const Game = () => {
@@ -24,7 +23,7 @@ export const Game = () => {
   };
 
   // const handleReset = () => {
-  //   //hint: should reset the state
+  //   //Hint - should reset the state
   // }
 
   return (
