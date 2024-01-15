@@ -4,7 +4,7 @@ React Workshop!
 
 ## Branch Description
 
-In this branch, you will be introduced to the concept of state. Your goal is to add state to the **Square** component.
+In this branch, we will introduce the concept of state. Our goal is to add state to the **Square** component.
 
 **Branch Task:**
 
