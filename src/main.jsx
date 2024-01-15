@@ -27,7 +27,7 @@ const Square = () => {
 
 // const Board = () => {
 //   const renderSquare = () => {
-//     // Hint - returns the Square Component
+//     // Hint - returns the Square component
 //   };
 
 //   const renderRow = () => {

@@ -4,7 +4,7 @@ React Workshop!
 
 ## Branch Description
 
-In this branch, you will be introduced to the concept of lifting state up. Your goal is to move the state for the **Square** component inside the new **Board** component.
+In this branch, we will introduce the concept of lifting state up. Our goal is to move the state for the **Square** component inside the new **Board** component.
 
 **Branch Task:**
 
@@ -17,4 +17,3 @@ In this branch, you will be introduced to the concept of lifting state up. Your 
 
 - [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)
 - [Lifting State](https://react.dev/learn/sharing-state-between-components)
-
