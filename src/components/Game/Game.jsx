@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { Board } from 'components/Board';
 import styles from './styles.module.css';
-import { useState } from 'react';
 
 /* TODO:
 - Add the following inside the Game component:
