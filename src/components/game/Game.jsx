@@ -12,36 +12,29 @@ const Game = ({
   handleClick,
   handlePlayer1,
   handlePlayer2,
-  reset,
+  handleReset,
 }) => (
-  <div className={styles.game}>
-    <div className={styles.gameStatus}>{status}</div>
-    <div className={styles['game-board']}>
-      <Board squares={squares} onSquareClick={handleClick} />
+  <div className={styles.gameWrapper}>
+    <div className={styles.boardAndStatusWrapper}>
+      <div>Game Status: {status}</div>
+      <div className={styles.boardWrapper}>
+        <Board squares={squares} onClick={handleClick} />
+      </div>
     </div>
-    <div className={styles.wrapper}>
-      <div className={styles.row}>
-        <label htmlFor='player-1'>Player 1</label>
-        <input
-          type='text'
-          id='player-1'
-          value={player1}
-          onChange={handlePlayer1}
-          ref={player1Ref}
-        />
+
+    <div className={styles.inputWrapper}>
+      <div className={styles.input}>
+        <label>Player 1:</label>
+        <input value={player1} ref={player1Ref} onChange={handlePlayer1} />
       </div>
-      <div className={styles.row}>
-        <label htmlFor='player-2'>Player 2</label>
-        <input
-          type='text'
-          id='player-2'
-          value={player2}
-          onChange={handlePlayer2}
-          ref={player2Ref}
-        />
+
+      <div className={styles.input}>
+        <label>Player 2:</label>
+        <input value={player2} ref={player2Ref} onChange={handlePlayer2} />
       </div>
-      <div className={styles.row}>
-        <button type='button' onClick={reset}>
+
+      <div className={styles.resetBtnWrapper}>
+        <button onClick={handleReset} className={styles.resetButton}>
           Reset
         </button>
       </div>

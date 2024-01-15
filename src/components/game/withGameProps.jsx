@@ -90,7 +90,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
       handleClick={handleClick}
       handlePlayer1={handlePlayer1}
       handlePlayer2={handlePlayer2}
-      reset={handleReset}
+      handleReset={handleReset}
       {...props}
     />
   );
