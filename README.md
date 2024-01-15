@@ -48,10 +48,10 @@ This is the starting branch. Preview the application files and open **src/main.j
 
 **Branch Tasks:**
 
-1. Create a simple React Component
-2. Render the Component into the DOM
+1. Create a simple React Component.
+2. Render the Component into the DOM.
 
 **Covers:**
 
 - React core concepts
-- React Component creation
+- [React Component creation](https://react.dev/reference/react-dom/components)
