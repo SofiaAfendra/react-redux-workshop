@@ -2,17 +2,17 @@ import { Board } from 'components';
 import { withGameProps } from './withGameProps';
 import styles from './styles.module.css';
 
-const GameComponent = ({
+const Game = ({
   player1,
   player2,
+  player1Ref,
+  player2Ref,
   squares,
   status,
   handleClick,
   handlePlayer1,
   handlePlayer2,
   reset,
-  player1Ref,
-  player2Ref,
 }) => (
   <div className={styles.game}>
     <div className={styles.gameStatus}>{status}</div>
@@ -49,4 +49,4 @@ const GameComponent = ({
   </div>
 );
 
-export const Game = withGameProps(GameComponent);
+export default withGameProps(Game);
