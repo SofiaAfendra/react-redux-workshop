@@ -16,7 +16,7 @@ const Game = ({
 }) => (
   <div className={styles.gameWrapper}>
     <div className={styles.boardAndStatusWrapper}>
-      <div>Game Status: {status}</div>
+      <div>{status}</div>
       <div className={styles.boardWrapper}>
         <Board squares={squares} onClick={handleClick} />
       </div>
