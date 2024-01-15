@@ -24,10 +24,6 @@ Libraries used:
 
 - usePersistState: This is a custom hook that persists the game state to local storage.
 
-## Why use HOC and presentational components?
-
-The HOC and presentational component pattern is used to separate the logic from the presentation. This allows the components to be reused in other applications and makes the code easier to read and maintain.
-
 ## File Structure
 
 The project has the following file structure:
