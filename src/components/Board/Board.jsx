@@ -1,6 +1,11 @@
 import { Square } from 'components/Square';
 import styles from './styles.module.css';
 
+/* 
+TODO: 
+- Create a new file withBoardProps.jsx and move the business logic in the HOC
+*/
+
 export const Board = ({ onClick, squares }) => {
   const renderSquare = (index) => (
     <Square value={squares[index]} onClick={onClick(index)} />

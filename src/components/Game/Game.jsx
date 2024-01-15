@@ -4,6 +4,11 @@ import { calculateWinner, getStatus } from 'utils';
 import { config } from 'config';
 import styles from './styles.module.css';
 
+/* 
+TODO: 
+- Create a new file withGameProps.jsx and move the business logic in the HOC
+*/
+
 export const initialState = {
   player1: '',
   player2: '',
