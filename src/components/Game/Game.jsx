@@ -32,6 +32,14 @@ export const Game = () => {
     setXIsNext(!xIsNext);
   };
 
+  const handlePlayer1 = (event) => {
+    setPlayer1(event?.target?.value);
+  };
+
+  const handlePlayer2 = (event) => {
+    setPlayer2(event?.target?.value);
+  };
+
   const handleReset = () => {
     setSquares(Array(9).fill(''));
     setPlayer1('');
@@ -50,18 +58,12 @@ export const Game = () => {
       <div className={styles.inputWrapper}>
         <div className={styles.input}>
           <label>Player 1:</label>
-          <input
-            value={player1}
-            onChange={(event) => setPlayer1(event.target.value)}
-          />
+          <input value={player1} onChange={handlePlayer1} />
         </div>
 
         <div className={styles.input}>
           <label>Player 2:</label>
-          <input
-            value={player2}
-            onChange={(event) => setPlayer2(event.target.value)}
-          />
+          <input value={player2} onChange={handlePlayer2} />
         </div>
 
         <div className={styles.resetBtnWrapper}>
