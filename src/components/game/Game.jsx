@@ -1,6 +1,6 @@
 import { Board } from 'components';
-import styles from './styles.module.css';
 import { withGameProps } from './withGameProps';
+import styles from './styles.module.css';
 
 const GameComponent = ({
   player1,

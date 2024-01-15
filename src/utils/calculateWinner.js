@@ -1,7 +1,7 @@
 /*
- * Utility function that take as input the 'squares' and return the symbol that
- * wins (X or O), null if there is no winner and 'draw...' if it is a draw.
- */
+Utility function that takes as input the 'squares' and returns the symbol that
+wins (X or O), null if there is no winner and 'Draw' if it is a draw.
+*/
 
 export const calculateWinner = (squares) => {
   const lines = [
@@ -37,5 +37,5 @@ export const calculateWinner = (squares) => {
     return complete;
   }, true);
 
-  return gameComplete && !winner ? 'draw...' : winner;
+  return gameComplete && !winner ? 'Draw' : winner;
 };

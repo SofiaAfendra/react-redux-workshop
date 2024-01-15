@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { calculateWinner } from 'utils';
 import { useGameState } from 'models';
+import { calculateWinner, getStatus } from 'utils';
 
 export const withGameProps = (WrappedComponent) => (props) => {
   const { state, dispatch } = useGameState();
@@ -76,9 +76,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
   };
 
   const gameStatus = winner
-    ? `Winner is: ${
-        winner === 'X' ? player1 : winner === 'O' ? player2 : winner
-      }`
+    ? getStatus(winner, player1, player2)
     : `Next player: ${xIsNext ? player1 : player2}`;
 
   return (

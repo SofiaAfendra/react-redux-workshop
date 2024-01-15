@@ -11,6 +11,7 @@ export default defineConfig({
       models: '/src/models',
       store: '/src/store',
       utils: '/src/utils',
+      config: '/src/config',
     },
   },
 });

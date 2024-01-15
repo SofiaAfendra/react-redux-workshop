@@ -2,10 +2,11 @@ import { useEffect, useReducer } from 'react';
 import { usePersistState } from 'libraries';
 import { Provider } from './store';
 import { initialState, gameReducer } from 'models';
+import { config } from 'config';
 
 export const GameStateProvider = ({ children }) => {
   const { persistedState, setPersistedState } = usePersistState(
-    'tic-tac-toe',
+    config.PERSIST_KEY,
     initialState,
   );
 
