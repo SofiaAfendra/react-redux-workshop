@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { config } from 'config';
 import { Board } from 'components/Board';
 import { calculateWinner, getStatus } from 'utils';
+import { config } from 'config';
 import styles from './styles.module.css';
 
 /*
