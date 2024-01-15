@@ -8,9 +8,10 @@ In this branch, you will be introduced to the useEffect hook and the localStorag
 
 **Branch Task:**
 
-1. ...
+1. Use Game component's useEffect hook to load/update state from/to localstorage.
+2. If a winner exists, display their name in 'status' and clear the localstorage.
 
-_hint_: The read-only localStorage property allows you to access a Storage object for the Document's origin; the stored data is saved across browser sessions.
+> Hint: The read-only localStorage property allows you to access a Storage object for the Document's origin; the stored data is saved across browser sessions.
 
 The localStorage API has 2 common functions to set/get a value from local storage
 
@@ -19,7 +20,11 @@ The localStorage API has 2 common functions to set/get a value from local storag
 // we use JSON.stringify to save the state into the localStorage
 // and JSON.parse to get it
 
-const retrievedState = JSON.parse(window.localStorage.getItem('ticTacToe'));
+window.localStorage.setItem('ticTacToe', JSON.stringify(this.state));
+
+const retrievedState = window.localStorage.getItem('ticTacToe');
+
+this.setState(JSON.parse(retrievedState));
 ```
 
 **Covers:**

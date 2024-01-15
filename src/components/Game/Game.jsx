@@ -1,15 +1,13 @@
 import { Board } from 'components/Board';
 import styles from './styles.module.css';
-
 import { useState } from 'react';
-
-//UPDATE README! Maybe useMemo useCallback?
+// import { calculateWinner } from 'utils';
 
 /* TODO:
-- Add the useEffect hook inside the Game component to load/update state from/to localStorage.
-- Create winner state.
-- Use the provided utility function calculateWinner to display the result in 'status'.
-- Update handleReset so that it now clears the localStorage.
+- Add the useEffect hook inside the Game component to load/update state from/to localStorage
+- Create winner state
+- If winner exists, use the provided utility function calculateWinner to display the result in 'status'
+- Update handleReset so that it clears the localStorage
 */
 
 export const Game = () => {
