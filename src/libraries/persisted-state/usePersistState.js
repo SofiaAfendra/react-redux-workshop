@@ -3,7 +3,7 @@ import { config } from 'config';
 
 export const usePersistState = (initialState) => {
   const [gameState, setGameState] = useState(
-    localStorage.getItem(config.PERSIST_KEY) ?? initialState,
+    JSON.parse(localStorage.getItem(config.PERSIST_KEY)) ?? initialState,
   );
 
   useEffect(() => {
