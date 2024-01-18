@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { config } from 'config';
 import { calculateWinner, getStatus } from 'utils';
+import { config } from 'config';
 
 // TO-DO: Use classes from previous state.
 
@@ -38,7 +38,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
       return;
     }
 
-    if (squares[squareIndex]) return;
+    if (squares[squareIndex] || winner) return;
 
     const newSquares = [...squares];
     newSquares[squareIndex] = xIsNext ? 'X' : 'O';
@@ -47,6 +47,20 @@ export const withGameProps = (WrappedComponent) => (props) => {
       xIsNext: !xIsNext,
       squares: newSquares,
       winner: calculateWinner(newSquares),
+    });
+  };
+
+  const handlePlayer1 = (event) => {
+    setGameState({
+      ...gameState,
+      player1: event.target?.value,
+    });
+  };
+
+  const handlePlayer2 = (event) => {
+    setGameState({
+      ...gameState,
+      player2: event.target?.value,
     });
   };
 
@@ -74,10 +88,10 @@ export const withGameProps = (WrappedComponent) => (props) => {
       status={status}
       player1Ref={player1Ref}
       player2Ref={player2Ref}
+      handlePlayer1={handlePlayer1}
+      handlePlayer2={handlePlayer2}
       reset={handleReset}
       handleClick={handleClick}
-      gameState={gameState}
-      setGameState={setGameState}
       {...props}
     />
   );
