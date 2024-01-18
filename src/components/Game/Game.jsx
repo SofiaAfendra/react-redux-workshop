@@ -6,12 +6,12 @@ const GameComponent = ({
   status,
   player1,
   player1Ref,
+  handlePlayer1,
   player2,
   player2Ref,
+  handlePlayer2,
   handleClick,
   reset,
-  gameState,
-  setGameState,
   squares,
 }) => {
   return (
@@ -29,12 +29,7 @@ const GameComponent = ({
           <input
             value={player1}
             ref={player1Ref}
-            onChange={(event) =>
-              setGameState({
-                ...gameState,
-                player1: event.target.value,
-              })
-            }
+            onChange={handlePlayer1}
           />
         </div>
 
@@ -43,12 +38,7 @@ const GameComponent = ({
           <input
             value={player2}
             ref={player2Ref}
-            onChange={(event) =>
-              setGameState({
-                ...gameState,
-                player2: event.target.value,
-              })
-            }
+            onChange={handlePlayer2}
           />
         </div>
 

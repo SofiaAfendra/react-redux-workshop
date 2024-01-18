@@ -14,6 +14,7 @@ export const initialState = {
 
 export const withGameProps = (WrappedComponent) => (props) => {
   const [gameState, setGameState] = usePersistState(initialState);
+  console.log(gameState);
   const { player1, player2, squares, xIsNext, winner } = gameState || {};
   const player1Ref = useRef(null);
   const player2Ref = useRef(null);
@@ -48,6 +49,20 @@ export const withGameProps = (WrappedComponent) => (props) => {
     });
   };
 
+  const handlePlayer1 = (event) => {
+    setGameState({
+      ...gameState,
+      player1: event.target?.value,
+    });
+  };
+
+  const handlePlayer2 = (event) => {
+    setGameState({
+      ...gameState,
+      player2: event.target?.value,
+    });
+  };
+
   const handleReset = () => {
     if (player1Ref.current) {
       player1Ref.current.style.border = '';
@@ -68,10 +83,10 @@ export const withGameProps = (WrappedComponent) => (props) => {
       status={status}
       player1Ref={player1Ref}
       player2Ref={player2Ref}
+      handlePlayer1={handlePlayer1}
+      handlePlayer2={handlePlayer2}
       reset={handleReset}
       handleClick={handleClick}
-      gameState={gameState}
-      setGameState={setGameState}
       {...props}
     />
   );
