@@ -1,2 +1,2 @@
-export { calculateWinner } from './calculate-winner';
-export { getStatus } from './get-status';
+export { getStatus } from './getStatus';
+export { calculateWinner } from './calculateWinner';
