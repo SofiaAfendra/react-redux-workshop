@@ -1,53 +1,55 @@
-import { Board } from 'components/board';
-
+import { Board } from 'components/Board';
 import styles from './styles.module.css';
 import { withGameProps } from './withGameProps';
 
 const GameComponent = ({
-  player1,
-  player2,
-  squares,
   status,
-  makeMove,
-  handlePlayer1,
-  handlePlayer2,
-  reset,
+  player1,
   player1Ref,
+  handlePlayer1,
+  player2,
   player2Ref,
-}) => (
-  <div className={styles['game']}>
-    <div className={styles.status}>{status}</div>
-    <div className={styles['game-board']}>
-      <Board squares={squares} onSquareClick={makeMove} />
+  handlePlayer2,
+  handleClick,
+  reset,
+  squares,
+}) => {
+  return (
+    <div className={styles.gameWrapper}>
+      <div className={styles.boardAndStatusWrapper}>
+        <div>{status}</div>
+        <div className={styles.boardWrapper}>
+          <Board squares={squares} onClick={handleClick} />
+        </div>
+      </div>
+
+      <div className={styles.inputWrapper}>
+        <div className={styles.input}>
+          <label>Player 1:</label>
+          <input
+            value={player1}
+            ref={player1Ref}
+            onChange={handlePlayer1}
+          />
+        </div>
+
+        <div className={styles.input}>
+          <label>Player 2:</label>
+          <input
+            value={player2}
+            ref={player2Ref}
+            onChange={handlePlayer2}
+          />
+        </div>
+
+        <div className={styles.resetBtnWrapper}>
+          <button onClick={reset} className={styles.resetButton}>
+            Reset
+          </button>
+        </div>
+      </div>
     </div>
-    <div className={styles.wrapper}>
-      <div className={styles.row}>
-        <label htmlFor='player-1'>Player 1</label>
-        <input
-          type='text'
-          id='player-1'
-          value={player1}
-          onChange={handlePlayer1}
-          ref={player1Ref}
-        />
-      </div>
-      <div className={styles.row}>
-        <label htmlFor='player-2'>Player 2</label>
-        <input
-          type='text'
-          id='player-2'
-          value={player2}
-          onChange={handlePlayer2}
-          ref={player2Ref}
-        />
-      </div>
-      <div className={styles.row}>
-        <button type='button' onClick={reset}>
-          Reset
-        </button>
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 export const Game = withGameProps(GameComponent);

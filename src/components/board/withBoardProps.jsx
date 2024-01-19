@@ -5,11 +5,11 @@ import styles from './styles.module.css';
 export const withBoardProps =
   (WrappedComponent) =>
   // eslint-disable-next-line react/display-name
-  ({ onSquareClick, ...props }) => {
+  ({ onClick, ...props }) => {
     const { squares } = useGameState();
 
     const renderSquare = (index) => (
-      <Square value={squares[index]} handleClick={() => onSquareClick(index)} />
+      <Square value={squares[index]} onClick={() => onClick(index)} />
     );
 
     const renderRow = (a, b, c) => (

@@ -3,7 +3,7 @@ import { withBoardProps } from './withBoardProps';
 
 export const Board = ({ renderRow }) => {
   return (
-    <div className={styles.game}>
+    <div className={styles.board}>
       {renderRow(0, 1, 2)}
       {renderRow(3, 4, 5)}
       {renderRow(6, 7, 8)}

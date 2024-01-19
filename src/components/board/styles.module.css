@@ -1,5 +1,5 @@
-.board-row:after {
-  clear: both;
-  content: '';
-  display: table;
+.board {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
 }

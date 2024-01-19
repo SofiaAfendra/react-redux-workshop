@@ -1,60 +1,42 @@
-.game {
+.gameWrapper {
+  width: 357px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   justify-content: center;
-  width: 400px;
-  margin: 50px auto;
+  margin: auto;
 }
 
-.game-board {
-  margin-bottom: 20px;
+.boardAndStatusWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.game-info {
-  margin-left: 20px;
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
 }
 
-.wrapper {
-  width: 400px;
-  padding: 0;
-  border-radius: 3px;
+.input {
+  display: flex;
+  justify-content: space-between;
 }
 
-.row {
+.resetBtnWrapper {
   display: flex;
   justify-content: flex-end;
-  padding: 5px;
 }
 
-.row > label {
-  padding: 5px 10px 5px 0;
-  flex: 1;
-}
-
-.row > input {
-  flex: 2;
-}
-
-.row > input,
-.row > button {
-  padding: 7.5px;
-}
-
-.row > button {
+.resetButton {
   padding: 10px 20px;
   background: gray;
   color: white;
   border: 0;
   cursor: pointer;
   border-radius: 5px;
-}
-
-.row > button:last-child {
-  margin-left: 20px;
-}
-
-.status {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
 }
