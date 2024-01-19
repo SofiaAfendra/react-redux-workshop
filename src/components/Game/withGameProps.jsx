@@ -14,7 +14,6 @@ export const initialState = {
 
 export const withGameProps = (WrappedComponent) => (props) => {
   const [gameState, setGameState] = usePersistState(initialState);
-  console.log(gameState);
   const { player1, player2, squares, xIsNext, winner } = gameState || {};
   const player1Ref = useRef(null);
   const player2Ref = useRef(null);
