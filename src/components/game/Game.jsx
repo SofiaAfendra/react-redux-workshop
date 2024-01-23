@@ -1,4 +1,4 @@
-import { Board } from 'components/Board';
+import { Board } from 'components/board';
 import styles from './styles.module.css';
 import { withGameProps } from './withGameProps';
 
@@ -26,20 +26,12 @@ const GameComponent = ({
       <div className={styles.inputWrapper}>
         <div className={styles.input}>
           <label>Player 1:</label>
-          <input
-            value={player1}
-            ref={player1Ref}
-            onChange={handlePlayer1}
-          />
+          <input value={player1} ref={player1Ref} onChange={handlePlayer1} />
         </div>
 
         <div className={styles.input}>
           <label>Player 2:</label>
-          <input
-            value={player2}
-            ref={player2Ref}
-            onChange={handlePlayer2}
-          />
+          <input value={player2} ref={player2Ref} onChange={handlePlayer2} />
         </div>
 
         <div className={styles.resetBtnWrapper}>

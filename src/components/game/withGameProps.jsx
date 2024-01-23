@@ -92,9 +92,9 @@ export const withGameProps = (WrappedComponent) => (props) => {
       squares: Array(9).fill(null),
       xIsNext: true,
       winner: null,
+      player1: '',
+      player2: '',
     });
-
-    // setPersistedState.reset();
   };
 
   return (
