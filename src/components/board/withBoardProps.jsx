@@ -3,11 +3,11 @@ import { useGameState } from 'models';
 
 export const withBoardProps =
   (WrappedComponent) =>
-  ({ onSquareClick, ...props }) => {
+  ({ onClick, ...props }) => {
     const { state: { squares } = {} } = useGameState();
 
     const renderSquare = (index) => (
-      <Square value={squares[index]} handleClick={() => onSquareClick(index)} />
+      <Square value={squares[index]} handleClick={() => onClick(index)} />
     );
 
     const renderRow = (a, b, c) => (
