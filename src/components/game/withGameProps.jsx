@@ -22,7 +22,6 @@ export const withGameProps = (WrappedComponent) => (props) => {
     squares,
     xIsNext,
     winner,
-    setPersistedState,
   } = useGameState();
 
   const player1Ref = useRef(null);
@@ -57,12 +56,6 @@ export const withGameProps = (WrappedComponent) => (props) => {
     setWinner(newWinner);
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
-
-    setPersistedState({
-      squares: nextSquares,
-      xIsNext: !xIsNext,
-      winner: newWinner,
-    });
   };
 
   const handlePlayer1 = (event) => {
@@ -86,15 +79,6 @@ export const withGameProps = (WrappedComponent) => (props) => {
     setWinner(null);
     setXIsNext(true);
     setSquares(Array(9).fill(null));
-
-    //TODO: Bug after reset and refreshing page.
-    setPersistedState({
-      squares: Array(9).fill(null),
-      xIsNext: true,
-      winner: null,
-      player1: '',
-      player2: '',
-    });
   };
 
   return (

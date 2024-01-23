@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { usePersistState } from 'libraries';
 import { Provider, gameState } from './store';
 
@@ -20,6 +20,16 @@ export const GameStateProvider = ({ children, persistKey }) => {
   const [xIsNext, setXIsNext] = useState(persistedState?.xIsNext);
   const [winner, setWinner] = useState(persistedState?.winner);
 
+  useEffect(() => {
+    setPersistedState({
+      player1,
+      player2,
+      squares,
+      xIsNext,
+      winner,
+    });
+  }, [player1, player2, squares, xIsNext, winner, setPersistedState]);
+
   const value = {
     player1,
     player2,
@@ -31,7 +41,6 @@ export const GameStateProvider = ({ children, persistKey }) => {
     setSquares,
     setXIsNext,
     setWinner,
-    setPersistedState,
   };
 
   return <Provider value={value}>{children}</Provider>;
