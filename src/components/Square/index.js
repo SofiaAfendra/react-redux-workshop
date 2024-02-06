@@ -1,1 +1,1 @@
-export * from './Square';
+export { Square } from './Square';
