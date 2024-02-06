@@ -18,11 +18,5 @@ export const withBoardProps =
       </div>
     );
 
-    return (
-      <WrappedComponent
-        {...props}
-        renderSquare={renderSquare}
-        renderRow={renderRow}
-      />
-    );
+    return <WrappedComponent renderRow={renderRow} {...props} />;
   };
