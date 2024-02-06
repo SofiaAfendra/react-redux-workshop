@@ -1,8 +1,8 @@
-import { Board } from 'components/board';
-import styles from './styles.module.css';
+import { Board } from 'components';
 import { withGameProps } from './withGameProps';
+import styles from './styles.module.css';
 
-const GameComponent = ({
+const Game = ({
   status,
   player1,
   player1Ref,
@@ -44,4 +44,4 @@ const GameComponent = ({
   );
 };
 
-export const Game = withGameProps(GameComponent);
+export default withGameProps(Game);

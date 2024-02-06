@@ -1,5 +1,5 @@
-import styles from './styles.module.css';
 import { withBoardProps } from './withBoardProps';
+import styles from './styles.module.css';
 
 export const Board = ({ renderRow }) => {
   return (

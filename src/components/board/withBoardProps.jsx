@@ -1,5 +1,5 @@
+import { Square } from 'components';
 import { useGameState } from 'store';
-import { Square } from 'components/square';
 import styles from './styles.module.css';
 
 export const withBoardProps =
