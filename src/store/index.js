@@ -1,2 +1,2 @@
-export { GameStateProvider, useGameState } from './stateProvider.jsx';
+export { StateProvider, useGameState } from './stateProvider.jsx';
 export { gameState } from './store';

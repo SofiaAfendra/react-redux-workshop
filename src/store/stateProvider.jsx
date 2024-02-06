@@ -9,7 +9,7 @@ const initState = {
   xIsNext: true,
   winner: null,
 };
-export const GameStateProvider = ({ children, persistKey }) => {
+export const StateProvider = ({ persistKey, children }) => {
   const { persistedState, setPersistedState } = usePersistState(
     persistKey,
     initState,
