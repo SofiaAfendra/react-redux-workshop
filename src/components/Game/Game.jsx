@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Board } from 'components/Board';
+import { Board } from 'components';
 import styles from './styles.module.css';
 
 /* TODO:
