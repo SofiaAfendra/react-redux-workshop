@@ -3,16 +3,16 @@ import styles from './styles.module.css';
 import { withGameProps } from './withGameProps';
 
 const Game = ({
-  status,
   player1,
-  player1Ref,
-  handlePlayer1,
   player2,
+  player1Ref,
   player2Ref,
-  handlePlayer2,
-  handleClick,
-  reset,
   squares,
+  status,
+  handleClick,
+  handlePlayer1,
+  handlePlayer2,
+  handleReset,
 }) => {
   return (
     <div className={styles.gameWrapper}>
@@ -35,7 +35,7 @@ const Game = ({
         </div>
 
         <div className={styles.resetBtnWrapper}>
-          <button onClick={reset} className={styles.resetButton}>
+          <button onClick={handleReset} className={styles.resetButton}>
             Reset
           </button>
         </div>

@@ -88,15 +88,14 @@ export const withGameProps = (WrappedComponent) => (props) => {
     <WrappedComponent
       player1={player1}
       player2={player2}
-      squares={squares}
-      winner={winner}
-      status={status}
       player1Ref={player1Ref}
       player2Ref={player2Ref}
+      squares={squares}
+      status={status}
+      handleClick={handleClick}
       handlePlayer1={handlePlayer1}
       handlePlayer2={handlePlayer2}
-      reset={handleReset}
-      handleClick={handleClick}
+      handleReset={handleReset}
       {...props}
     />
   );
