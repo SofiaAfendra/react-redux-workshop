@@ -1,19 +1,7 @@
-import { Square } from 'components';
+import { withBoardProps } from './withBoardProps';
 import styles from './styles.module.css';
 
-export const Board = ({ onClick, squares }) => {
-  const renderSquare = (index) => (
-    <Square value={squares[index]} onClick={() => onClick(index)} />
-  );
-
-  const renderRow = (index1, index2, index3) => (
-    <div>
-      {renderSquare(index1)}
-      {renderSquare(index2)}
-      {renderSquare(index3)}
-    </div>
-  );
-
+export const Board = ({ renderRow }) => {
   return (
     <div className={styles.board}>
       {renderRow(0, 1, 2)}
@@ -22,3 +10,5 @@ export const Board = ({ onClick, squares }) => {
     </div>
   );
 };
+
+export default withBoardProps(Board);
