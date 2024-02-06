@@ -4,17 +4,14 @@ React Workshop!
 
 ## Branch Description
 
-In this branch, you will be introduced to the concept of lifting state up. Your goal is to move the state for the **Square** component inside the new **Board** component.
+In this branch, you will be introduced to the concept of custom hooks. Your goal is to move all persisted state logic from the withGameProps HOC, into a new separate file.
 
 **Branch Task:**
 
-1. Find a way to lift the state so that the **Board** has all the state for each **Sqaure** component.
-2. Utilize the renderSquare to return a **Square** component with a value and an onClick as props.
-3. Utilize renderRow to return three **Square** components inside the **Board** component.
-4. Make sure that if a square has a value it no longer changes when clicked.
+1. Create a folder named **libraries** in src, a file named **usePersistState.js** inside and an **index.js** file that exports it.
+2. Separate any persisted state logic from the **withGameProps.jsx** into **usePersistedState.js**.
+   > Hint: Upon calling the usePersistedState hook within withGameProps, it should return persistedState and setPersistededState.
 
 **Covers:**
 
-- [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)
-- [Lifting State](https://react.dev/learn/sharing-state-between-components)
-
+- [Reusing Logic with Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)

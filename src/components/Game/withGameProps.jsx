@@ -2,12 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import { calculateWinner, getStatus } from 'utils';
 import { config } from 'config';
 
-/* TODO: -Create a new folder library in src, in which add the persist-state folder to include the usePersistState.js file.
+/* TODO: -Create a new folder library in src, in which add a file named usePersistState.js.
 
          -Create a custom Hook named usePersistState and move the logic of the persisted state from the withGameProps HOC in it.
 
          -Use the custom hook to provide the Game's persisted state logic to the HOC.
-*/ 
+*/
 
 export const initialState = {
   player1: '',
