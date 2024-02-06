@@ -16,7 +16,7 @@ The basic components that make up the game are:
 
 The models that make up the game are:
 
-- GameStateProvider: This is a context provider that creates a global game state and shares it across the application.
+- StateProvider: This is a context provider that creates a global game state and shares it across the application.
 - reducer: This is the reducer that manages the game state.
 - useGameState: This is a custom hook that provides the game state and the functions that update the game state to the components that need it.
 
@@ -53,7 +53,7 @@ tic-tac-toe/
 │   │
 │   ├── models/
 │   │   └── state/
-│   │       ├── GameStateProvider.js
+│   │       ├── StateProvider.js
 │   │       ├── reducer.js
 │   │       ├── useGameState.js
 │   │       └── ...

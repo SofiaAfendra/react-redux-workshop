@@ -1,12 +1,11 @@
 import { useEffect, useReducer } from 'react';
 import { usePersistState } from 'libraries';
 import { initialState, gameReducer } from 'models';
-import { config } from 'config';
 import { Provider } from './store';
 
-export const GameStateProvider = ({ children }) => {
+export const StateProvider = ({ persistKey, children }) => {
   const { persistedState, setPersistedState } = usePersistState(
-    config.PERSIST_KEY,
+    persistKey,
     initialState,
   );
 
