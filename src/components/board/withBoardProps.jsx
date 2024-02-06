@@ -4,7 +4,6 @@ import styles from './styles.module.css';
 
 export const withBoardProps =
   (WrappedComponent) =>
-  // eslint-disable-next-line react/display-name
   ({ onClick, ...props }) => {
     const { squares } = useGameState();
 
@@ -20,11 +19,5 @@ export const withBoardProps =
       </div>
     );
 
-    return (
-      <WrappedComponent
-        {...props}
-        renderSquare={renderSquare}
-        renderRow={renderRow}
-      />
-    );
+    return <WrappedComponent renderRow={renderRow} {...props} />;
   };
