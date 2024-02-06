@@ -43,20 +43,21 @@ tic-tac-toe/
 │   │   └── square/
 │   │       ├── Square.jsx
 │   │       └── ...
-│   ├── config/
-│   │       ├── config.js
-│   │       └── ...
+│   ├── config.js
+│   │
 │   ├── libraries/
-│   │   └─ usePersistState/
-│   │       ├── usePersistState.js
-│   │       └── ...
+│   │    ├── usePersistState.js
+│   │    └── ...
 │   │
 │   ├── models/
-│   │   └── state/
-│   │       ├── StateProvider.js
+│   │   └── game/
 │   │       ├── reducer.js
 │   │       ├── useGameState.js
 │   │       └── ...
+│   ├── store/
+│   │   ├── stateProvider.jsx
+│   │   ├── store.js
+│   │   └── ...
 │   ├── utils/
 │   │   ├── calculateWinner.js
 │   │   └── ...
@@ -68,8 +69,9 @@ tic-tac-toe/
 
 - src/ contains the source code for the project
 - src/components/ contains the React components used to build the game and the HOCs used to provide props to presentational components
-- src/config/ contains the configuration for the game such as the persistence key
-- src/libraries/persistState/ contains the custom hook used to persist the game state to local storage
-- src/models/state/ contains the context and reducer used to manage the game state
+- src/config.js contains the configuration for the game such as the persistence key
+- src/libraries/ contains the custom hook used to persist the game state to local storage
+- src/models/game/ contains the context and reducer used to manage the game state
+- src/store/ contains the context provider used to share the game state across the application
 - src/utils/ contains utility functions used in the game
 - src/main.jsx is the entry point for the application.
