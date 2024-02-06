@@ -1,4 +1,4 @@
-import { Square } from 'components/Square';
+import { Square } from 'components';
 import styles from './styles.module.css';
 
 export const Board = ({ onClick, squares }) => {
