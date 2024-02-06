@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Board } from 'components/Board';
+import { Board } from 'components';
 // import { calculateWinner } from 'utils';
 import styles from './styles.module.css';
 
