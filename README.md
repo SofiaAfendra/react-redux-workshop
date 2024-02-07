@@ -9,15 +9,15 @@ The file structure should be like this:
 
 ```
 ├── components
-│   ├── Board
+│   ├── board
 │   │   ├── Board.jsx
 │   │   ├── index.js
 │   │   └── styles.module.css
-│   ├── Game
+│   ├── game
 │   │   ├── Game.jsx
 │   │   ├── index.js
 │   │   └── styles.module.css
-│   └── Square
+│   └── square
 │       ├── Square.jsx
 │       ├── index.js
 │       └── styles.module.css
