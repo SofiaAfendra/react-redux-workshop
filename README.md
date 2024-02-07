@@ -6,12 +6,16 @@ React Workshop!
 
 In this branch, you will be introduced to the useEffect hook and the localStorage browser API. You will use the useEffect hook to load/update state from the localStorage and calculate the winner of the game.
 
+## What is the useEffect hook?
+
+The useEffect hook is a function that allows us to perform side effects in our function components. Side effects are operations that are not directly related to the rendering of your component. This includes things like data fetching, setting up subscriptions, and manually changing the DOM.
+
 **Branch Task:**
 
 1. Use Game component's useEffect hook to load/update state from/to localstorage.
 2. If a winner exists, display their name in 'status' and clear the localstorage.
 
-> Hint: The read-only localStorage property allows you to access a Storage object for the Document's origin; the stored data is saved across browser sessions.
+> Hint: The read-only localStorage property allows us to access a Storage object for the Document's origin; the stored data is saved across browser sessions.
 
 The localStorage API has 2 common functions to set/get a value from local storage
 
