@@ -2,7 +2,23 @@ import { useRef } from 'react';
 import { usePersistState } from 'libraries';
 import { calculateWinner, getStatus } from 'utils';
 
-// TO-DO: Use classes from previous state.
+/* TODO: 
+    -Create a new folder named store in src. This folder will contain two files named stateProvider.jsx and store.js.
+
+    -In store.js, use createContext to create a context object named gameState and extract the Provider from it.
+
+    -Define a component named StateProvider in stateProvider.jsx that uses the useState hook to manage the state of the game.
+      This component wraps its children with the Provider, making the game state accessible to its descendants.
+      (README: add detail about using persistedState and useState to create multiple states)
+
+    -Define the useGameState hook that uses the useContext hook to access the gameState context.
+
+    -Include an error check to ensure that the hook is used within a StateProvider.
+
+    -In main.jsx, wrap the Game component with StateProvider. This makes the game state available in any component by using useGameState.
+
+    -Extract the state from gameState context in withGameProps and refactor previous logic.  
+*/
 
 export const initialState = {
   player1: '',
@@ -13,8 +29,8 @@ export const initialState = {
 };
 
 export const withGameProps = (WrappedComponent) => (props) => {
-  const [gameState, setGameState] = usePersistState(initialState);
-  const { player1, player2, squares, xIsNext, winner } = gameState || {};
+  const [persisteState, setPersisteState] = usePersistState(initialState);
+  const { player1, player2, squares, xIsNext, winner } = persisteState || {};
   const player1Ref = useRef(null);
   const player2Ref = useRef(null);
 
@@ -40,8 +56,8 @@ export const withGameProps = (WrappedComponent) => (props) => {
 
     const newSquares = [...squares];
     newSquares[squareIndex] = xIsNext ? 'X' : 'O';
-    setGameState({
-      ...gameState,
+    setPersisteState({
+      ...persisteState,
       xIsNext: !xIsNext,
       squares: newSquares,
       winner: calculateWinner(newSquares),
@@ -49,15 +65,15 @@ export const withGameProps = (WrappedComponent) => (props) => {
   };
 
   const handlePlayer1 = (event) => {
-    setGameState({
-      ...gameState,
+    setPersisteState({
+      ...persisteState,
       player1: event.target?.value,
     });
   };
 
   const handlePlayer2 = (event) => {
-    setGameState({
-      ...gameState,
+    setPersisteState({
+      ...persisteState,
       player2: event.target?.value,
     });
   };
@@ -70,7 +86,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
       player2Ref.current.style.border = '';
     }
 
-    setGameState(initialState);
+    setPersisteState(initialState);
   };
 
   return (
