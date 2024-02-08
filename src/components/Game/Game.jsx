@@ -18,10 +18,10 @@ export const initialState = {
 };
 
 export const Game = () => {
-  const [gameState, setGameState] = useState(
+  const [persistedState, setPersistedState] = useState(
     JSON.parse(localStorage.getItem(config.PERSIST_KEY)) ?? initialState,
   );
-  const { player1, player2, squares, xIsNext, winner } = gameState;
+  const { player1, player2, squares, xIsNext, winner } = persistedState;
   const player1Ref = useRef(null);
   const player2Ref = useRef(null);
 
@@ -47,8 +47,8 @@ export const Game = () => {
 
     const newSquares = [...squares];
     newSquares[squareIndex] = xIsNext ? 'X' : 'O';
-    setGameState({
-      ...gameState,
+    setPersistedState({
+      ...persistedState,
       xIsNext: !xIsNext,
       squares: newSquares,
       winner: calculateWinner(newSquares),
@@ -56,15 +56,15 @@ export const Game = () => {
   };
 
   const handlePlayer1 = (event) => {
-    setGameState({
-      ...gameState,
+    setPersistedState({
+      ...persistedState,
       player1: event.target?.value,
     });
   };
 
   const handlePlayer2 = (event) => {
-    setGameState({
-      ...gameState,
+    setPersistedState({
+      ...persistedState,
       player2: event.target?.value,
     });
   };
@@ -77,12 +77,12 @@ export const Game = () => {
       player2Ref.current.style.border = '';
     }
 
-    setGameState(initialState);
+    setPersistedState(initialState);
   };
 
   useEffect(() => {
-    localStorage.setItem(config.PERSIST_KEY, JSON.stringify(gameState));
-  }, [gameState]);
+    localStorage.setItem(config.PERSIST_KEY, JSON.stringify(persistedState));
+  }, [persistedState]);
 
   return (
     <div className={styles.gameWrapper}>
