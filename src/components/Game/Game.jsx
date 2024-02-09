@@ -23,45 +23,57 @@ export const Game = () => {
     JSON.parse(localStorage.getItem(config.PERSIST_KEY)) ?? initialState,
   );
 
-  const { player1, player2, squares, xIsNext, winner } = persistedState || {};
+  const [player1, setPlayer1] = useState(persistedState.player1);
+  const [player2, setPlayer2] = useState(persistedState.player2);
+  const [squares, setSquares] = useState(persistedState.squares);
+  const [xIsNext, setXIsNext] = useState(persistedState.xIsNext);
+  const [winner, setWinner] = useState(persistedState.winner);
+
+  useEffect(() => {
+    setPersistedState({
+      player1,
+      player2,
+      squares,
+      xIsNext,
+      winner,
+    });
+  }, [player1, player2, squares, xIsNext, winner, setPersistedState]);
 
   const status = winner
     ? getStatus(winner, player1, player2)
     : `Next player: ${xIsNext ? player1 : player2}`;
 
   const handleClick = (squareIndex) => {
-    if (!(player1 && player2)) {
-      alert('Please, set the names of both players.');
+    if (!player1 || !player2) {
+      alert("Please provide players' names.");
       return;
     }
 
     if (squares[squareIndex] || winner) return;
+
     const newSquares = [...squares];
     newSquares[squareIndex] = xIsNext ? 'X' : 'O';
-    setPersistedState({
-      ...persistedState,
-      xIsNext: !xIsNext,
-      squares: newSquares,
-      winner: calculateWinner(newSquares),
-    });
+    const newWinner = calculateWinner(newSquares);
+
+    setWinner(newWinner);
+    setSquares(newSquares);
+    setXIsNext(!xIsNext);
   };
 
   const handlePlayer1 = (event) => {
-    setPersistedState({
-      ...persistedState,
-      player1: event.target?.value,
-    });
+    setPlayer1(event.target?.value);
   };
 
   const handlePlayer2 = (event) => {
-    setPersistedState({
-      ...persistedState,
-      player2: event.target?.value,
-    });
+    setPlayer2(event.target?.value);
   };
 
   const handleReset = () => {
-    setPersistedState(initialState);
+    setPlayer1('');
+    setPlayer2('');
+    setWinner(null);
+    setXIsNext(true);
+    setSquares(Array(9).fill(null));
   };
 
   useEffect(() => {
