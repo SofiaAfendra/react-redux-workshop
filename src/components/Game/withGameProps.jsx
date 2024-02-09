@@ -18,10 +18,26 @@ export const initialState = {
 };
 
 export const withGameProps = (WrappedComponent) => (props) => {
-  const [persisteState, setPersisteState] = useState(
+  const [persistedState, setPersistedState] = useState(
     JSON.parse(localStorage.getItem(config.PERSIST_KEY)) ?? initialState,
   );
-  const { player1, player2, squares, xIsNext, winner } = persisteState;
+
+  const [player1, setPlayer1] = useState(persistedState.player1);
+  const [player2, setPlayer2] = useState(persistedState.player2);
+  const [squares, setSquares] = useState(persistedState.squares);
+  const [xIsNext, setXIsNext] = useState(persistedState.xIsNext);
+  const [winner, setWinner] = useState(persistedState.winner);
+
+  useEffect(() => {
+    setPersistedState({
+      player1,
+      player2,
+      squares,
+      xIsNext,
+      winner,
+    });
+  }, [player1, player2, squares, xIsNext, winner, setPersistedState]);
+
   const player1Ref = useRef(null);
   const player2Ref = useRef(null);
 
@@ -38,8 +54,8 @@ export const withGameProps = (WrappedComponent) => (props) => {
     : `Next player: ${xIsNext ? player1 : player2}`;
 
   const handleClick = (squareIndex) => {
-    if (!(player1 && player2)) {
-      alert('Please, set the names of both players.');
+    if (!player1 || !player2) {
+      alert("Please provide players' names.");
       return;
     }
 
@@ -47,26 +63,19 @@ export const withGameProps = (WrappedComponent) => (props) => {
 
     const newSquares = [...squares];
     newSquares[squareIndex] = xIsNext ? 'X' : 'O';
-    setPersisteState({
-      ...persisteState,
-      xIsNext: !xIsNext,
-      squares: newSquares,
-      winner: calculateWinner(newSquares),
-    });
+    const newWinner = calculateWinner(newSquares);
+
+    setWinner(newWinner);
+    setSquares(newSquares);
+    setXIsNext(!xIsNext);
   };
 
   const handlePlayer1 = (event) => {
-    setPersisteState({
-      ...persisteState,
-      player1: event.target?.value,
-    });
+    setPlayer1(event.target?.value);
   };
 
   const handlePlayer2 = (event) => {
-    setPersisteState({
-      ...persisteState,
-      player2: event.target?.value,
-    });
+    setPlayer2(event.target?.value);
   };
 
   const handleReset = () => {
@@ -76,13 +85,16 @@ export const withGameProps = (WrappedComponent) => (props) => {
     if (player2Ref.current) {
       player2Ref.current.style.border = '';
     }
-
-    setPersisteState(initialState);
+    setPlayer1('');
+    setPlayer2('');
+    setWinner(null);
+    setXIsNext(true);
+    setSquares(Array(9).fill(null));
   };
 
   useEffect(() => {
-    localStorage.setItem(config.PERSIST_KEY, JSON.stringify(persisteState));
-  }, [persisteState]);
+    localStorage.setItem(config.PERSIST_KEY, JSON.stringify(persistedState));
+  }, [persistedState]);
 
   return (
     <WrappedComponent
