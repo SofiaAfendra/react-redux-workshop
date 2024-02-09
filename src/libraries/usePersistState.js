@@ -10,5 +10,8 @@ export const usePersistState = (initialState) => {
     localStorage.setItem(config.PERSIST_KEY, JSON.stringify(persistedState));
   }, [persistedState]);
 
-  return [persistedState, setPersistedState];
+  return {
+    persistedState,
+    setPersistedState,
+  };
 };

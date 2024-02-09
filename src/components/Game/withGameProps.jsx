@@ -29,7 +29,7 @@ export const initialState = {
 };
 
 export const withGameProps = (WrappedComponent) => (props) => {
-  const [persistedState, setPersistedState] = usePersistState(initialState);
+  const { persistedState, setPersistedState } = usePersistState(initialState);
   const [player1, setPlayer1] = useState(persistedState.player1);
   const [player2, setPlayer2] = useState(persistedState.player2);
   const [squares, setSquares] = useState(persistedState.squares);
