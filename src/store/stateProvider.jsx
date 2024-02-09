@@ -50,7 +50,7 @@ export const useGameState = () => {
   const context = useContext(gameState);
 
   if (context === undefined) {
-    throw new Error('useGameState must be used within a GameStateProvider');
+    throw new Error('useGameState must be used within a StateProvider');
   }
 
   return context;

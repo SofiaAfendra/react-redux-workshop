@@ -8,13 +8,18 @@ In this branch, you will be introduced to the concept of lifting state up. Your 
 
 **Branch Task:**
 
-1. Find a way to lift the state so that the **Board** has all the state for each **Sqaure** component.
-2. Utilize the renderSquare to return a **Square** component with a value and an onClick as props.
-3. Utilize renderRow to return three **Square** components inside the **Board** component.
-4. Make sure that if a square has a value it no longer changes when clicked.
+1. Create a new folder named **models** and another folder named **game** inside it.
+2. In the game folder, create files named **useGameState.js**, **reducer.js** and an **index.js** to export them.
+
+   -Move useGameState hook definition from stateProvider.jsx to useGameState.js
+
+   -Move the initialState definition to reducer.js and define a function named gameReducer that accepts a state and an action as arguments. Use a switch case against the action argument.
+
+   > Hint: Should have the same amount of switch cases as there were setter function invocations in withGameProps.
+
+3. In stateProvider.jsx, replace all useState hooks with the useReducer hook and update useEffect and value prop accordingly.
+4. Finally in withGameProps.jsx, extract state and dispatch from useGameState and replace previous state management by calling dispatch with the appropriate type and payload.
 
 **Covers:**
 
-- [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)
-- [Lifting State](https://react.dev/learn/sharing-state-between-components)
-
+- [React hook - useReducer](https://react.dev/reference/react/useReducer)
