@@ -1,1 +1,1 @@
-export * from './persist-middleware';
+export { persistState} from './persistState';

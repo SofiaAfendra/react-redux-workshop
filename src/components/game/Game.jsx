@@ -1,4 +1,4 @@
-import { Board } from '@/components';
+import { Board } from 'components';
 import styles from './styles.module.css';
 import { withGameProps } from './withGameProps';
 import {
@@ -13,7 +13,7 @@ import {
   setSquares,
   setWinner,
   setXIsNext,
-} from '../../models/game';
+} from 'models';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 

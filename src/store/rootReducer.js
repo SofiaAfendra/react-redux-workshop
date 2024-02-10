@@ -1,4 +1,4 @@
-import { gameReducer } from '@/models';
+import { gameReducer } from 'models';
 
 /**
  * Root reducer

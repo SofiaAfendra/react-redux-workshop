@@ -1,4 +1,4 @@
-import { Square } from '@/components';
+import { Square } from 'components';
 
 export const withBoardProps =
   (WrappedComponent) =>
