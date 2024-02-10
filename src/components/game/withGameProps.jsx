@@ -27,7 +27,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
     player2Ref.current.style.border = '2px solid green';
   }
 
-  const handlePlayerMove = (squareIndex) => {
+  const handleClick = (squareIndex) => {
     if (!player1 || !player2) {
       alert("Please provide players' names.");
       return;
@@ -53,7 +53,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
     setPlayer2(event?.target?.value);
   };
 
-  const reset = () => {
+  const handleReset = () => {
     if (player1Ref.current) {
       player1Ref.current.style.border = '';
     }
@@ -64,17 +64,17 @@ export const withGameProps = (WrappedComponent) => (props) => {
     resetGame();
   };
 
-  const gameStatus = winner
+  const status = winner
     ? getStatus(winner, player1, player2)
     : `Next player: ${xIsNext ? player1 : player2}`;
 
   return (
     <WrappedComponent
-      gameStatus={gameStatus}
-      handlePlayerMove={handlePlayerMove}
+      status={status}
+      handleClick={handleClick}
       handlePlayer1={handlePlayer1}
       handlePlayer2={handlePlayer2}
-      reset={reset}
+      handleReset={handleReset}
       player1Ref={player1Ref}
       player2Ref={player2Ref}
       {...props}
