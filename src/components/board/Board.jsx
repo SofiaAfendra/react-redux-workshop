@@ -1,7 +1,7 @@
 import { compose } from 'redux';
-import { withBoardProps } from './withBoardProps';
 import { connect } from 'react-redux';
 import { squares } from 'models';
+import { withBoardProps } from './withBoardProps';
 import styles from './styles.module.css';
 
 export const Board = ({ renderRow }) => (

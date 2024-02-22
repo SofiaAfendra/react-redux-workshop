@@ -1,6 +1,6 @@
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import { Board } from 'components';
-import styles from './styles.module.css';
-import { withGameProps } from './withGameProps';
 import {
   player1,
   player2,
@@ -14,8 +14,8 @@ import {
   setWinner,
   setXIsNext,
 } from 'models';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
+import { withGameProps } from './withGameProps';
+import styles from './styles.module.css';
 
 const GameComponent = ({
   player1,

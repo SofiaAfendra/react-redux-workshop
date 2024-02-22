@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './rootReducer';
+import { config } from 'config';
 import { persistState } from 'libraries';
-import config from 'config';
+import rootReducer from './rootReducer';
 
 /**
  * Make store
