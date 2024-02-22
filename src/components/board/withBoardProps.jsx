@@ -2,11 +2,11 @@ import Square from '../square/Square';
 
 export const withBoardProps =
   (WrappedComponent) =>
-  ({ onSquareClick, ...props }) => {
+  ({ onClick, ...props }) => {
     const { squares } = props;
 
     const renderSquare = (index) => (
-      <Square value={squares[index]} handleClick={() => onSquareClick(index)} />
+      <Square value={squares[index]} handleClick={() => onClick(index)} />
     );
 
     const renderRow = (a, b, c) => (

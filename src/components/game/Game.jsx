@@ -1,61 +1,55 @@
-import { withGameProps } from './withGameProps';
 import { compose } from 'redux';
+import { Board } from 'components';
+import { withModelProps } from 'libraries';
 import {
+  player1,
+  player2,
+  squares,
+  winner,
+  xIsNext,
+  resetGame,
   setPlayer1,
   setPlayer2,
   setSquares,
-  setXIsNext,
   setWinner,
-  resetGame,
-  player1,
-  player2,
-  winner,
-  xIsNext,
-  squares,
-} from '@/models';
+  setXIsNext,
+} from 'models';
+import { withGameProps } from './withGameProps';
 import styles from './styles.module.css';
-import { Board } from '../board';
-import { withModelProps } from '@/libraries';
 
 const GameComponent = ({
   player1,
   player2,
-  gameStatus,
-  handlePlayerMove,
+  squares,
+  status,
+  handleClick,
   handlePlayer1,
   handlePlayer2,
-  reset,
+  handleReset,
   player1Ref,
   player2Ref,
 }) => (
-  <div className={styles.game}>
-    <div className={styles.gameStatus}>{gameStatus}</div>
-    <div className={styles['game-board']}>
-      <Board onSquareClick={handlePlayerMove} />
+  <div className={styles.gameWrapper}>
+    <div className={styles.boardAndStatusWrapper}>
+      <div>{status}</div>
+      <div className={styles.boardWrapper}>
+        <Board squares={squares} onClick={handleClick} />
+      </div>
     </div>
-    <div className={styles.wrapper}>
-      <div className={styles.row}>
-        <label htmlFor='player-1'>Player 1</label>
-        <input
-          type='text'
-          id='player-1'
-          value={player1}
-          onChange={handlePlayer1}
-          ref={player1Ref}
-        />
+
+    <div className={styles.inputWrapper}>
+      <div className={styles.input}>
+        <label>Player 1:</label>
+        <input value={player1} ref={player1Ref} onChange={handlePlayer1} />
       </div>
-      <div className={styles.row}>
-        <label htmlFor='player-2'>Player 2</label>
-        <input
-          type='text'
-          id='player-2'
-          value={player2}
-          onChange={handlePlayer2}
-          ref={player2Ref}
-        />
+
+      <div className={styles.input}>
+        <label>Player 2:</label>
+        <input value={player2} ref={player2Ref} onChange={handlePlayer2} />
       </div>
-      <div className={styles.row}>
-        <button type='button' onClick={reset}>
+
+      <div className={styles.resetBtnWrapper}>
+        <button onClick={handleReset} className={styles.resetButton}>
           Reset
         </button>
       </div>
@@ -70,12 +64,12 @@ export const Game = compose(
     squares,
     winner,
     xIsNext,
+    resetGame,
     setPlayer1,
     setPlayer2,
     setSquares,
     setWinner,
     setXIsNext,
-    resetGame,
   }),
   withGameProps,
 )(GameComponent);

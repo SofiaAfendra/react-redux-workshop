@@ -1,2 +1,2 @@
-export { persistState } from './persist-middleware';
-export { withModelProps } from './with-model-props';
+export { persistState } from './persistState';
+export { withModelProps } from './withModelProps';

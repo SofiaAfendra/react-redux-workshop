@@ -1,4 +1,4 @@
-import { gameSliceName, gameReducer } from '@/models';
+import { gameSliceName, gameReducer } from 'models';
 
 /**
  * Root reducer

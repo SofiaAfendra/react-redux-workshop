@@ -1,1 +1,0 @@
-export { withModelProps } from './withModelProps';
