@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import { Game } from 'components';
-import { StateProvider } from 'store';
+import { StateProvider } from 'reactStore';
 import { config } from 'config';
 import './main.css';
 

@@ -10,6 +10,7 @@ export default defineConfig({
       libraries: '/src/libraries',
       models: '/src/models',
       store: '/src/store',
+      reactStore: '/src/reactStore',
       utils: '/src/utils',
       config: '/src/config',
     },
