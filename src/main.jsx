@@ -3,9 +3,12 @@ import { Game } from 'components';
 import { StateProvider } from 'reactStore';
 import { config } from 'config';
 import './main.css';
+import { UISetup } from './components';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StateProvider persistKey={config.PERSIST_KEY}>
-    <Game />
+    <UISetup>
+      <Game />
+    </UISetup>
   </StateProvider>,
 );
