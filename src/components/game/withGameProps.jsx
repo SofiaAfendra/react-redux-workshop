@@ -3,24 +3,17 @@ import { useGameState } from 'store';
 import { calculateWinner, getStatus } from 'utils';
 
 /* TODO: 
-    -Create a new folder named **models** and another folder named **game** inside it.
-    
-    -In the game folder, create the useGameState.js and reducer.js files.
+-Create a new folder named **models** and another folder named **game** inside it.
+-In the game folder, create the useGameState.js and reducer.js files.
+-Move useGameState hook definition from stateProvider.jsx to useGameState.js
+-Move the initialState definition to reducer.js and define a function named gameReducer. 
+    -Accepts the state and an action.
+    -Uses switch case against the action and updates the state.
+-In stateProvider.jsx, replace all useState hooks with the useReducer hook and update useEffect and value prop accordingly.
+-Finally in withGameProps.jsx, extract state and dispatch from useGameState and replace previous state management, 
+by calling dispatch with the appropriate type and payload.
+*/
 
-    -Move useGameState hook definition from stateProvider.jsx to useGameState.js
-
-    -Move the initialState definition to reducer.js and define a function named gameReducer. 
-        -Accepts the state and an action.
-        -Uses switch case against the action and updates the state.
-
-    -In stateProvider.jsx, replace all useState hooks with the useReducer hook and update useEffect and value prop accordingly.
-   
-    -Finally in withGameProps.jsx, extract state and dispatch from useGameState and replace previous state management,
-     by calling dispatch with the appropriate type and payload.
-
- */
-
-// eslint-disable-next-line react/display-name
 export const withGameProps = (WrappedComponent) => (props) => {
   const {
     setSquares,
