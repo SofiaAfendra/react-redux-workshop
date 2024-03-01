@@ -4,9 +4,9 @@ React Workshop!
 
 ## Branch Description
 
-In this branch, we will introduce the useContext React hook.
+In this branch, we will introduce the `useContext` React hook.
 
-The useContext Hook and the Context API in general are crucial because they allow for easy sharing of data that can be considered "global" for a tree of React components. This includes authenticated user information, theme settings, preferred language, etc. In this case, the game state (player names, current squares, turn, winner) can be accessed by multiple components.
+The `useContext` Hook and the **Context API** in general are crucial because they allow for easy sharing of data that can be considered "global" for a tree of React components. This includes authenticated user information, theme settings, preferred language, etc. In this case, the game state (player names, current squares, turn, winner) can be accessed by multiple components.
 
 Without context, we would have to pass this data through props, which can get messy and inefficient as our app grows and data needs to be passed through many components. With context, we can access this data directly from any component without having to pass it down manually through props.
 
