@@ -4,7 +4,9 @@ React Workshop!
 
 ## Branch Description
 
-In this branch, we will introduce the concept of state. Our goal is to add state to the **Square** component.
+In this branch, we will introduce the concept of state. Our goal is to add state to the `Square` component.
+
+In function components, we can use the `useState` hook to add state to our components. The `useState` hook returns an array with two elements: the current state and a function that allows us to update the state.
 
 ## What is state?
 
