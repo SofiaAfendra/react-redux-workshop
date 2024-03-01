@@ -39,12 +39,12 @@ npm i
 Run the application using the command:
 
 ```bash
-npm start
+npm run dev
 ```
 
 ## Branch Description
 
-This is the starting branch. Preview the application files and open **src/main.jsx** to start your first task.
+This is the starting branch. Preview the application files and open _src/main.jsx_ to start your first task.
 
 **Branch Tasks:**
 
