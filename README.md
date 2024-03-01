@@ -14,7 +14,7 @@ For example, in our tic-tac-toe game, we want to keep track of which squares hav
 
 **Branch Task:**
 
-1. Add logic to the Square component so when it's clicked it updates it's state and draws an 'X' or an 'O'.
+1. Add logic to the `Square` component so when it's clicked it updates it's **state** and draws an 'X' or an 'O'.
 
 **Covers:**
 
