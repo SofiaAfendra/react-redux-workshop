@@ -4,7 +4,7 @@ React Workshop!
 
 ## Branch description
 
-In this branch we will make all business logic, that now resides in the **Game** component, reusable by creating a **withGameProps** Higher Order Component (HOC). Accordingly, we will follow these steps for the **Board** component.
+In this branch we will make all business logic, that now resides in the `Game` component, reusable by creating a `withGameProps` Higher Order Component (HOC). Accordingly, we will follow these steps for the `Board` component.
 
 ## Why use HOC and presentational components?
 
@@ -24,10 +24,10 @@ The HOC and presentational component pattern is used to separate the logic from 
 
 ## Branch Tasks
 
-1. Create a Higher Order Component (HOC) withGameProps.
-2. Move the **Game** component useEffect, useState, useRef hooks and the rest functionality to the HOC.
-3. Create a HOC withBoardProps.
-4. Move the **Board** component functionality to the HOC.
+1. Create a Higher Order Component (HOC) `withGameProps`.
+2. Move the `Game` component `useEffect`, `useState`, `useRef` hooks and the rest functionality to the HOC.
+3. Create a HOC `withBoardProps`.
+4. Move the `Board` component functionality to the HOC.
 
 ## Covers
 
