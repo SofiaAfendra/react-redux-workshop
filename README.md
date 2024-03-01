@@ -1,6 +1,6 @@
 # Agile Actors Academy
 
-React Workshop
+React Workshop!
 
 ## Description
 
@@ -8,21 +8,21 @@ This is the final form of the Tic Tac Toe game built with React. It allows two p
 
 The basic components that make up the game are:
 
-- Square: The Square is a single square on the board. It is responsible for rendering the value of the square and calling the function that fills the square when it is clicked.
-- Board: The Board is a 3x3 grid of squares. It is responsible for rendering the squares and providing the props to the squares.
-- withBoardProps: This is a higher order component that provides the props and functionality to the Board. It is responsible for providing the squares with the value of the square and the function that fills the square.
-- Game: The game is the container component that is responsible for rendering the Board, the player inputs and the reset button.
-- withGameProps: This is a higher order component that provides the props and functionality to the Game.
+- `Square`: The `Square` is a single square on the board. It is responsible for rendering the value of the square and calling the function that fills the square when it is clicked.
+- `Board`: The `Board` is a 3x3 grid of squares. It is responsible for rendering the squares and providing the props to the squares.
+- `withBoardProps`: This is a Higher-Order Component that provides the props and functionality to the `Board`. It is responsible for providing the squares with the value of the square and the function that fills the square.
+- `Game`: The `Game` is the container component that is responsible for rendering the `Board`, the player inputs and the reset button.
+- `withGameProps`: This is a Higher-Order Component that provides the props and functionality to the `Game`.
 
 The models that make up the game are:
 
-- StateProvider: This is a context provider that creates a global game state and shares it across the application.
-- reducer: This is the reducer that manages the game state.
-- useGameState: This is a custom hook that provides the game state and the functions that update the game state to the components that need it.
+- `StateProvider`: This is a context provider that creates a global game state and shares it across the application.
+- `reducer`: This is the reducer that manages the game state.
+- `useGameState`: This is a custom hook that provides the game state and the functions that update the game state to the components that need it.
 
 Libraries used:
 
-- usePersistState: This is a custom hook that persists the game state to local storage.
+- `usePersistState`: This is a custom hook that persists the game state to local storage.
 
 ## File Structure
 
@@ -67,11 +67,11 @@ tic-tac-toe/
 └── ...
 ```
 
-- src/ contains the source code for the project
-- src/components/ contains the React components used to build the game and the HOCs used to provide props to presentational components
-- src/config.js contains the configuration for the game such as the persistence key
-- src/libraries/ contains the custom hook used to persist the game state to local storage
-- src/models/game/ contains the context and reducer used to manage the game state
-- src/store/ contains the context provider used to share the game state across the application
-- src/utils/ contains utility functions used in the game
-- src/main.jsx is the entry point for the application.
+- _src/_ contains the source code for the project
+- _src/components/_ contains the React components used to build the game and the HOCs used to provide props to presentational components
+- _src/config.js_ contains the configuration for the game such as the persistence key
+- _src/libraries/_ contains the custom hook used to persist the game state to local storage
+- _src/models/game/_ contains the context and reducer used to manage the game state
+- _src/store/_ contains the context provider used to share the game state across the application
+- _src/utils/_ contains utility functions used in the game
+- _src/main.jsx_ is the entry point for the application.
