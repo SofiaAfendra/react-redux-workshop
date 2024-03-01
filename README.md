@@ -4,7 +4,7 @@ React Workshop!
 
 ## Branch Description
 
-In this branch, we will introduce the concept of custom hooks. Our goal is to move all persisted state logic from the withGameProps HOC, into a new separate file.
+In this branch, we will introduce the concept of custom hooks. Our goal is to move all persisted state logic from the `withGameProps` HOC, into a new separate file.
 
 ## Why is this useful?
 
@@ -14,10 +14,10 @@ They can consume other hooks, take arguments, and return values just like any ot
 
 **Branch Task:**
 
-1. Create a folder named **libraries** in src, a file named **usePersistState.js** inside and an **index.js** file that exports it.
-2. Separate any persisted state logic from the **withGameProps.jsx** into **usePersistedState.js**.
+1. Create a folder named _libraries_ in src, a file named _usePersistState.js_ inside and an _index.js_ file that exports it.
+2. Separate any persisted state logic from the _withGameProps.jsx_ into _usePersistedState.js_.
 
-   > Hint: Upon calling the usePersistedState hook within withGameProps, it should return persistedState and setPersistededState.
+   > Hint: Upon calling the `usePersistedState` hook within `withGameProps`, it should return `persistedState` and `setPersistededState`.
 
 **Covers:**
 
