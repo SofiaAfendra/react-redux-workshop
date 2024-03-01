@@ -3,21 +3,15 @@ import { usePersistState } from 'libraries';
 import { calculateWinner, getStatus } from 'utils';
 
 /* TODO: 
-    -Create a new folder named store in src. This folder will contain two files named stateProvider.jsx and store.js.
-
-    -In store.js, use createContext to create a context object named gameState and extract the Provider from it.
-
-    -Define a component named StateProvider in stateProvider.jsx that uses the useState hook to manage the state of the game.
-      This component wraps its children with the Provider, making the game state accessible to its descendants.
-      (README: add detail about using persistedState and useState to create multiple states)
-
-    -Define the useGameState hook that uses the useContext hook to access the gameState context.
-
-    -Include an error check to ensure that the hook is used within a StateProvider.
-
-    -In main.jsx, wrap the Game component with StateProvider. This makes the game state available in any component by using useGameState.
-
-    -Extract the state from gameState context in withGameProps and refactor previous logic.  
+-Create a new folder named store in src. This folder will contain two files named stateProvider.jsx and store.js.
+-In store.js, use createContext to create a context object named gameState and extract the Provider from it.
+-Define a component named StateProvider in stateProvider.jsx that uses the useState hook to manage the state of the game.
+ This component wraps its children with the Provider, making the game state accessible to its descendants.
+-Inside the returned component, use the **usePersistState** hook with the initialState to get the persisted state of the game.
+-Define the useGameState hook that uses the useContext hook to access the gameState context.
+-Include an error check to ensure that the hook is used within a StateProvider.
+-In main.jsx, wrap the Game component with StateProvider. This makes the game state available in any component by using useGameState.
+-Extract the state from gameState context in withGameProps and refactor previous logic.  
 */
 
 export const initialState = {
