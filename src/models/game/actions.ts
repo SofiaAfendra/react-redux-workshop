@@ -1,3 +1,4 @@
+//TODO: actions should come from the new slice
 const setPlayer1 = (player) => ({
   type: 'SET_PLAYER_1',
   payload: player,

@@ -5,7 +5,7 @@ export const initialState = {
   xIsNext: true,
   winner: null,
 };
-
+// TODO: refactor reducer with createslice from Redux toolkit
 export const gameReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_PLAYER_1':

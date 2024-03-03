@@ -29,14 +29,20 @@ The Redux store:
 Libraries used:
 
 - persistMiddleware: This is a custom middleware that is used to persist the game state to local storage. It is responsible for getting the game state from the redux store and saving it to local storage in every dispatched action.
+- redux/toolkit: It is intended to be the standard way to write Redux logic. It was originally created to help address three common concerns about Redux:
 
-## Why use Redux?
+    1. Configuring a Redux store is too complicated
+    1. I have to add a lot of packages to get Redux to do anything useful
+    1. Redux requires too much boilerplate code
+    
 
-Redux is a state management library that is used to manage the state of an application. It is a predictable state container that allows us to manage the state of our application in a single place and it is the single source of truth for the state.
+## Why use Redux Toolkit (RTK) ?
 
-## Why use Redux instead of React Context?
+Redux Toolkit (also known as "RTK" for short) is our official recommended approach for writing Redux logic. The @reduxjs/toolkit package wraps around the core redux package, and contains API methods and common dependencies that we think are essential for building a Redux app. Redux Toolkit builds in our suggested best practices, simplifies most Redux tasks, prevents common mistakes, and makes it easier to write Redux applications.
 
-React Context is a built-in feature in React designed to facilitate the sharing of data across a tree of React components, often referred to as "global" data within the context of the component tree. While it can be employed for global state management, it is generally not recommended for extensive state management purposes, as its primary use case lies elsewhere. It's important to note that React Context is not as robust as Redux and does not offer the same level of functionality. For instance, it lacks support for middleware capabilities, which allow you to inject custom logic, such as logging or API calls, between actions and reducers in a Redux-based application.
+## Why use Redux Toolkit instead of Redux?
+
+Redux Toolkit simplifies store setup down to a single clear function call, while retaining the ability to fully configure the store's options if you need to. It eliminates accidental mutations, which have always been the #1 cause of Redux bugs. It eliminates the need to write any action creators or action types by hand. It eliminates the need to write manual and error-prone immutable update logic. It makes it easy to write a Redux feature's code in one file, instead of spreading it across multiple separate files. RTK also offers excellent TS support, with APIs that are designed to give you excellent type safety and minimize the number of types you have to define in your code. Finally, RTK Query can eliminate the need to write any thunks, reducers, action creators, or effect hooks to manage fetching data and tracking loading state
 
 ## File Structure
 
