@@ -34,7 +34,7 @@ const gameSlice = createSlice({
     },
   },
 });
-export default gameSlice.reducer;
+export const gameReducer = gameSlice.reducer;
 export const {
   setPlayer1,
   setPlayer2,
