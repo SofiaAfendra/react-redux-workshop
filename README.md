@@ -4,45 +4,26 @@ React Workshop
 
 ## Description
 
-This is the final form of the Tic Tac Toe game built with React and Redux.
+Now that we have established the Redux knowledge, let's use an already known library to make our lives a lot simpler.
 
-The basic components that make up the game are:
-
-- Square: The Square is a single square on the board. It is responsible for rendering the value of the square and calling the function that fills the square when it is clicked.
-- Board: The Board is a 3x3 grid of squares. It is responsible for rendering the squares and providing the props to the squares.
-- withBoardProps: This is a higher order component that provides the props and functionality to the Board. It is responsible for providing the squares with the value of the square and the function that fills the square.
-- Game: The game is the container component that is responsible for rendering the Board, the player inputs and the reset button.
-- withGameProps: This is a higher order component that provides the props and functionality to the Game.
-- UISetup: This component is responsible for wrapping and providing the redux store to our application. Potentially, this component could be used to provide other functionality to the application such as routing or/and theme.
-
-The models that make up the game are:
-
-- reducer: The reducers are used to update the game state. In this case, the game reducer is responsible for updating the game state.
-- actions: These are the actions that can be dispatched to the game slice. The actions are responsible for providing the type of action and the payload to the reducer.
-- selectors: These are the selectors that can be used to get the game state from the redux store. The selectors are responsible for getting the game state from the redux store.
-
-The Redux store:
-
-- rootReducer: This is the root reducer that is used to combine all the reducers in the application. In this case, it only contains the game reducer.
-- store: This is the configuration for the redux store. It is responsible for creating the store, applying the middleware and providing the state to the application. It also contains the preloaded state, meaning the initial state of the store when the application is loaded. In this case, the preloaded state is the persisted state from local storage.
-
-Libraries used:
-
-- persistMiddleware: This is a custom middleware that is used to persist the game state to local storage. It is responsible for getting the game state from the redux store and saving it to local storage in every dispatched action.
-- redux/toolkit: It is intended to be the standard way to write Redux logic. It was originally created to help address three common concerns about Redux:
-
-    1. Configuring a Redux store is too complicated
-    1. I have to add a lot of packages to get Redux to do anything useful
-    1. Redux requires too much boilerplate code
-    
+The library's name is redux-toolkit. We have use it in a previous lecture to create the store using 
+``configureStore()`` function instead of the ``createStore()`` function of plain redux since the later was deprecated.     
 
 ## Why use Redux Toolkit (RTK) ?
 
-Redux Toolkit (also known as "RTK" for short) is our official recommended approach for writing Redux logic. The @reduxjs/toolkit package wraps around the core redux package, and contains API methods and common dependencies that we think are essential for building a Redux app. Redux Toolkit builds in our suggested best practices, simplifies most Redux tasks, prevents common mistakes, and makes it easier to write Redux applications.
+Redux Toolkit (also known as "RTK" for short) is Redux's official recommended approach for writing Redux logic. The @reduxjs/toolkit package wraps around the core redux package, and contains API methods and common dependencies that are essential for building a Redux app. Redux Toolkit builds in Redux's suggested best practices, simplifies most Redux tasks, prevents common mistakes, and makes it easier to write Redux applications.
 
 ## Why use Redux Toolkit instead of Redux?
 
 Redux Toolkit simplifies store setup down to a single clear function call, while retaining the ability to fully configure the store's options if you need to. It eliminates accidental mutations, which have always been the #1 cause of Redux bugs. It eliminates the need to write any action creators or action types by hand. It eliminates the need to write manual and error-prone immutable update logic. It makes it easy to write a Redux feature's code in one file, instead of spreading it across multiple separate files. RTK also offers excellent TS support, with APIs that are designed to give you excellent type safety and minimize the number of types you have to define in your code. Finally, RTK Query can eliminate the need to write any thunks, reducers, action creators, or effect hooks to manage fetching data and tracking loading state
+
+## Branch goals
+
+Since the store configuration is ready your goal for this branch is to do some minor tweeks and transform your plain Redux with redux-toolkit.
+- We recommend you start with the docs: https://redux-toolkit.js.org/tutorials/quick-start
+- Transform your reducers using the redux-toolkit logic and the ``createSlice()`` function.
+- Your actions should be coming from the slice you created.
+- Update your store file.
 
 ## File Structure
 
