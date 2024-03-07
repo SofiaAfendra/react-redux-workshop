@@ -1,3 +1,5 @@
+import { createSlice } from '@reduxjs/toolkit';
+
 export const initialState = {
   player1: '',
   player2: '',
@@ -5,39 +7,39 @@ export const initialState = {
   xIsNext: true,
   winner: null,
 };
-// TODO: refactor reducer with createslice from Redux toolkit
-export const gameReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'SET_PLAYER_1':
-      return {
-        ...state,
-        player1: action.payload,
-      };
-    case 'SET_PLAYER_2':
-      return {
-        ...state,
-        player2: action.payload,
-      };
-    case 'SET_SQUARES':
-      return {
-        ...state,
-        squares: action.payload,
-      };
-    case 'SET_X_IS_NEXT':
-      return {
-        ...state,
-        xIsNext: action.payload,
-      };
-    case 'SET_WINNER':
-      return {
-        ...state,
-        winner: action.payload,
-      };
-    case 'RESET_GAME':
-      return {
-        ...initialState,
-      };
-    default:
-      return state;
-  }
-};
+
+const gameSlice = createSlice({
+  name: 'gameReducer',
+  initialState,
+  reducers: {
+    setPlayer1: (state, payload) => {
+      state.player1 = payload.player1;
+    },
+    setPlayer2: (state, payload) => {
+      state.player2 = payload.player2;
+    },
+    setSquares: (state, payload) => {
+      state.squares = payload.squares;
+    },
+    setWinner: (state, payload) => {
+      state.winner = payload.winner;
+    },
+    setXIsNext: (state, payload) => {
+      state.setXIsNext = payload.setXIsNext;
+    },
+    resetGame: (state) => {
+      state.squares = initialState.squares;
+      state.xIsNext = initialState.xIsNext;
+      state.winner = initialState.winner;
+    },
+  },
+});
+export default gameSlice.reducer;
+export const {
+  setPlayer1,
+  setPlayer2,
+  setSquares,
+  setWinner,
+  setXIsNext,
+  resetGame,
+} = gameSlice.actions;
