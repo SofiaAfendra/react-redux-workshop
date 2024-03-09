@@ -4,74 +4,18 @@ React Workshop
 
 ## Description
 
-This is the final form of the Tic Tac Toe game built with React. It allows two players to play against each other on a 3x3 grid. The game keeps track of the current player, the squares that have been filled, and the winner of the game. The game state is persisted to local storage so that the game can be resumed after the page is refreshed and can be reset by clicking the "Reset Game" button.
+Welcome to the Redux section of this training, where you will gradually refactor the way the application's state is managed. In this branch you will be introduced to the core concepts that make a Redux app tick. You have been provided with the following:
 
-The basic components that make up the game are:
+1.  Inside **models/test/actions** the testAction is defined. It returns an action object with the type "TEST_ACTION".
+2.  Inside **models/test/reducer** an initial state and testReducer are defined. When testReducer runs with a state and an action as arguments, it will update the state depending on the action type and the state's previous values.
+3.  Inside **store** the new store is configured using testReducer and initialState defined in the **reducer** folder. This way whenever the action with type "TEST_ACTION" is dipatched to the store, it will run testReducer to update the global state of the app.
+    > Note: The **store** folder from previous branches, has been renamed to **reactStore**.
 
-- Square: The Square is a single square on the board. It is responsible for rendering the value of the square and calling the function that fills the square when it is clicked.
-- Board: The Board is a 3x3 grid of squares. It is responsible for rendering the squares and providing the props to the squares.
-- withBoardProps: This is a higher order component that provides the props and functionality to the Board. It is responsible for providing the squares with the value of the square and the function that fills the square.
-- Game: The game is the container component that is responsible for rendering the Board, the player inputs and the reset button.
-- withGameProps: This is a higher order component that provides the props and functionality to the Game.
+This setup is very basic and does not affect any of the previous tic-tac-toe functionality or UI, it only serves as a simple example of how Redux works. Follow the next steps to gain some familiarity with this new pattern, before moving on to the main tasks.
 
-The models that make up the game are:
+**First steps:**
 
-- StateProvider: This is a context provider that creates a global game state and shares it across the application.
-- reducer: This is the reducer that manages the game state.
-- useGameState: This is a custom hook that provides the game state and the functions that update the game state to the components that need it.
+- Add the [Redux Dev Tools](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) browser extension and explore it's many features.
+- Try dispatching a Custom action with type "TEST_ACTION" and watch that state update, with each dispatch.
 
-Libraries used:
-
-- usePersistState: This is a custom hook that persists the game state to local storage.
-
-## File Structure
-
-The project has the following file structure:
-
-```bash
-tic-tac-toe/
-├── src/
-│   ├── components/
-│   │   ├── board/
-│   │   │   ├── Board.jsx
-│   │   │   ├── withBoardProps.jsx
-│   │   │   └── ...
-│   │   ├── game/
-│   │   │   ├── Game.jsx
-│   │   │   ├── withGameProps.jsx
-│   │   │   └── ...
-│   │   └── square/
-│   │       ├── Square.jsx
-│   │       └── ...
-│   ├── config.js
-│   │
-│   ├── libraries/
-│   │    ├── usePersistState.js
-│   │    └── ...
-│   │
-│   ├── models/
-│   │   └── game/
-│   │       ├── reducer.js
-│   │       ├── useGameState.js
-│   │       └── ...
-│   ├── store/
-│   │   ├── stateProvider.jsx
-│   │   ├── store.js
-│   │   └── ...
-│   ├── utils/
-│   │   ├── calculateWinner.js
-│   │   └── ...
-│   ├── main.jsx
-├── package.json
-├── README.md
-└── ...
-```
-
-- src/ contains the source code for the project
-- src/components/ contains the React components used to build the game and the HOCs used to provide props to presentational components
-- src/config.js contains the configuration for the game such as the persistence key
-- src/libraries/ contains the custom hook used to persist the game state to local storage
-- src/models/game/ contains the context and reducer used to manage the game state
-- src/store/ contains the context provider used to share the game state across the application
-- src/utils/ contains utility functions used in the game
-- src/main.jsx is the entry point for the application.
+**Branch Tasks:**

@@ -4,7 +4,7 @@ export const initialTestState = {
 
 export const testReducer = (state = initialTestState, action) => {
   if (action.type === 'TEST_ACTION') {
-    return !state.test;
+    return !state;
   }
   return state;
 };
