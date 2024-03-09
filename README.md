@@ -19,3 +19,17 @@ This setup is very basic and does not affect any of the previous tic-tac-toe fun
 - Try dispatching a Custom action with type "TEST_ACTION" and watch that state update, with each dispatch.
 
 **Branch Tasks:**
+
+<!-- TBD: breaking down reducers. Decide and update README -->
+
+1. Create a new folder named **gameRedux** inside **models**. This is where you will create **actions.js** and **reducer.js**.
+2. Inside **actions.js** define and export all tic-tac-toe related actions, they should return action objects with the type and payload properties.
+   > Hint: Each action should always return a type, but the payload is not always necessary.
+3. Inside **reducer.js** define the initialGameState and the gameReduxReducer to handle your new actions, according to their type and payload.
+4. Inside **store/store.js** replace initialTestState and testReducer with initialGameState and gameReduxReducer from **models/gameRedux/reducer.js**.
+5. Use Redux Dev Tools to dispatch Custom actions and confirm everything works correctly.
+
+**Covers:**
+
+- [Redux Essentials](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)
+- [Flux architectural pattern](https://www.freecodecamp.org/news/an-introduction-to-the-flux-architectural-pattern-674ea74775c9/)
