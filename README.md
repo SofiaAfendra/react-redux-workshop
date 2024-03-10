@@ -4,10 +4,9 @@ React Workshop
 
 ## Description
 
-Now that we have established the Redux knowledge, let's use an already known library to make our lives a lot simpler.
+Well done for your effort so far. Now that you have grasped your basic knowledge of RTK, let's dive a little deeper.
+In this section, we will learn a little bit more about this awesome library. Specifically, we will try to create a new custom hook to extract all individual game values from our store. Additionally, we will use the useSelector and useDispatch hooks, which are integrated into RTK, to access our selectors and dispatch our game's actions accordingly.
 
-The library's name is redux-toolkit. We have use it in a previous lecture to create the store using 
-``configureStore()`` function instead of the ``createStore()`` function of plain redux since the later was deprecated.     
 
 ## Why use Redux Toolkit (RTK) ?
 
