@@ -7,9 +7,15 @@ React Workshop
 Well done for your effort so far. Now that you have grasped your basic knowledge of RTK, let's dive a little deeper.
 In this section, we will learn a little bit more about this awesome library. Specifically, we will try to create a new custom hook to extract all individual game values from our store. Additionally, we will use the useSelector and useDispatch hooks, which are integrated into RTK, to access our selectors and dispatch our game's actions accordingly.
 
-## Let's have a sneek peek
+## Let's have a sneek peek to the past
 
+``uselector`` hook is a special hook provided by react-redux library. It allows you to extract data from the Redux store state for use in this component, using a selector function.
+``useDispatch`` hook is another special hook by react-redux library. This hook returns a reference to the dispatch function from the Redux store. You may use it to dispatch actions as needed.
+You can do your reasearch and refresh your memory in : https://react-redux.js.org/api/hooks#using-hooks-in-a-react-redux-app
 
+## Goals
+
+Let's break down your goals for this section: 
 
 ## File Structure
 
