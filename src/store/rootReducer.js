@@ -1,4 +1,4 @@
-import { gameReducer } from 'models';
+import { gameReducer, name } from 'models';
 
 /**
  * Root reducer
@@ -7,7 +7,7 @@ import { gameReducer } from 'models';
  *
  */
 const rootReducer = {
-  game: gameReducer,
+  [name]: gameReducer,
 };
 
 export default rootReducer;
