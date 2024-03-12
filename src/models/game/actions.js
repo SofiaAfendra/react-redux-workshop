@@ -5,5 +5,6 @@ export const {
   setPlayer2,
   setWinner, //
   setXIsNext,
+  setSquares,
   resetGame,
 } = gameSlice.actions;
