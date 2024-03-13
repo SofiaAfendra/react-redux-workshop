@@ -13,19 +13,19 @@ export const gameSlice = createSlice({
   initialState,
   reducers: {
     setPlayer1: (state, { payload }) => {
-      state.player1 = payload.player1;
+      state.player1 = payload;
     },
     setPlayer2: (state, { payload }) => {
-      state.player2 = payload.player2;
+      state.player2 = payload;
     },
     setSquares: (state, { payload }) => {
-      state.squares = payload.squares;
+      state.squares = payload;
     },
     setWinner: (state, { payload }) => {
-      state.winner = payload.winner;
+      state.winner = payload;
     },
     setXIsNext: (state, { payload }) => {
-      state.setXIsNext = payload.setXIsNext;
+      state.xIsNext = payload;
     },
     resetGame: () => initialState,
   },
