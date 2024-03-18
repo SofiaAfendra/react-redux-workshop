@@ -1,6 +1,3 @@
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { squares } from 'models';
 import { withBoardProps } from './withBoardProps';
 import styles from './styles.module.css';
 
@@ -12,8 +9,4 @@ export const Board = ({ renderRow }) => (
   </div>
 );
 
-const mapStateToProps = (state) => ({
-  squares: squares(state),
-});
-
-export default compose(connect(mapStateToProps), withBoardProps)(Board);
+export default withBoardProps(Board);

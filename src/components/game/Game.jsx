@@ -1,19 +1,4 @@
-import { compose } from 'redux';
-import { connect } from 'react-redux';
 import { Board } from 'components';
-import {
-  player1,
-  player2,
-  squares,
-  winner,
-  xIsNext,
-  resetGame,
-  setPlayer1,
-  setPlayer2,
-  setSquares,
-  setWinner,
-  setXIsNext,
-} from 'models';
 import { withGameProps } from './withGameProps';
 import styles from './styles.module.css';
 
@@ -57,26 +42,4 @@ const GameComponent = ({
   </div>
 );
 
-const mapStateToProps = (state) => {
-  return {
-    player1: player1(state),
-    player2: player2(state),
-    xIsNext: xIsNext(state),
-    winner: winner(state),
-    squares: squares(state),
-  };
-};
-
-const mapDispatchToProps = {
-  setPlayer1,
-  setPlayer2,
-  setSquares,
-  setWinner,
-  setXIsNext,
-  resetGame,
-};
-
-export const Game = compose(
-  connect(mapStateToProps, mapDispatchToProps),
-  withGameProps,
-)(GameComponent);
+export const Game = withGameProps(GameComponent);

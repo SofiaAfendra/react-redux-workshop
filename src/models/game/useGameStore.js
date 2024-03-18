@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { player1, player2, winner, xIsNext, squares } from './selectors';
 import {
   setPlayer1,
@@ -34,11 +34,11 @@ export const useGameStore = () => {
   );
   const resetGameAction = useCallback(() => dispatch(resetGame()), [dispatch]);
   return {
-    player1,
-    player2,
-    winner,
-    xIsNext,
-    squares,
+    player1: useSelector(player1),
+    player2: useSelector(player2),
+    winner: useSelector(winner),
+    xIsNext: useSelector(xIsNext),
+    squares: useSelector(squares),
     setPlayer1: setPlayer1Action,
     setPlayer2: setPlayer2Action,
     setWinner: setWinnerAction,

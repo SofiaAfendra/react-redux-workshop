@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { calculateWinner, getStatus } from 'utils';
+import { useGameStore } from 'models';
 
 export const withGameProps = (WrappedComponent) => (props) => {
   const {
@@ -14,8 +15,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
     setWinner,
     setXIsNext,
     resetGame,
-  } = props;
-
+  } = useGameStore();
   const player1Ref = useRef(null);
   const player2Ref = useRef(null);
 
