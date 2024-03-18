@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { calculateWinner, getStatus } from 'utils';
 import { useGameStore } from 'models';
 
-export const withGameProps = (WrappedComponent) => (props) => {
+export const withGameProps = (WrappedComponent) => () => {
   const {
     player1,
     player2,
@@ -77,7 +77,9 @@ export const withGameProps = (WrappedComponent) => (props) => {
       handleReset={handleReset}
       player1Ref={player1Ref}
       player2Ref={player2Ref}
-      {...props}
+      player1={player1}
+      player2={player2}
+      squares={squares}
     />
   );
 };
