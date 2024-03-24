@@ -29,9 +29,15 @@ You can do your reasearch and refresh your memory at : https://react-redux.js.or
 
 Let's break down your goals for this section: 
 
-- Since we have all our selector's and actions extracted. We only need to create a custom hook in our game folder (./src/model/game). A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks.
+- Since we have all our selector's and actions extracted. We only need to create a custom hook for our game.Since this is a utility function add it in the utils folder (./src/utils). A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks.
 
 - Use the custom hook to extract the selector's and dispatched actions wherever it is needed throughout the app.
+
+> **Hint:** pay close attendion to the objects we use to map selectors and actions in the `withGameProps.jsx` file. Do we stil need them?
+
+> **Hint:** If the mapping proccess is no longer available does the `withGameProps.jsx` file have any props passed to it?
+
+> **Hint** Are there any other places we need to look to remove or reform the same pattern?
 
 
 Good luck!!
