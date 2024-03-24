@@ -4,37 +4,46 @@ React Workshop
 
 ## Description
 
-Well done for your effort so far. Now that you have grasped your basic knowledge of RTK, let's dive a little deeper.
-In this section, we will learn a little bit more about this awesome library. Specifically, we will create a new custom hook using the useSelector and useDispatch hooks, which are integrated in react-redux, to access our selectors and dispatch our game's actions accordingly.
-As you can see the actions that are now extracted from the actions file won't dispatch.
+Beautiful effort so far. Now it is time to combine all out previous knowlegde and give our Game a nice finishing touch for RTK.
+Using a custom Hook has nothing wrong. It remains our single source of truth, it allows us to skip the part where we need to use the react-redux hooks all over the app which is great! But here is an alternative to this approach. The agile framework strongly supports the separation of concerns throughout our components. To manage that let's consider rewinding back before having our custom hook. Let's consider creating a HOC that takes all the mapping concerns of our selectors and actions and passing them to their contextually children components as props enhancing our game with just the use of an individual HOC.
+
 
 ## Why do we need to do that?
-Overall, using a custom hook that returns all selectors and actions in a React app can lead to cleaner, more maintainable code, improved encapsulation, better testability, and potentially enhanced performance.
 
-- By centralizing all selectors and actions within a single custom hook, you establish a single source of truth for managing state-related operations. This can help prevent inconsistencies and reduce the likelihood of bugs caused by scattered state management logic across different parts of your application.
+All this is about has to do with the agile framework. As an organization we need to keep some constants that will help to have better communication a clear way of how everything is being built. That said we have to establish that the separation of concerns is of absolute importance. We need to follow and use the `MVC` (Model - View - Controller) design pattern, this means that the components responsible for the UI part (View) is only responsible for that, another type of components should be responsible only for controlling (Controller) the communication between the user and our business logic and finally the components that manage the state (Model).
 
-- Abstracting away the state management logic into a custom hook helps to hide implementation details and provides a cleaner interface for consuming components. This makes it easier for other developers (or even your future self) to understand and work with the codebase.
-
-- A custom hook to encapsulate selectors and actions is a way to follow the DRY (Don't Repeat Yourself) principle in software development. The DRY principle advocates for reducing repetition of code by abstracting common functionality into reusable components or functions.
-
-## Let's have a sneek peek to the past
-
-``uselector``: hook is a special hook provided by react-redux library. It allows you to extract data from the Redux store state for use in this component, using a selector function.
-
-``useDispatch``: hook is another special hook by react-redux library. This hook returns a reference to the dispatch function from the Redux store. You may use it to dispatch actions as needed.
-
-You can do your reasearch and refresh your memory at : https://react-redux.js.org/api/hooks#using-hooks-in-a-react-redux-app.
+![MVC diagram](https://upload.wikimedia.org/wikipedia/commons/a/a0/MVC-Process.svg)
 
 ## Goals
 
-Let's break down your goals for this section: 
+Since this is a really tricky endeavour we'll need to get to a really deep break down to get the hold of it. 
 
-- Since we have all our selector's and actions extracted. We only need to create a custom hook in our game folder (./src/model/game). A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks.
+What we basically need to do is create a HOC component that manages all the logic of managing the Selectors and Actions and pass them down to it's children components as props. Since this is clear we can get our hands dirty with the implementation.
 
-- Use the custom hook to extract the selector's and dispatched actions wherever it is needed throughout the app.
+Let's start by creating a component in our libraries folder(./src/libraries) with the name `withModelProps.jsx`. This is the wrapper we will use to manage our state from now on.
+
+This component will actually accept a series of values as props that will be the actions and selectors we need to pass down and will return our already wrapped component enhanced with the props we are passing to it.
+
+> **Hint:** Let's first think about the values we are passing through as props to our enhanced component. What are they? How can we separate the Selectors from the actions?
+
+> **Hint:** log the actions and selector in an object to find out a property that might help you separate them. e.g. console.log({setplayer1, player1}). you can use that in your custom hook for now.
+
+> **Hint:** create some function that will help you separate them in selectorproperties and actionproperties for your enhanced component. Create at least two function as helpers for this assignment.
+
+You should also keep in mind that when the function component renders, the provided selector function will be called and its result will be returned from the useSelector() hook. (A cached result may be returned by the hook without re-running the selector if it's the same function reference as on a previous render of the component.)
+
+However, when an action is dispatched to the Redux store, useSelector() only forces a re-render if the selector result appears to be different than the last result. The default comparison is a strict === reference comparison. This is different than connect(), which uses shallow equality checks on the results of mapState calls to determine if re-rendering is needed. This has several implications on how you should use useSelector().
+
+With mapState, all individual fields were returned in a combined object. It didn't matter if the return object was a new reference or not - connect() just compared the individual fields. With useSelector(), returning a new object every time will always force a re-render by default. If you want to retrieve multiple values from the store, you can: Use the shallowEqual function from React-Redux as the equalityFn argument to useSelector().
+
+> **Hint:** There is a function in react-redux library called `bindActionCreators`.Turns an object whose values are action creators, into an object with the same keys, but with every action creator wrapped into a dispatch call so they may be invoked directly. 
+
+After you have separete the props and manage to call them either with the useSelector hook or bind them with the dispatch function, you are almost at the finsish line.
+
+The only remaining thing to do is to compose your wrapper components with the `withModelProps` (don't forget to pass your props here) component with the contextually children components. 
 
 
-Good luck!!
+ ### Good luck!!
 
 ## File Structure
 
