@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { calculateWinner, getStatus } from 'utils';
 
+// TODO: since we use a custom hook is it necessary to import all the props from the Game component?
 export const withGameProps = (WrappedComponent) => (props) => {
   const {
     player1,
@@ -68,6 +69,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
     ? getStatus(winner, player1, player2)
     : `Next player: ${xIsNext ? player1 : player2}`;
 
+  // TODO: make sure to pass the props to the GameComponent
   return (
     <WrappedComponent
       status={status}

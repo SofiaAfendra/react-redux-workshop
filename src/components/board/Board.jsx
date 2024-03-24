@@ -12,6 +12,7 @@ export const Board = ({ renderRow }) => (
   </div>
 );
 
+// TODO: do you need the props to be mapped with the new custom hook?
 const mapStateToProps = (state) => ({
   squares: squares(state),
 });

@@ -17,6 +17,7 @@ import {
 import { withGameProps } from './withGameProps';
 import styles from './styles.module.css';
 
+// TODO: do you get all the props needed from the custom hook from withGameProps?
 const GameComponent = ({
   player1,
   player2,
@@ -57,6 +58,7 @@ const GameComponent = ({
   </div>
 );
 
+// TODO:  using the custom hook withGameProps do you now need to pass the props to the GameComponent?
 const mapStateToProps = (state) => {
   return {
     player1: player1(state),
@@ -76,6 +78,7 @@ const mapDispatchToProps = {
   resetGame,
 };
 
+// TODO:  using the custom hook withGameProps do you now need to pass the props to the GameComponent?
 export const Game = compose(
   connect(mapStateToProps, mapDispatchToProps),
   withGameProps,

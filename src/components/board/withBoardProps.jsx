@@ -1,5 +1,6 @@
 import { Square } from 'components';
 
+//TODO: remember that using the custom hook withGameProps you will get all the props needed to be passed down to the Board component
 export const withBoardProps =
   (WrappedComponent) =>
   ({ onClick, ...props }) => {
