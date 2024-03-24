@@ -1,14 +1,18 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { player1, player2, winner, xIsNext, squares } from './selectors';
 import {
+  player1,
+  player2,
+  winner,
+  xIsNext,
+  squares,
   setPlayer1,
   setPlayer2,
   setWinner, //
   setXIsNext,
   setSquares,
   resetGame,
-} from './actions';
+} from 'models';
 
 export const useGameStore = () => {
   const dispatch = useDispatch();
