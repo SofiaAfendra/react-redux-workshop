@@ -6,7 +6,6 @@ import { bindActionCreators } from 'redux';
  * Takes an object of selectors and action creators,
  * and returns only the action creators by checking the type property
  * @param {function} prop - action creator or selector
- * @param {string} key - key for model props
  * @returns {boolean} isAction - is action
  */
 const isAction = (prop) => prop?.type;
@@ -31,7 +30,6 @@ const actionProps = (props) =>
  *
  * @param {object} props - model props
  * @param {object} ownProps - own props
- * @param {object} state - state
  *
  * @returns {function} stateProps - state props
  *
@@ -45,7 +43,6 @@ const stateProps = (props, ownProps) => (state) =>
 /**
  * Add model props to component
  * @param {object} props - model props
- * @param {object} WrappedComponent - component
  * @returns {function} EnhancedComponent - component with model props
  *
  * @example
