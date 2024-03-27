@@ -73,7 +73,7 @@ export const withModelProps = (props) => (WrappedComponent) => {
     // https://redux.js.org/api/bindactioncreators
     const boundActionProps = useMemo(
       () => bindActionCreators(actionProps(props), dispatch),
-      [],
+      [dispatch],
     );
 
     return (
