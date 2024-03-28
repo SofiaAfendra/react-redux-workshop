@@ -43,8 +43,8 @@ const stateProps = (props, ownProps) => (state) =>
 /**
  * Add model props to component
  * @param {object} props - model props
+ * @returns {function} WrappedComponent - component
  * @returns {function} EnhancedComponent - component with model props
- *
  * @example
  * import React from 'react';
  * import { withModelProps } from '../../utils';
