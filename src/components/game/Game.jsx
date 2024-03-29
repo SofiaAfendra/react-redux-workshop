@@ -21,7 +21,6 @@ import styles from './styles.module.css';
 const GameComponent = ({
   player1,
   player2,
-  squares,
   status,
   handleClick,
   handlePlayer1,
@@ -34,7 +33,7 @@ const GameComponent = ({
     <div className={styles.boardAndStatusWrapper}>
       <div>{status}</div>
       <div className={styles.boardWrapper}>
-        <Board squares={squares} onClick={handleClick} />
+        <Board onClick={handleClick} />
       </div>
     </div>
 
