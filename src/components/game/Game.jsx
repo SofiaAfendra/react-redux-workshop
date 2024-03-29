@@ -33,7 +33,7 @@ const GameComponent = ({
     <div className={styles.boardAndStatusWrapper}>
       <div>{status}</div>
       <div className={styles.boardWrapper}>
-        <Board squares={squares} onClick={handleClick} />
+        <Board onClick={handleClick} />
       </div>
     </div>
 
