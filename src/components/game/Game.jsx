@@ -20,7 +20,6 @@ import styles from './styles.module.css';
 const GameComponent = ({
   player1,
   player2,
-  squares,
   status,
   handleClick,
   handlePlayer1,
