@@ -1,10 +1,10 @@
 const setPlayer1 = (player) => ({
-  type: 'SET_PLAYER_1',
+  type: 'SET_PLAYER1',
   payload: player,
 });
 
 const setPlayer2 = (player) => ({
-  type: 'SET_PLAYER_2',
+  type: 'SET_PLAYER2',
   payload: player,
 });
 
@@ -24,7 +24,7 @@ const setXIsNext = (xIsNext) => ({
 });
 
 const resetGame = () => ({
-  type: 'RESET_GAME',
+  type: 'RESET',
 });
 
 export { setPlayer1, setPlayer2, setSquares, setWinner, setXIsNext, resetGame };
