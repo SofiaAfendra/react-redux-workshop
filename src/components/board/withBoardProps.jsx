@@ -1,10 +1,9 @@
-import { Square } from 'components/square';
-import { useGameState } from 'models';
+import { Square } from 'components';
 
 export const withBoardProps =
   (WrappedComponent) =>
   ({ onClick, ...props }) => {
-    const { state: { squares } = {} } = useGameState();
+    const { squares } = props;
 
     const renderSquare = (index) => (
       <Square value={squares[index]} handleClick={() => onClick(index)} />

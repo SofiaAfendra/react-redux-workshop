@@ -1,18 +1,33 @@
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import { Board } from 'components';
+import {
+  player1,
+  player2,
+  squares,
+  winner,
+  xIsNext,
+  resetGame,
+  setPlayer1,
+  setPlayer2,
+  setSquares,
+  setWinner,
+  setXIsNext,
+} from 'models';
 import { withGameProps } from './withGameProps';
 import styles from './styles.module.css';
 
-const Game = ({
+const GameComponent = ({
   player1,
   player2,
-  player1Ref,
-  player2Ref,
   squares,
   status,
   handleClick,
   handlePlayer1,
   handlePlayer2,
   handleReset,
+  player1Ref,
+  player2Ref,
 }) => (
   <div className={styles.gameWrapper}>
     <div className={styles.boardAndStatusWrapper}>
@@ -42,4 +57,28 @@ const Game = ({
   </div>
 );
 
-export default withGameProps(Game);
+const mapStateToProps = (state) => {
+  return {
+    player1: player1(state),
+    player2: player2(state),
+    xIsNext: xIsNext(state),
+    winner: winner(state),
+    squares: squares(state),
+  };
+};
+
+const mapDispatchToProps = {
+  setPlayer1,
+  setPlayer2,
+  setSquares,
+  setWinner,
+  setXIsNext,
+  resetGame,
+};
+
+const Game = compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  withGameProps,
+)(GameComponent);
+
+export default Game;
