@@ -2,23 +2,18 @@
 
 React Workshop
 
-## Description
-
-Welcome to the Redux section of this training, where you will gradually refactor the way the application's state is managed. In this branch you will be introduced to the core concepts that make a Redux app tick. You have been provided with a _test_ folder inside _models_ containing:
-
-1.  The _actions.js_ file where _testAction_ is defined. It returns an action object with the type "TEST_ACTION".
-2.  The _reducer.js_ where an initial state and _testReducer_ are defined. When testReducer runs with a state and an action as arguments, it will update the state depending on the action type and the state's previous values.
-
 **Branch Tasks:**
 
-1.  Create a folder named _store_ and use the [configureStore](https://redux-toolkit.js.org/api/configureStore) method to setup a Redux store. Use the provided _testReducer_ and initialState defined inside _models/test/reducer.js_. This way whenever the action with type "TEST_ACTION" is dispatched to the store, it will run testReducer to update the global state of the app.
-    > Note: The `store` folder from previous branches, has been renamed to `reactStore`.
-2.  Create a component named _UISetup.jsx_. It should return the Redux _Provider_ component that makes the Redux store available to it's children.
-3.  Inside _main.jsx_ use _UISetup.jsx_ to wrap the _Game_ component, to complete the new setup.
-4.  Add the [Redux Dev Tools](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) browser extension and explore it's many features.
+1. Inside `actions.js` define and export all tic-tac-toe related actions, they should return action objects with the type and payload properties.
 
-- Open Redux Dev Tools and try dispatching a Custom action with type "TEST_ACTION", to watch that state update with each dispatch.
-<!-- - You can also call the dispatch method using _testAction_ inside _store.js_  -->
+2. Inside _store/store.js_
+   replace initialTestState and testReducer with initialGameState and gameReduxReducer from
+   `models/gameRedux/reducer.js`.
+   > NOTE: _The reducer at `game/reducer.js` return an Object with property type and optionally a property payload so we can reuse it at our Redux store._
+
+- Open Redux Dev Tools and try dispatching an action.
+
+<!--todo: update covers section -->
 
 **Covers:**
 
