@@ -38,6 +38,8 @@ With mapState, all individual fields were returned in a combined object. It didn
 
 After you have separated the props and manage to call them either with the useSelector hook or bind them with the dispatch function, you are almost at the finish line.
 
+> **Hint:** To avoid the re-rendering of the component you can use the `useMemo` hook to memoize the enhanced component.
+ 
 The only remaining thing to do is to compose your wrapper components with the `withModelProps` (don't forget to pass your props here) component with the contextually children components. 
 
 
