@@ -10,9 +10,7 @@ Using a custom Hook has nothing wrong. It remains our single source of truth, it
 
 ## Why do we need to do that?
 
-All this is about has to do with the agile framework. As an organization we need to keep some constants that will help to have better communication a clear way of how everything is being built. That said we have to establish that the separation of concerns is of absolute importance. We need to follow and use the `MVC` (Model - View - Controller) design pattern, this means that the components responsible for the UI part (View) is only responsible for that, another type of components should be responsible only for controlling (Controller) the communication between the user and our business logic and finally the components that manage the state (Model).
-
-![MVC diagram](https://upload.wikimedia.org/wikipedia/commons/a/a0/MVC-Process.svg)
+All this is about has to do with the agile framework. As an organization we need to keep some constants that will help to have better communication a clear way of how everything is being built. That said we have to establish that the separation of concerns is of absolute importance. We need to follow and use a certain design pattern, this means that the components responsible for the UI part (View) is only responsible for that, another type of components should be responsible only for our business logic that manage the state (Model).
 
 ## Goals
 
@@ -28,7 +26,7 @@ This component will actually accept a series of values as props that will be the
 
 > **Hint:** log the actions and selector in an object to find out a property that might help you separate them. e.g. console.log({setplayer1, player1}). you can use that in your custom hook for now.
 
-> **Hint:** create some function that will help you separate them in selectorproperties and actionproperties for your enhanced component. Create at least two function as helpers for this assignment.
+> **Hint:** create some function that will help you separate them in selector properties and action properties for your enhanced component. Create at least two function as helpers for this assignment.
 
 You should also keep in mind that when the function component renders, the provided selector function will be called and its result will be returned from the useSelector() hook. (A cached result may be returned by the hook without re-running the selector if it's the same function reference as on a previous render of the component.)
 
@@ -38,7 +36,7 @@ With mapState, all individual fields were returned in a combined object. It didn
 
 > **Hint:** There is a function in react-redux library called `bindActionCreators`.Turns an object whose values are action creators, into an object with the same keys, but with every action creator wrapped into a dispatch call so they may be invoked directly. 
 
-After you have separete the props and manage to call them either with the useSelector hook or bind them with the dispatch function, you are almost at the finsish line.
+After you have separated the props and manage to call them either with the useSelector hook or bind them with the dispatch function, you are almost at the finish line.
 
 The only remaining thing to do is to compose your wrapper components with the `withModelProps` (don't forget to pass your props here) component with the contextually children components. 
 
