@@ -7,7 +7,7 @@ React Workshop
 Now that we have established the Redux knowledge, let's use an already known library to make our lives a lot simpler.
 
 The library's name is redux-toolkit. We have use it in a previous lecture to create the store using 
-``configureStore()`` function instead of the ``createStore()`` function of plain redux since the later was deprecated.     
+``configureStore()``.    
 
 ## Why use Redux Toolkit (RTK) ?
 
@@ -22,6 +22,8 @@ Redux Toolkit simplifies store setup down to a single clear function call, while
 Since the store configuration is ready your goal for this branch is to do some minor tweeks and transform your plain Redux with redux-toolkit.
 - We recommend you start with the docs: https://redux-toolkit.js.org/tutorials/quick-start
 - Transform your reducers using the redux-toolkit logic and the ``createSlice()`` function.
+> **Hint:** createSlice accepts an object with a name, initialState, and reducers. The name is a string used to generate action type strings, and the reducers object is a collection of reducer functions. Each reducer function is created with a "builder callback" API that lets you write mutable logic, and it automatically generates the correct immutable update logic for you.
+
 - Your actions should be coming from the slice you created.
 - Update your store file.
 
