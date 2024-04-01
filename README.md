@@ -33,9 +33,9 @@ Let's break down your goals for this section:
 
 - Use the custom hook to extract the selector's and dispatched actions wherever it is needed throughout the app.
 
-> **Hint:** pay close attendion to the objects we use to map selectors and actions in the `withGameProps.jsx` file. Do we stil need them?
+> **Hint:** pay close attendion to the objects we use to map selectors and actions in the `withGameProps.jsx` / `withBoardProps.jsx` file. Do we still need them?
 
-> **Hint:** If the mapping proccess is no longer available does the `withGameProps.jsx` file have any props passed to it?
+> **Hint:** If the mapping proccess is no longer available does the `withGameProps.jsx`/ `withBoardProps.jsx` file have any props passed to it?
 
 > **Hint** Are there any other places we need to look to remove or reform the same pattern?
 
