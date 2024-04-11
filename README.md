@@ -12,7 +12,7 @@ Without context, we would have to pass this data through props, which can get me
 
 This makes the code cleaner, easier to maintain, and reduces the chance of errors. Furthermore, it can lead to performance improvements, as unnecessary re-renders can be avoided when state changes occur deep in the component tree.
 
-**Branch Task:**
+## Branch Tasks
 
 1. Create a new folder named _store_ in src. This folder will contain two files named _stateProvider.jsx_ and _store.js_.
 2. In _store.js_, use the `createContext` hook to create a context object named `gameState` and extract the `Provider` from it.
@@ -42,3 +42,47 @@ This makes the code cleaner, easier to maintain, and reduces the chance of error
 
 - [React Hook - createContext](https://react.dev/reference/react/createContext)
 - [React Hook - useContext](https://react.dev/reference/react/useContext)
+
+## File Structure
+
+The project should have the following file structure:
+
+```bash
+tic-tac-toe/
+├── src/
+│   ├── components/
+│   │   ├── board/
+│   │   │   ├── Board.jsx
+│   │   │   ├── withBoardProps.jsx
+│   │   │   └── ...
+│   │   ├── game/
+│   │   │   ├── Game.jsx
+│   │   │   ├── withGameProps.jsx
+│   │   │   └── ...
+│   │   └── square/
+│   │       ├── Square.jsx
+│   │       └── ...
+│   ├── libraries/
+│   │    ├── usePersistState.js
+│   │    └── ...
+│   ├── store/
+│   │   ├── stateProvider.jsx
+│   │   ├── store.js
+│   │   └── ...
+│   ├── utils/
+│   │   ├── calculateWinner.js
+│   │   └── ...
+│   ├── config.js
+│   └── main.jsx
+├── package.json
+├── README.md
+└── ...
+```
+
+- _src/_ contains the source code for the project
+- _src/components/_ contains the React components used to build the game and the HOCs used to provide props to presentational components
+- _src/libraries/_ contains the custom hook used to persist the game state to local storage
+- _src/store/_ contains the context provider used to share the game state across the application
+- _src/utils/_ contains utility functions used in the game
+- _src/config.js_ contains the configuration for the game such as the persistence key
+- _src/main.jsx_ is the entry point for the application.
