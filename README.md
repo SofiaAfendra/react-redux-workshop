@@ -42,16 +42,14 @@ tic-tac-toe/
 │   │   └── square/
 │   │       ├── Square.jsx
 │   │       └── ...
-│   │
 │   ├── libraries/
 │   │    ├── usePersistState.js
 │   │    └── ...
-│   │
 │   ├── utils/
 │   │   ├── calculateWinner.js
 │   │   └── ...
 │   ├── config.js
-│   ├── main.jsx
+│   └── main.jsx
 ├── package.json
 ├── README.md
 └── ...
