@@ -10,7 +10,7 @@ In this branch, we will introduce the concept of lifting state up. Our goal is t
 
 Lifting state up is a common technique in React. It allows you to share state between components and make sure that the source of truth is always in the same place. This makes it easier to manage state and keep your application consistent.
 
-**Branch Task:**
+## Branch Tasks
 
 1. Find a way to lift the state so that the `Board` has all the state for each `Sqaure` component.
 2. Utilize the `renderSquare` to return a `Square` component with a value and an `onClick` as props.
