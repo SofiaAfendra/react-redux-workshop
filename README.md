@@ -56,7 +56,7 @@ tic-tac-toe/
 │   │   ├── calculateWinner.js
 │   │   └── ...
 │   ├── config.js
-│   ├── main.jsx
+│   └── main.jsx
 ├── package.json
 ├── README.md
 └── ...
@@ -64,6 +64,6 @@ tic-tac-toe/
 
 - _src/_ contains the source code for the project
 - _src/components/_ contains the React components used to build the game and the HOCs used to provide props to presentational components
-- _src/config.js_ contains the configuration for the game such as the persistence key
 - _src/utils/_ contains utility functions used in the game
+- _src/config.js_ contains the configuration for the game such as the persistence key
 - _src/main.jsx_ is the entry point for the application.
