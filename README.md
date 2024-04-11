@@ -10,7 +10,7 @@ In this branch, we will introduce the concept of _refs_. We will manipulate the 
 
 Ref (short for reference) is a way to access DOM nodes or React elements created in the render method. The `useRef` hook provides a way to create mutable objects that persist across renders. While it can be used to get references to DOM elements in functional components, it is also particularly useful for persisting values between renders without causing re-renders.
 
-**Branch Tasks:**
+## Branch Tasks
 
 1. Change `Game` component so when there is a winner, the input elements will change style.
 
