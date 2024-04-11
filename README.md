@@ -2,7 +2,7 @@
 
 React Workshop!
 
-## Description
+## Branch Description
 
 This is the final form of the Tic Tac Toe game built with React. It allows two players to play against each other on a 3x3 grid. The game keeps track of the current player, the squares that have been filled, and the winner of the game. The game state is persisted to local storage so that the game can be resumed after the page is refreshed and can be reset by clicking the "Reset Game" button.
 
