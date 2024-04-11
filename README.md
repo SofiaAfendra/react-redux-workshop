@@ -14,7 +14,7 @@ State is a built-in React object that allows components to keep track of changin
 
 For example, in our tic-tac-toe game, we want to keep track of which squares have been clicked and what the current value of the square is. We can use state to store this information.
 
-**Branch Task:**
+## Branch Tasks
 
 1. Add logic to the `Square` component so when it's clicked it updates it's **state** and draws an 'X' or an 'O'.
 
