@@ -29,6 +29,41 @@ The HOC and presentational component pattern is used to separate the logic from 
 3. Create a HOC `withBoardProps`.
 4. Move the `Board` component functionality to the HOC.
 
-## Covers
+**Covers:**
 
 - Code reusability with **Higher Order Components** (HOC)
+
+## File Structure
+
+The project should have the following file structure:
+
+```bash
+tic-tac-toe/
+├── src/
+│   ├── components/
+│   │   ├── board/
+│   │   │   ├── Board.jsx
+│   │   │   ├── withBoardProps.jsx
+│   │   │   └── ...
+│   │   ├── game/
+│   │   │   ├── Game.jsx
+│   │   │   ├── withGameProps.jsx
+│   │   │   └── ...
+│   │   └── square/
+│   │       ├── Square.jsx
+│   │       └── ...
+│   ├── utils/
+│   │   ├── calculateWinner.js
+│   │   └── ...
+│   ├── config.js
+│   ├── main.jsx
+├── package.json
+├── README.md
+└── ...
+```
+
+- _src/_ contains the source code for the project
+- _src/components/_ contains the React components used to build the game and the HOCs used to provide props to presentational components
+- _src/config.js_ contains the configuration for the game such as the persistence key
+- _src/utils/_ contains utility functions used in the game
+- _src/main.jsx_ is the entry point for the application.
