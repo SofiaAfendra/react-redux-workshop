@@ -2,7 +2,7 @@
 
 React Workshop!
 
-## Description
+## Branch Description
 
 This is the final form of the Tic Tac Toe game built with React and Redux-Toolkit.
 
