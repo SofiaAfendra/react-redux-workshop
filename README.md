@@ -13,15 +13,13 @@ Welcome to the Redux section of this training, where you will gradually refactor
 
 1.  Create a folder named _store_ and use the [configureStore](https://redux-toolkit.js.org/api/configureStore) method to setup a Redux store. Use the provided _testReducer_ and initialState defined inside _models/test/reducer.js_. This way whenever the action with type "TEST_ACTION" is dispatched to the store, it will run testReducer to update the global state of the app.
     > Note: The `store` folder from previous branches, has been renamed to `reactStore`.
-2.  Create a component named _UISetup.jsx_. It should return the Redux _Provider_ component that makes the Redux store available to it's children.
-3.  Inside _main.jsx_ use _UISetup.jsx_ to wrap the _Game_ component, to complete the new setup.
+2.  Create a component named _UISetup.jsx_, it should return the Redux _[Provider](https://react-redux.js.org/api/provider)_ component that makes the Redux store available to it's children. Since _StateProvider_ is also responsible for making the persistedState available to it's children, move it here from _main.jsx_ and wrap the _Provider_. These components have similar concerns, so grouping them will make the code cleaner.
+3.  Now use _UISetup.jsx_ to wrap the _Game_ component inside _main.jsx_, to complete the new setup.
 4.  Add the [Redux Dev Tools](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) browser extension and explore it's many features.
 
 - Open Redux Dev Tools and try dispatching a Custom action with type "TEST_ACTION", to watch that state update with each dispatch.
-<!-- - You can also call the dispatch method using _testAction_ inside _store.js_  -->
 
 **Covers:**
 
 - [Redux Essentials](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)
-- [Provider](https://react-redux.js.org/api/provider)
 - [Flux architectural pattern](https://www.freecodecamp.org/news/an-introduction-to-the-flux-architectural-pattern-674ea74775c9/)
