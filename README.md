@@ -2,7 +2,7 @@
 
 React Workshop!
 
-## Description
+## Branch Description
 
 Now that we have established the Redux knowledge, let's use an already known library to make our lives a lot simpler.
 
@@ -36,7 +36,7 @@ Since the store configuration is ready your goal for this branch is to do some m
 3. Your actions should be coming from the slice you created.
 4. Update your store file.
 
-**Cover**:
+**Covers:**
 
 - [Reducers and Actions - createSlice](https://redux-toolkit.js.org/api/createSlice)
 
