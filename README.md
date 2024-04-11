@@ -12,7 +12,7 @@ The `useEffect` hook is a function that allows us to perform side effects in our
 
 The `useEffect` hook takes two arguments: a function and an array of dependencies. The function is the side effect we want to perform, and the array of dependencies is a list of variables that the effect depends on. If any of the variables in the array change, the effect will run again.
 
-**Branch Task:**
+## Branch Tasks
 
 1. Use `Game` component's `useEffect` hook to load/update state from/to `localstorage`.
 2. If a winner exists, display their name in `status` and clear the `localstorage`.
