@@ -8,7 +8,7 @@ In this branch, we will introduce the concept of handling user input.
 
 User input is any information that a user provides to a software program. This can be done through a variety of ways, such as typing into a text box, selecting items in a list, or clicking a button.
 
-**Branch Task:**
+## Branch Tasks
 
 1. Utilize the _Game_ component provided and modify each input, so that the values provided by the users are stored in state.
 
