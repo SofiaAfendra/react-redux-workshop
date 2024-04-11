@@ -31,7 +31,7 @@ In each component folder, you'll find an _index.js_ file. This file serves a spe
 - When multiple components are imported into a file, having a clear entry point for each component enhances code readability. It also makes it easier to manage and update imports if the file structure or component locations change over time.
 - In some cases, the _index.js_ file may also be used to export additional functionality related to the component, such as utility functions, constants, or Higher-Order Components.
 
-**Branch Task:**
+## Branch Tasks
 
 1. Change the folder structure.
 2. The `Game` component should render the `Board` component.
