@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { calculateWinner, getStatus } from 'utils';
-import { useGameStore } from 'models';
+import { useGameStore } from 'utils';
 
 export const withGameProps = (WrappedComponent) => () => {
   const {

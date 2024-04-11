@@ -1,5 +1,5 @@
 import { Square } from 'components';
-import { useGameStore } from 'models';
+import { useGameStore } from 'utils';
 
 export const withBoardProps =
   (WrappedComponent) =>
