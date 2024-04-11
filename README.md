@@ -1,6 +1,6 @@
 # Agile Actors Academy
 
-React Workshop
+React Workshop!
 
 ## Description
 
@@ -31,10 +31,6 @@ Libraries used:
 - persistMiddleware: This is a custom middleware that is used to persist the game state to local storage. It is responsible for getting the game state from the redux store and saving it to local storage in every dispatched action.
 - withModelProps: This is a higher order component that is used to provide actions and selectors as props to the wrapped component. In other words, It is responsible for providing the game state to the Game and Board components.
 
-## Why use Redux-Toolkit?
-
-Redux-Toolkit is a library that provides a set of tools to make working with Redux easier. It provides a set of utilities that simplify common Redux use cases, such as store setup, defining reducers, immutable update logic, and even creating entire "slices" of state at once without writing any action creators or action types by hand. It is also the recommended way to write Redux code.
-
 ## File Structure
 
 The project has the following file structure:
@@ -57,9 +53,6 @@ tic-tac-toe/
 │   │   └── ui-setup/
 │   │       ├── UISetup.jsx
 │   │       └── ...
-│   ├── config/
-│   │       ├── config.js
-│   │       └── ...
 │   ├── libraries/
 │   │   ├─ persistMiddleware/
 │   │   │   ├── persistState.js
@@ -67,7 +60,6 @@ tic-tac-toe/
 │   │   └── with-model-props/
 │   │       ├── withModelProps.jsx
 │   │       └── ...
-│   │
 │   ├── models/
 │   │   └── game/
 │   │       ├── actions.js
@@ -77,22 +69,22 @@ tic-tac-toe/
 │   ├── store/
 │   │   ├── rootReducer.js
 │   │   └── store.js
-│   │
 │   ├── utils/
 │   │   ├── calculateWinner.js
 │   │   └── ...
 │   ├── main.jsx
+│   └──config.js
 ├── package.json
 ├── README.md
 └── ...
 ```
 
-- src/ contains the source code for the project
-- src/components/ contains the React components used to build the game and the HOCs used to provide props to presentational components
-- src/config/ contains the configuration for the game such as the persistence key
-- src/libraries/persist-middleware/ contains the custom middleware implementation
-- src/libraries/with-model-props/ contains the HOC used to provide props to presentational components
-- src/models/game/ contains the redux slice, actions and selectors for the game
-- src/store/ contains the configuration for the redux store and the root reducer
-- src/utils/ contains utility functions used in the game
-- src/main.jsx is the entry point for the application.
+- _src/_ contains the source code for the project
+- _src/components/_ contains the React components used to build the game and the HOCs used to provide props to presentational components
+- _src/libraries/persist-middleware/_ contains the custom middleware implementation
+- _src/libraries/with-model-props/_ contains the HOC used to provide props to presentational components
+- _src/models/game/_ contains the redux slice, actions and selectors for the game
+- _src/store/_ contains the configuration for the redux store and the root reducer
+- _src/utils/_ contains utility functions used in the game
+- _src/config.js_ contains the configuration for the game such as the persistence key
+- _src/main.jsx_ is the entry point for the application.
