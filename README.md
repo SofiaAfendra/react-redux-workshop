@@ -2,7 +2,7 @@
 
 React Workshop
 
-## Description
+## Branch Description
 
 Well done for your effort so far! Now that you have grasped your basic knowledge of RTK, let's dive a little deeper.
 
@@ -38,6 +38,11 @@ Let's break down your goals for this section:
 > **Hint:** If the mapping process is no longer available does the `withGameProps.jsx`/ `withBoardProps.jsx` file have any props passed to it?
 
 > **Hint** Are there any other places we need to look to remove or reform the same pattern?
+
+**Covers:**
+
+- [useSelector](https://react-redux.js.org/api/hooks#useselector)
+- [useDispatch](https://react-redux.js.org/api/hooks#usedispatch)
 
 Good luck!!
 
