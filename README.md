@@ -46,7 +46,7 @@ npm run dev
 
 This is the starting branch. Preview the application files and open _src/main.jsx_ to start your first task.
 
-**Branch Tasks:**
+## Branch Tasks
 
 1. Create a simple React Component.
 2. Render the Component into the DOM.
