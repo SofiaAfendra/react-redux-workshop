@@ -2,14 +2,22 @@
 
 React Workshop
 
+## Description
+
+Welcome to the Middlewares branch! In this stage, we'll be implementing middlewares into our Redux setup to add more functionality and flexibility to our application. Specifically, we'll be focusing on persisting state to local storage using a middleware function.
+
 **Branch Tasks:**
 
-- Open Redux Dev Tools and try dispatching an action.
+1. Begin by removing any unnecessary files from previous React implementations like the `useGameState.js` and `usePersistState.js` files.
 
-<!--todo: update covers section -->
+2. Create a new file named `persistState.js`. This file will contain a function responsible for persisting our state to local storage. The function should take a key parameter and return an object with two properties:
+
+   - `initialState`: This property will retrieve the initial state from local storage using the provided key, or an empty object if no state exists.
+   - `persistStateMiddleware`: This property will define the middleware function responsible for updating the state in local storage after each Redux action.
+
+3. Inside `store.js`, implement the `makeStore` function. This function should run the `persistState` function with the `PERSIST_KEY` key and return a configured Redux store using `configureStore`. Ensure to include the `persistStateMiddleware` in the middleware setup.
 
 **Covers:**
 
-- [Redux Essentials](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)
-- [Provider](https://react-redux.js.org/api/provider)
-- [Flux architectural pattern](https://www.freecodecamp.org/news/an-introduction-to-the-flux-architectural-pattern-674ea74775c9/)
+- [Redux Middleware](https://redux.js.org/advanced/middleware)
+- [Redux Persist](https://github.com/rt2zz/redux-persist)
