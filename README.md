@@ -4,7 +4,7 @@ React Workshop
 
 ## Description
 
-Nicely done! Now it's time to kick it up a notch. In this branch you will connect the Game component to the Redux store and replace the previous logic and functionality. This will be achieved by using the compose and connect function, to merge the Redux store's state and action dispatching functions with the Game React component. Additionally, you will be introduced to the pronciple of the selector functions that contribute to good Redux architecture keeping state minimal. After you complete the tasks, you should be able to access and update the Redux store's state through the UI.
+Nicely done! Now it's time to kick it up a notch. In this branch you will connect the Game component to the Redux store and replace the previous logic and functionality. This will be achieved by using the compose and connect function, to merge the Redux store's state and action dispatching functions with the Game React component. Additionally, you will be introduced to the principle of the selector functions that contribute to good Redux architecture keeping state minimal. After you complete the tasks, you should be able to access and update the Redux store's state through the UI.
 
 **Branch Tasks:**
 
@@ -21,7 +21,7 @@ connect(mapStateToProps, mapDispatchToProps),
 withGameProps,
 )(GameComponent);
 
-5. Previously we were using the useGameState hook to make dispatch and state available inside the Game component. Now that we have the new setup is time to replace any dispatch calls with their respective actions.
+5. Previously we were using the useGameState hook to make dispatch and state available inside the Game & Board components. Now that we have the new setup is time to replace any dispatch calls with their respective actions.
 
 **Covers:**
 
