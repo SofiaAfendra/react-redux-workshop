@@ -23,9 +23,9 @@ Nicely done! Now it's time to kick it up a notch. In this branch you will connec
    - First, the invocation of the connect function with _mapStateToProps_ and _mapDispatchToProps_ as arguments, containing everything Redux related.
    - Then the withGameProps HOC, containing some additional props.
    - Finally, since compose returns a function, immediately invoke it with _GameComponent_ as the argument.
-     > Note: The resulting component Game, combines the props of the Redux-connected HOC and withGameProps and passes them to GameComponent.
+     > Note: The resulting Game component, combines the props of the Redux-connected HOC and withGameProps and passes them to GameComponent.
 
-6. Replace any state and dispatch from useGameState with the props available from the new enhnaced HOC. Also, keep in mind that some props passed to the WrappedComponent returned by _withGameProps_ are already accessible due to the Redux-connected HOC. Remove any such unnecessary prop.
+6. Replace any state and dispatch from useGameState with the props available from the new enhanced HOC. Also, keep in mind that some props passed to the WrappedComponent returned by _withGameProps_ are already accessible due to the Redux-connected HOC. Remove any such unnecessary prop.
 
 **Covers:**
 
