@@ -1,12 +1,12 @@
 # Agile Actors Academy
 
-React Workshop
+React Workshop!
 
 ## Description
 
 Good work! Now that you have seen the basics in action, it's time and start refactoring. In this branch you will create the necessary action creators and use the gameReducer to update the game's state. Once you complete the tasks, you should be able to dispatch actions that will update your store's state. Your work will not yet be reflected in the UI, but can you check the results via the Redux Dev Tools.
 
-**Branch Tasks:**
+## Branch Tasks
 
 1. Start by creating _actions.js_ file inside _models/game_ and define action creators there. Action creators should return an action object with the type and payload properties, for each game related value (player1, xIsNext, winner... etc).
 
