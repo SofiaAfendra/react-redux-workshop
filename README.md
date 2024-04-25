@@ -9,7 +9,7 @@ Welcome to the Redux section of this training, where you will gradually refactor
 1.  The `actions.js` file where `testAction` is defined. It returns an action object with the type "TEST_ACTION".
 2.  The `reducer.js` where an initial state and `testReducer` are defined. When testReducer runs with a state and an action as arguments, it will update the state depending on the action type and the state's previous values.
 
-## Branch Tasks:
+## Branch Tasks
 
 1.  Create a folder named `store` and use the [configureStore](https://redux-toolkit.js.org/api/configureStore) method to setup a Redux store. Use the provided `testReducer` and initialState defined inside `models/test/reducer.js`. This way whenever the action with type "TEST`ACTION" is dispatched to the store, it will run testReducer to update the global state of the app.
     > Note: The `store` folder from previous branches, has been renamed to `reactStore`.
@@ -19,7 +19,7 @@ Welcome to the Redux section of this training, where you will gradually refactor
 
 - Open Redux Dev Tools and try dispatching a Custom action with type "TEST_ACTION", to watch that state update with each dispatch.
 
-## Covers:
+## Covers
 
 - [Redux Essentials](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)
 - [Flux architectural pattern](https://www.freecodecamp.org/news/an-introduction-to-the-flux-architectural-pattern-674ea74775c9/)
