@@ -37,12 +37,11 @@ tic-tac-toe/
 │   │   │   ├── Game.jsx
 │   │   │   ├── withGameProps.jsx
 │   │   │   └── ...
-│   │   └── square/
-│   │       ├── Square.jsx
-│   │       └── ...
-│   ├── ui-setup/
+│   │   ├── square/
+│   │   │   ├── Square.jsx
+│   │   │   └── ...
+│   │   ├── ui-setup/
 │   │   └──  UISetup.jsx
-│   │
 │   ├── libraries/
 │   │   ├──  usePersistedState.js
 │   │   └── ...
