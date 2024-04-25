@@ -37,3 +37,48 @@ You will mix everything together and create an enhanced `Game` HOC that combines
 - [Selectors](https://redux.js.org/usage/deriving-data-selectors)
 - [Connect](https://react-redux.js.org/api/connect)
 - [Compose](https://redux.js.org/api/compose)
+
+```bash
+tic-tac-toe/
+├── src/
+│   ├── components/
+│   │   ├── board/
+│   │   │   ├── Board.jsx
+│   │   │   ├── withBoardProps.jsx
+│   │   │   └── ...
+│   │   ├── game/
+│   │   │   ├── Game.jsx
+│   │   │   ├── withGameProps.jsx
+│   │   │   └── ...
+│   │   ├── square/
+│   │   │   ├── Square.jsx
+│   │   │   └── ...
+│   │   ├── ui-setup/
+│   │   └──  UISetup.jsx
+│   ├── libraries/
+│   │   ├──  usePersistedState.js
+│   │   └── ...
+│   ├── models/
+│   │   ├── game/
+│   │   │   ├── actions.js
+│   │   │   ├── reducer.js
+│   │   │   ├── useGameState.js
+│   │   │   └── ...
+│   │   └── test/
+│   │       ├── actions.js
+│   │       └── reducer.js
+│   ├── reactStore/
+│   │   ├── stateProvider.js
+│   │   └── store.js
+│   ├── store/
+│   │   ├── rootReducer.js
+│   │   └── store.js
+│   ├── utils/
+│   │   ├── calculateWinner.js
+│   │   └── ...
+│   ├── main.jsx
+│   └──config.js
+├── package.json
+├── README.md
+└── ...
+```
