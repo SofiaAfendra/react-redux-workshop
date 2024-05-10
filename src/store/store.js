@@ -1,9 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { initialTestState, testAction, testReducer } from '../models';
 
-const preloadedState = {
-  test: initialTestState,
-};
+const preloadedState = initialTestState;
+
 export const store = configureStore({
   preloadedState,
   reducer: testReducer,
