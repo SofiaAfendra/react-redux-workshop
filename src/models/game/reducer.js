@@ -1,23 +1,12 @@
-export const initialState = {
-  player1: '',
-  player2: '',
+export const initialGameState = {
   squares: Array(9).fill(null),
   xIsNext: true,
   winner: null,
 };
 
-export const gameReducer = (state = initialState, action) => {
+export const gameReducer = (state = initialGameState, action) => {
+  console.log('reducer', state);
   switch (action.type) {
-    case 'SET_PLAYER_1':
-      return {
-        ...state,
-        player1: action.payload,
-      };
-    case 'SET_PLAYER_2':
-      return {
-        ...state,
-        player2: action.payload,
-      };
     case 'SET_SQUARES':
       return {
         ...state,
@@ -35,7 +24,7 @@ export const gameReducer = (state = initialState, action) => {
       };
     case 'RESET_GAME':
       return {
-        ...initialState,
+        ...initialGameState,
       };
     default:
       return state;

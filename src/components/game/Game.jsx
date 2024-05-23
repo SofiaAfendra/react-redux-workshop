@@ -7,7 +7,8 @@ import {
   squares,
   winner,
   xIsNext,
-  resetGame,
+  resetGameState,
+  resetPlayerState,
   setPlayer1,
   setPlayer2,
   setSquares,
@@ -58,6 +59,7 @@ const GameComponent = ({
 );
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     player1: player1(state),
     player2: player2(state),
@@ -73,7 +75,8 @@ const mapDispatchToProps = {
   setSquares,
   setWinner,
   setXIsNext,
-  resetGame,
+  resetGameState,
+  resetPlayerState,
 };
 
 export const Game = compose(

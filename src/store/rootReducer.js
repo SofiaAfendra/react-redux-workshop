@@ -1,4 +1,5 @@
-import { gameReducer } from 'models';
+import { gameReducer, playerReducer } from 'models';
+import { combineReducers } from 'redux';
 
 /**
  * Root reducer
@@ -6,8 +7,10 @@ import { gameReducer } from 'models';
  * @description Combine all reducers
  *
  */
-const rootReducer = {
+
+const rootReducer = combineReducers({
   game: gameReducer,
-};
+  players: playerReducer,
+});
 
 export default rootReducer;
