@@ -12,7 +12,7 @@ Welcome to the Redux section of this training, where you will gradually refactor
 ## Branch Tasks
 
 1.  Create a folder named `store` and use the [configureStore](https://redux-toolkit.js.org/api/configureStore) method to setup a Redux store. Use the provided `testReducer` and initialState defined inside `models/test/reducer.js`. This way whenever the action with type "TEST`ACTION" is dispatched to the store, it will run testReducer to update the global state of the app.
-    > Note: The `store` folder from previous branches, has been renamed to `reactStore`.
+    > Note: The `store` and _models/_`game` folder from previous branches, have been renamed to `reactStore` and `reactGame`.
 2.  Create a component named `UISetup.jsx`, it should return the Redux [Provider](https://react-redux.js.org/api/provider) component that makes the Redux store available to it's children. Since `StateProvider` is also responsible for making the persistedState available to it's children, move it here from `main.jsx` and wrap the `Provider`. These components have similar concerns, so grouping them will make the code cleaner.
 3.  Now use `UISetup.jsx` to wrap the `Game` component inside `main.jsx`, to complete the new setup.
 4.  Add the [Redux Dev Tools](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) browser extension and explore it's many features.
