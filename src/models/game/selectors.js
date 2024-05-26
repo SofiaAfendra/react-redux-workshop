@@ -1,5 +1,5 @@
-const winner = (state) => state.game.winner;
-const xIsNext = (state) => state.game.xIsNext;
-const squares = (state) => state.game.squares;
+const winner = ({ game }) => game.winner;
+const xIsNext = ({ game }) => game.xIsNext;
+const squares = ({ game }) => game.squares;
 
 export { winner, xIsNext, squares };
