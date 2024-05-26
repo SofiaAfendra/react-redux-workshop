@@ -1,9 +1,9 @@
-export const initialPlayerState = {
+export const initialState = {
   player1: '',
   player2: '',
 };
 
-export const playerReducer = (state = initialPlayerState, action) => {
+export const playerReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_PLAYER_1':
       return {
@@ -17,7 +17,7 @@ export const playerReducer = (state = initialPlayerState, action) => {
       };
     case 'RESET_PLAYERS':
       return {
-        ...initialPlayerState,
+        ...initialState,
       };
     default:
       return state;

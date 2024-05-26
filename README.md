@@ -67,17 +67,23 @@ tic-tac-toe/
 │   │   └─ persist-middleware/
 │   │       ├── persistState.js
 │   │       └── ...
-│   │
 │   ├── models/
-│   │   └── game/
-│   │       ├── actions.js
-│   │       ├── reducer.js
-│   │       ├── selectors.js
-│   │       └── ...
+│   │   ├── game/
+│   │   │   ├── index.js
+│   │   │   ├── actions.js
+│   │   │   └── reducer.js
+│   │   ├── players/
+│   │   │   ├── index.js
+│   │   │   ├── actions.js
+│   │   │   └── reducer.js
+│   │   └── reactGame/
+│   │   │   ├── index.js
+│   │   │   ├── reducer.js
+│   │   │   └── useGameState.js
+│   │   └── index.js
 │   ├── store/
 │   │   ├── rootReducer.js
 │   │   └── store.js
-│   │
 │   ├── utils/
 │   │   ├── calculateWinner.js
 │   │   └── ...
