@@ -31,11 +31,11 @@ Good work! Now that you have seen the basics in action, it's time and start refa
    > - Each returned action should always have a type, but the payload property is not always necessary.
    > - A single action dispatch can trigger many reducers, as long as they have a switch case that mathces the action's type.
 
-3. Define the reducers along with their initial states. Reducer functions need an initial state as their default state argument, otherwise they cannot calculate the new state. You can draw inspiration from `initialState` and `gameReducer` inside `models/reducer.js` to define `initialGameState` and `initialPlayerState`. Then use the initial states as default arguments in the definition of `gameStateReducer` and `playerStateReducer` respectively.
+3. Define the `gameStateReducer` and `playerStateReducer` and an `initialState` for each, inside their respective `reducer.js` files. You can use `initialState` and `gameReducer` inside `models/reactGame/reducer.js` as a reference. Reducer functions need an initial state as their default state argument, otherwise they cannot calculate the new state.
 
 4. Create a `rootReducer.js` file inside the `store` folder. There you will use the `combineReducers` function along with your slice reducers to define the `rootReducer`. The argument passed to combineReducers should be an object with the keys `game`, `players` and their respective reducers as their value.
 
-5. Finally, replace `testReducer` with the new `rootReducer` in the arguments of `configureStore` inside `store/store.js`. The rootReducer already has an initial state, that is the combination of `initialGameState` and `initialPlayerState`. Meaning you can remove the proloadedState argument completely.
+5. Finally, replace `testReducer` with the new `rootReducer` in the arguments of `configureStore` inside `store/store.js`. The rootReducer already has an initial state, that is the combination of the initial states from `game` and `players` reducers. Meaning you can remove the proloadedState argument completely.
 
 - Open Redux Dev Tools and try dispatching actions to check the results.
 
