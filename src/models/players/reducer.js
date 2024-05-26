@@ -1,9 +1,9 @@
-export const initialPlayerState = {
+const initialState = {
   player1: '',
   player2: '',
 };
 
-export const playerStateReducer = (state = initialPlayerState, action) => {
+export const playerStateReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_PLAYER_1':
       return {
@@ -16,11 +16,8 @@ export const playerStateReducer = (state = initialPlayerState, action) => {
         player2: action.payload,
       };
     case 'RESET_GAME':
-      //   return {
-      //     ...initialPlayerState,
-      //   };case 'RESET_GAME':
       return {
-        ...initialPlayerState,
+        ...initialState,
       };
     default:
       return state;
