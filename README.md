@@ -13,7 +13,7 @@ You will mix everything together and create an enhanced `Game` HOC that combines
 
 ## Branch Tasks
 
-1. First create a new file inside `models/game` named `selectors.js`, this is where you will define the new selectors. A selector is a function that accepts the state as an argument and returns the specified piece of data from that state. Now define a selector for each game related variable and export them.
+1. First create a new file inside `models/game` and `models/players` named `selectors.js`, this is where you will define the new selectors. A selector is a function that accepts the store's state as an argument and returns the specified piece of data from that state. Now define a selector for each game and player related value and export them.
 
    > Note: Using selector functions will reduce the amount of code needed to access state values.
 
@@ -60,13 +60,17 @@ tic-tac-toe/
 │   │   └── ...
 │   ├── models/
 │   │   ├── game/
+│   │   │   ├── index.js
 │   │   │   ├── actions.js
+│   │   │   └── reducer.js
+│   │   ├── players/
+│   │   │   ├── index.js
+│   │   │   ├── actions.js
+│   │   │   └── reducer.js
+│   │   └── reactGame/
+│   │   │   ├── index.js
 │   │   │   ├── reducer.js
-│   │   │   ├── useGameState.js
-│   │   │   └── ...
-│   │   └── test/
-│   │       ├── actions.js
-│   │       └── reducer.js
+│   │   │   └── useGameState.js
 │   ├── reactStore/
 │   │   ├── stateProvider.js
 │   │   └── store.js
