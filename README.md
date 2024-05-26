@@ -10,37 +10,45 @@ Good work! Now that you have seen the basics in action, it's time and start refa
 
 1. Start by creating two new folders named `game` and `players` inside `models`. You will define two new separate reducers and action creators for each folder. These new reducers should each handle a slice of the tic-tac-toe's state, specifically the `game` slice handles _squares, xIsNext, winner_ and _reset_ and the `players` slice handles _player1_ and _player2_.
 
-   > Each reducer should have an `index.js` file.
-   >
-   > > Tip: Each slice's `index.js` should export all actions and the reducer. And `models/index.js` should now also export everything from the slices' folders.
-   >
-   > ```bash
-   >  models/
-   >     ├── game/
-   >     │    ├── index.js
-   >     │    ├── actions.js
-   >     │    └── reducer.js
-   >     ├── players/
-   >     │    └── ...
-   >     ├── reactGame/
-   >     │    └── ...
-   >     └── index.js
-   > ```
+   - Each reducer folder should have an `index.js` file.
+   - Each slice's `index.js` should export all actions and the reducer. And `models/index.js` should now also export everything from the slices' folders.
+
+   ```bash
+    models/
+       ├── game/
+       │    ├── index.js
+       │    ├── actions.js
+       │    └── reducer.js
+       ├── players/
+       │    └── ...
+       ├── reactGame/
+       │    └── ...
+       └── index.js
+   ```
 
 2. Define action creators inside each slice's `actions.js` file. Action creators should return an action object with the type and payload properties, for each game related value.
 
-   > Hints:
-   >
    > - Each returned action should always have a type, but the payload property is not always necessary.
-   > - New action types should match the existing switch cases in their respective reducer.
+   > - A single action dispatch can trigger many reducers, as long as they have a switch case that mathces the action's type.
 
 3. Define the reducers along with their initial states. Reducer functions need an initial state as their default state argument, otherwise they cannot calculate the new state. You can draw inspiration from `initialState` and `gameReducer` inside `models/reducer.js` to define `initialGameState` and `initialPlayerState`. Then use the initial states as default arguments in the definition of `gameStateReducer` and `playerStateReducer` respectively.
-<!-- Check if both reset functions are needed -->
+
 4. Create a `rootReducer.js` file inside the `store` folder. There you will use the `combineReducers` function along with your slice reducers to define the `rootReducer`. The argument passed to combineReducers should be an object with the keys `game`, `players` and their respective reducers as their value.
 
-5. Finally, update the `configureStore` parameters inside `store/store.js`. Replace `testReducer` with the new `rootReducer` and remove proloadedState completely.
+5. Finally, replace `testReducer` with the new `rootReducer` in the arguments of `configureStore` inside `store/store.js`. The rootReducer already has an initial state, that is the combination of `initialGameState` and `initialPlayerState`. Meaning you can remove the proloadedState argument completely.
 
 - Open Redux Dev Tools and try dispatching actions to check the results.
+
+  ```
+   # Update player 1
+   {type: 'SET_PLAYER_1', payload: 'John'}
+
+   # Update xIsNext
+   {type: 'SET_X_IS_NEXT', payload: false}
+
+   # Reset the state
+   {type: 'RESET_GAME'}
+  ```
 
 ## Covers
 
