@@ -48,14 +48,17 @@ tic-tac-toe/
 │   │   └── ...
 │   ├── models/
 │   │   ├── game/
+│   │   │   ├── index.js
 │   │   │   ├── actions.js
+│   │   │   └── reducer.js
+│   │   ├── players/
+│   │   │   ├── index.js
+│   │   │   ├── actions.js
+│   │   │   └── reducer.js
+│   │   └── reactGame/
+│   │   │   ├── index.js
 │   │   │   ├── reducer.js
-│   │   │   ├── selectors.js
-│   │   │   ├── useGameState.js
-│   │   │   └── ...
-│   │   └── test/
-│   │       ├── actions.js
-│   │       └── reducer.js
+│   │   │   └── useGameState.js
 │   ├── reactStore/
 │   │   ├── stateProvider.js
 │   │   └── store.js
