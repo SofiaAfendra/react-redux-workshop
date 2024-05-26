@@ -82,6 +82,11 @@ tic-tac-toe/
 │   │       └── ...
 │   ├── models/
 │   │   └── game/
+│   │   |   ├── actions.js
+│   │   |   ├── reducer.js
+│   │   |   ├── selectors.js
+│   │   |   └── ...
+|   |   └── player/
 │   │       ├── actions.js
 │   │       ├── reducer.js
 │   │       ├── selectors.js
