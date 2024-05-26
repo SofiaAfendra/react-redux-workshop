@@ -61,8 +61,14 @@ tic-tac-toe/
 │   │       ├── withModelProps.jsx
 │   │       └── ...
 │   ├── models/
-│   │   └── game/
-│   │       ├── actions.js
+│   │   |── game/
+│   │   |   ├── actions.js
+│   │   |   ├── selectors.js
+│   │   |   ├── slice.js
+│   │   |   └── ...
+|   |   |
+|   |   |-- player/
+|   |       ├── actions.js
 │   │       ├── selectors.js
 │   │       ├── slice.js
 │   │       └── ...

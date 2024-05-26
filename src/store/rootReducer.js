@@ -1,4 +1,9 @@
-import { gameSliceName, gameReducer } from 'models';
+import {
+  gameSliceName,
+  gameReducer,
+  playerReducer,
+  playerSliceName,
+} from 'models';
 
 /**
  * Root reducer
@@ -8,6 +13,7 @@ import { gameSliceName, gameReducer } from 'models';
  */
 const rootReducer = {
   [gameSliceName]: gameReducer,
+  [playerSliceName]: playerReducer,
 };
 
 export default rootReducer;
