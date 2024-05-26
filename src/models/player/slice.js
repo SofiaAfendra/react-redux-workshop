@@ -15,6 +15,9 @@ export const playerSlice = createSlice({
     setPlayer2: (state, action) => {
       state.player2 = action.payload;
     },
+    resetPlayers: () => {
+      return initialState;
+    },
   },
 });
 
