@@ -71,6 +71,7 @@ tic-tac-toe/
 │   │   │   ├── index.js
 │   │   │   ├── reducer.js
 │   │   │   └── useGameState.js
+│   │   └── index.js
 │   ├── reactStore/
 │   │   ├── stateProvider.js
 │   │   └── store.js
