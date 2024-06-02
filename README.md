@@ -47,7 +47,7 @@ tic-tac-toe/
 │   │   ├──  usePersistedState.js
 │   │   └── ...
 │   ├── models/
-│   │   ├── game/
+│   │   ├── reactGame/
 │   │   │   ├── reducer.js
 │   │   │   ├── useGameState.js
 │   │   │   └── ...
