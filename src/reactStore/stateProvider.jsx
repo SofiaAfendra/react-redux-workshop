@@ -1,10 +1,7 @@
 import { useEffect, useReducer } from 'react';
 import { usePersistState } from 'libraries';
-import { gameReducer } from 'models';
+import { gameReducer, initialState } from 'models';
 import { Provider } from './store';
-
-//Note: we provide a initialState so we don't cause an error. this file must be deleted!
-const initialState = {};
 
 export const StateProvider = ({ persistKey, children }) => {
   const { persistedState, setPersistedState } = usePersistState(

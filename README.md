@@ -50,10 +50,12 @@ tic-tac-toe/
 │   │   ├── game/
 │   │   │   ├── index.js
 │   │   │   ├── actions.js
+│   │   │   ├── selectors.js
 │   │   │   └── reducer.js
 │   │   ├── players/
 │   │   │   ├── index.js
 │   │   │   ├── actions.js
+│   │   │   ├── selectors.js
 │   │   │   └── reducer.js
 │   │   └── reactGame/
 │   │   │   ├── index.js
