@@ -7,7 +7,8 @@ import {
   squares,
   winner,
   xIsNext,
-  resetGame,
+  resetGameState,
+  resetPlayerState,
   setPlayer1,
   setPlayer2,
   setSquares,
@@ -73,12 +74,11 @@ const mapDispatchToProps = {
   setSquares,
   setWinner,
   setXIsNext,
-  resetGame,
+  resetGameState,
+  resetPlayerState,
 };
 
-const Game = compose(
+export const Game = compose(
   connect(mapStateToProps, mapDispatchToProps),
   withGameProps,
 )(GameComponent);
-
-export default Game;

@@ -1,4 +1,4 @@
-export { gameReducer, initialState } from './reducer';
-export { useGameState } from './useGameState';
+export * from './reducer';
 export * from './actions';
 export * from './selectors';
+export { useGameState } from './useGameState';
