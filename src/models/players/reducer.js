@@ -15,7 +15,7 @@ export const playerStateReducer = (state = initialState, action) => {
         ...state,
         player2: action.payload,
       };
-    case 'RESET_GAME':
+    case 'RESET_PLAYERS':
       return {
         ...initialState,
       };
