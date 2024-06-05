@@ -12,10 +12,10 @@ import rootReducer from './rootReducer';
  *
  */
 export const makeStore = (persistKey) => {
-  const { initialsState, persistStateMiddleware } = persistState(persistKey);
+  const { initialState, persistStateMiddleware } = persistState(persistKey);
 
   return configureStore({
-    preloadedState: { ...initialsState },
+    preloadedState: { ...initialState },
     reducer: rootReducer,
     middleware: (prev) => prev().concat(persistStateMiddleware),
   });

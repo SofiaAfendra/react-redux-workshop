@@ -13,6 +13,7 @@ import {
   setSquares,
   setWinner,
   setXIsNext,
+  resetPlayers,
 } from 'models';
 import { withGameProps } from './withGameProps';
 import styles from './styles.module.css';
@@ -75,6 +76,7 @@ const mapDispatchToProps = {
   setWinner,
   setXIsNext,
   resetGame,
+  resetPlayers,
 };
 
 // TODO:  using the custom hook withGameProps do you now need to pass the props to the GameComponent?
