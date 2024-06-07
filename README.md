@@ -67,7 +67,7 @@ tic-tac-toe/
 │   │   |   ├── slice.js
 │   │   |   └── ...
 |   |   |
-|   |   |-- player/
+|   |   |-- players/
 |   |       ├── actions.js
 │   │       ├── selectors.js
 │   │       ├── slice.js
