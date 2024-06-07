@@ -59,7 +59,6 @@ const GameComponent = ({
 );
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     player1: player1(state),
     player2: player2(state),
