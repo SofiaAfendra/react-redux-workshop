@@ -15,7 +15,7 @@ export const makeStore = (persistKey) => {
   const { initialState, persistStateMiddleware } = persistState(persistKey);
 
   return configureStore({
-    preloadedState: { ...initialState },
+    preloadedState: initialState,
     reducer: rootReducer,
     middleware: (prev) => prev().concat(persistStateMiddleware),
   });
