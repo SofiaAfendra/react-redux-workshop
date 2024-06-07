@@ -86,7 +86,7 @@ tic-tac-toe/
 │   │   |   ├── reducer.js
 │   │   |   ├── selectors.js
 │   │   |   └── ...
-|   |   └── player/
+|   |   └── players/
 │   │       ├── actions.js
 │   │       ├── reducer.js
 │   │       ├── selectors.js
