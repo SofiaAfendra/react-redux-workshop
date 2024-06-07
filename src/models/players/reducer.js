@@ -3,7 +3,7 @@ const initialState = {
   player2: '',
 };
 
-export const playerStateReducer = (state = initialState, action) => {
+export const playerReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_PLAYER_1':
       return {

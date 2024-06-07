@@ -1,9 +1,9 @@
-import { gameStateReducer, playerStateReducer } from 'models';
+import { gameReducer, playerReducer } from 'models';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  game: gameStateReducer,
-  players: playerStateReducer,
+  game: gameReducer,
+  players: playerReducer,
 });
 
 export default rootReducer;
