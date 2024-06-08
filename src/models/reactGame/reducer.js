@@ -6,7 +6,7 @@ export const initialState = {
   winner: null,
 };
 
-export const gameReducer = (state, action) => {
+export const gameReactReducer = (state, action) => {
   switch (action.type) {
     case 'SET_PLAYER1':
       return {

@@ -1,2 +1,2 @@
-export { gameReducer, initialState } from './reducer';
+export { gameReactReducer, initialState } from './reducer';
 export { useGameState } from './useGameState';
