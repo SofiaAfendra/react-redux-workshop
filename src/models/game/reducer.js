@@ -4,7 +4,7 @@ const initialState = {
   winner: null,
 };
 
-export const gameStateReducer = (state = initialState, action) => {
+export const gameReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_SQUARES':
       return {
