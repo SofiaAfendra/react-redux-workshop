@@ -7,7 +7,8 @@ import {
   squares,
   winner,
   xIsNext,
-  resetGame,
+  resetGameState,
+  resetPlayerState,
   setPlayer1,
   setPlayer2,
   setSquares,
@@ -20,13 +21,13 @@ import styles from './styles.module.css';
 const Game = ({
   player1,
   player2,
+  player1Ref,
+  player2Ref,
   status,
   handleClick,
   handlePlayer1,
   handlePlayer2,
   handleReset,
-  player1Ref,
-  player2Ref,
 }) => (
   <div className={styles.gameWrapper}>
     <div className={styles.boardAndStatusWrapper}>
@@ -56,15 +57,13 @@ const Game = ({
   </div>
 );
 
-const mapStateToProps = (state) => {
-  return {
-    player1: player1(state),
-    player2: player2(state),
-    xIsNext: xIsNext(state),
-    winner: winner(state),
-    squares: squares(state),
-  };
-};
+const mapStateToProps = (state) => ({
+  player1: player1(state),
+  player2: player2(state),
+  xIsNext: xIsNext(state),
+  winner: winner(state),
+  squares: squares(state),
+});
 
 const mapDispatchToProps = {
   setPlayer1,
@@ -72,7 +71,8 @@ const mapDispatchToProps = {
   setSquares,
   setWinner,
   setXIsNext,
-  resetGame,
+  resetGameState,
+  resetPlayerState,
 };
 
 export default compose(

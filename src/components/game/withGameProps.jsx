@@ -13,7 +13,8 @@ export const withGameProps = (WrappedComponent) => (props) => {
     setSquares,
     setWinner,
     setXIsNext,
-    resetGame,
+    resetGameState,
+    resetPlayerState,
   } = props;
 
   const player1Ref = useRef(null);
@@ -61,7 +62,8 @@ export const withGameProps = (WrappedComponent) => (props) => {
       player2Ref.current.style.border = '';
     }
 
-    resetGame();
+    resetGameState();
+    resetPlayerState();
   };
 
   const status = winner
@@ -70,13 +72,13 @@ export const withGameProps = (WrappedComponent) => (props) => {
 
   return (
     <WrappedComponent
+      player1Ref={player1Ref}
+      player2Ref={player2Ref}
       status={status}
       handleClick={handleClick}
       handlePlayer1={handlePlayer1}
       handlePlayer2={handlePlayer2}
       handleReset={handleReset}
-      player1Ref={player1Ref}
-      player2Ref={player2Ref}
       {...props}
     />
   );
