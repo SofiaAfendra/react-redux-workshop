@@ -2,7 +2,7 @@ import { Board } from 'components';
 import { withGameProps } from './withGameProps';
 import styles from './styles.module.css';
 
-const GameComponent = ({
+const Game = ({
   player1,
   player2,
   status,
@@ -41,4 +41,4 @@ const GameComponent = ({
   </div>
 );
 
-export const Game = withGameProps(GameComponent);
+export default withGameProps(Game);
