@@ -13,8 +13,8 @@ const setXIsNext = (xIsNext) => ({
   payload: xIsNext,
 });
 
-const resetGameState = () => ({
+const resetGame = () => ({
   type: 'RESET_GAME',
 });
 
-export { setSquares, setWinner, setXIsNext, resetGameState };
+export { setSquares, setWinner, setXIsNext, resetGame };
