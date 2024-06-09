@@ -2,9 +2,7 @@ import { Square } from 'components';
 
 export const withBoardProps =
   (WrappedComponent) =>
-  ({ onClick, ...props }) => {
-    const { squares } = props;
-
+  ({ onClick, squares, ...props }) => {
     const renderSquare = (index) => (
       <Square value={squares[index]} handleClick={() => onClick(index)} />
     );
