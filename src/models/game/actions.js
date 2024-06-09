@@ -1,13 +1,3 @@
-const setPlayer1 = (player) => ({
-  type: 'SET_PLAYER_1',
-  payload: player,
-});
-
-const setPlayer2 = (player) => ({
-  type: 'SET_PLAYER_2',
-  payload: player,
-});
-
 const setSquares = (squares) => ({
   type: 'SET_SQUARES',
   payload: squares,
@@ -23,8 +13,8 @@ const setXIsNext = (xIsNext) => ({
   payload: xIsNext,
 });
 
-const resetGame = () => ({
+const resetGameState = () => ({
   type: 'RESET_GAME',
 });
 
-export { setPlayer1, setPlayer2, setSquares, setWinner, setXIsNext, resetGame };
+export { setSquares, setWinner, setXIsNext, resetGameState };

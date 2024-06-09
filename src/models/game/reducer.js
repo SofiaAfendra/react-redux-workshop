@@ -1,6 +1,4 @@
-export const initialState = {
-  player1: '',
-  player2: '',
+const initialState = {
   squares: Array(9).fill(null),
   xIsNext: true,
   winner: null,
@@ -8,16 +6,6 @@ export const initialState = {
 
 export const gameReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_PLAYER_1':
-      return {
-        ...state,
-        player1: action.payload,
-      };
-    case 'SET_PLAYER_2':
-      return {
-        ...state,
-        player2: action.payload,
-      };
     case 'SET_SQUARES':
       return {
         ...state,
