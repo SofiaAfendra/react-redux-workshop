@@ -17,7 +17,7 @@ import {
 import { withGameProps } from './withGameProps';
 import styles from './styles.module.css';
 
-const GameComponent = ({
+const Game = ({
   player1,
   player2,
   status,
@@ -75,7 +75,7 @@ const mapDispatchToProps = {
   resetGame,
 };
 
-export const Game = compose(
+export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   withGameProps,
-)(GameComponent);
+)(Game);
