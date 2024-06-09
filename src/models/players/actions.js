@@ -1,7 +1,7 @@
-import { playerSlice } from './slice';
+import { playersSlice } from './slice';
 
 export const {
   setPlayer1, //
   setPlayer2,
   resetPlayers,
-} = playerSlice.actions;
+} = playersSlice.actions;

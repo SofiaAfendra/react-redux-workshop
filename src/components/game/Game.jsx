@@ -5,13 +5,13 @@ import styles from './styles.module.css';
 const Game = ({
   player1,
   player2,
+  player1Ref,
+  player2Ref,
   status,
   handleClick,
   handlePlayer1,
   handlePlayer2,
   handleReset,
-  player1Ref,
-  player2Ref,
 }) => (
   <div className={styles.gameWrapper}>
     <div className={styles.boardAndStatusWrapper}>
