@@ -6,8 +6,9 @@
  * @returns {function} persistStateMiddleware - middleware for store
  *
  */
+
 export const persistState = (key) => ({
-  initialsState: JSON.parse(localStorage.getItem(key)) || {},
+  initialState: JSON.parse(localStorage.getItem(key)) ?? {},
 
   persistStateMiddleware: (store) => (next) => (action) => {
     const result = next(action);
