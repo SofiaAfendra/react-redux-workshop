@@ -4,7 +4,11 @@ React Workshop!
 
 ## Description
 
-Welcome to the Middlewares branch! In this stage, we'll be implementing middlewares into our Redux setup to add more functionality and flexibility to our application. Specifically, we'll be focusing on persisting state to local storage using a middleware function.
+Welcome to the Middlewares branch! In this stage, we'll be implementing middlewares into our application to add more functionality and flexibility to it. Specifically, we'll be focusing on persisting state to local storage using a middleware function.
+
+## Middlewares
+
+Middlewares are functions that have access to the Redux store's dispatch function. They can be used to perform actions before or after an action is dispatched, or even to stop the action from being dispatched altogether. Middlewares are a powerful tool that can be used to add functionality to Redux, such as logging, crash reporting, or persisting state to local storage.
 
 ## Branch Tasks
 

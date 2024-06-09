@@ -58,15 +58,13 @@ const Game = ({
   </div>
 );
 
-const mapStateToProps = (state) => {
-  return {
-    player1: player1(state),
-    player2: player2(state),
-    xIsNext: xIsNext(state),
-    winner: winner(state),
-    squares: squares(state),
-  };
-};
+const mapStateToProps = (state) => ({
+  player1: player1(state),
+  player2: player2(state),
+  xIsNext: xIsNext(state),
+  winner: winner(state),
+  squares: squares(state),
+});
 
 const mapDispatchToProps = {
   setPlayer1,
