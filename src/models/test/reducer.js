@@ -1,4 +1,4 @@
-export const initialTestState = {
+const initialTestState = {
   test: false,
 };
 

@@ -4,14 +4,14 @@ React Workshop!
 
 ## Description
 
-Good work! Now that you have seen the basics in action, it's time and start refactoring. In this branch you will create the necessary action creators and reducers to update the Redux store's state. You will be introduced to the combineReducers helper function, that turns different reducer functions into a single combined reducer. Once you complete the tasks, you should be able to dispatch actions that will update your store's state. Your work will not yet be reflected in the UI, but can you check the results via the Redux Dev Tools.
+Good work! Now that you have seen the basics in action, it's time to start refactoring. In this branch you will create the necessary action creators and reducers to update the Redux store's state. You will be introduced to the `combineReducers` helper function, that turns different reducer functions into a single combined reducer. Once you complete the tasks, you should be able to dispatch actions that will update your store's state. Your work will not yet be reflected in the UI, but you can check the results via the Redux Dev Tools.
 
 ## Branch Tasks
 
-1. Start by creating two new folders named `game` and `players` inside `models`. You will define two new separate reducers and action creators for each folder. These new reducers should each handle a piece of the tic-tac-toe's state, specifically the `game` reducer handles _squares, xIsNext, winner_ and _reset_ and the `players` reducer handles _player1_ and _player2_.
+1. Start by creating two new folders named `game` and `players` inside `models`. You will define two new separate reducers and action creators for each folder. These new reducers should each handle a piece of the tic-tac-toe's state, specifically the `game` reducer handles _squares_, _xIsNext_, _winner_ and _reset_ and the `players` reducer handles _player1_ and _player2_.
 
-   - Each reducer folder should have an `index.js` file.
-   - Each `index.js` file should export all actions and the reducer. And `models/index.js` should now also export everything from the reducer folders.
+   - Each reducer folder should have an _index.js_ file.
+   - Each _index.js_ file should export all actions and the reducer. And _models/index.js_ should now also export everything from the reducer folders.
 
    ```bash
     models/
@@ -26,16 +26,16 @@ Good work! Now that you have seen the basics in action, it's time and start refa
        └── index.js
    ```
 
-2. Define action creators inside each `actions.js` file. Action creators should return an action object with the type and payload properties, for each game related value.
+2. Define action creators inside each _actions.js_ file. Action creators should return an action object with the type and payload properties, for each game related value.
 
    > - Each returned action should always have a type, but the payload property is not always necessary.
    > - A single action dispatch can trigger many reducers, as long as they have a switch case that matches the action's type.
 
-3. Define the `gameReducer` and `playerReducer` and an `initialState` for each, inside their respective `reducer.js` files. You can use `initialState` and `gameReactReducer` inside `models/reactGame/reducer.js` as a reference. Reducer functions need an initial state as their default state argument, otherwise they cannot calculate the new state.
+3. Define the `gameReducer` and `playerReducer` and an `initialState` for each, inside their respective _reducer.js_ files. You can use `initialState` and `gameReactReducer` inside _models/reactGame/reducer.js_ as a reference. Reducer functions need an initial state as their default state argument, otherwise they cannot calculate the new state.
 
-4. Create a `rootReducer.js` file inside the `store` folder. There you will use the `combineReducers` function along with your reducers to define the `rootReducer`. The argument passed to combineReducers should be an object with the keys `game`, `players` and their respective reducers as their value.
+4. Create a _rootReducer.js_ file inside the `store` folder. There you will use the `combineReducers` function along with your reducers to define the `rootReducer`. The argument passed to `combineReducers` should be an object with the keys `game`, `players` and their respective reducers as their value.
 
-5. Finally, replace `testReducer` with the new `rootReducer` in the arguments of `configureStore` inside `store/store.js`. The rootReducer already has an initial state, that is the combination of the initial states from `game` and `players` reducers. Meaning you can remove the preloadedState argument completely.
+5. Finally, replace `testReducer` with the new `rootReducer` in the arguments of `configureStore` inside _store/store.js_.
 
 - Open Redux Dev Tools and try dispatching actions to check the results.
 
@@ -50,13 +50,14 @@ Good work! Now that you have seen the basics in action, it's time and start refa
    {type: 'RESET_GAME'}
   ```
 
-## Covers
+**Covers:**
 
+- [Redux - data flow](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
 - [Redux - combineReducers](https://redux.js.org/api/combinereducers)
 
 ## File Structure
 
-The project has the following file structure:
+The project should have the following file structure:
 
 ```bash
 tic-tac-toe/
