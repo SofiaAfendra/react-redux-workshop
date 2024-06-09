@@ -7,7 +7,8 @@ import {
   squares,
   winner,
   xIsNext,
-  resetGame,
+  resetGameState,
+  resetPlayerState,
   setPlayer1,
   setPlayer2,
   setSquares,
@@ -17,7 +18,7 @@ import {
 import { withGameProps } from './withGameProps';
 import styles from './styles.module.css';
 
-const GameComponent = ({
+const Game = ({
   player1,
   player2,
   squares,
@@ -57,15 +58,13 @@ const GameComponent = ({
   </div>
 );
 
-const mapStateToProps = (state) => {
-  return {
-    player1: player1(state),
-    player2: player2(state),
-    xIsNext: xIsNext(state),
-    winner: winner(state),
-    squares: squares(state),
-  };
-};
+const mapStateToProps = (state) => ({
+  player1: player1(state),
+  player2: player2(state),
+  xIsNext: xIsNext(state),
+  winner: winner(state),
+  squares: squares(state),
+});
 
 const mapDispatchToProps = {
   setPlayer1,
@@ -73,12 +72,11 @@ const mapDispatchToProps = {
   setSquares,
   setWinner,
   setXIsNext,
-  resetGame,
+  resetGameState,
+  resetPlayerState,
 };
 
-const Game = compose(
+export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   withGameProps,
-)(GameComponent);
-
-export default Game;
+)(Game);

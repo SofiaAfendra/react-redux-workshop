@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from 'react';
 import { usePersistState } from 'libraries';
-import { initialState, gameReducer } from 'models';
+import { gameReactReducer, initialState } from 'models';
 import { Provider } from './store';
 
 export const StateProvider = ({ persistKey, children }) => {
@@ -9,7 +9,7 @@ export const StateProvider = ({ persistKey, children }) => {
     initialState,
   );
 
-  const [state, dispatch] = useReducer(gameReducer, persistedState);
+  const [state, dispatch] = useReducer(gameReactReducer, persistedState);
 
   useEffect(() => {
     setPersistedState(state);
