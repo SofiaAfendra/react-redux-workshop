@@ -30,10 +30,6 @@ Libraries used:
 
 - `persistMiddleware`: This is a custom middleware that is used to persist the game state to local storage. It is responsible for getting the game state from the redux store and saving it to local storage in every dispatched action.
 
-## Why use Redux?
-
-Redux is a state management library that is used to manage the state of an application. It is a predictable state container that allows us to manage the state of our application in a single place and it is the single source of truth for the state.
-
 ## Why use Redux instead of React Context?
 
 React Context is a built-in feature in React designed to facilitate the sharing of data across a tree of React components, often referred to as "global" data within the context of the component tree. While it can be employed for global state management, it is generally not recommended for extensive state management purposes, as its primary use case lies elsewhere. It's important to note that React Context is not as robust as Redux and does not offer the same level of functionality. For instance, it lacks support for middleware capabilities, which allow you to inject custom logic, such as logging or API calls, between actions and reducers in a Redux-based application.
