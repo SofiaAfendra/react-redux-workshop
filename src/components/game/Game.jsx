@@ -21,20 +21,19 @@ import styles from './styles.module.css';
 const Game = ({
   player1,
   player2,
-  squares,
+  player1Ref,
+  player2Ref,
   status,
   handleClick,
   handlePlayer1,
   handlePlayer2,
   handleReset,
-  player1Ref,
-  player2Ref,
 }) => (
   <div className={styles.gameWrapper}>
     <div className={styles.boardAndStatusWrapper}>
       <div>{status}</div>
       <div className={styles.boardWrapper}>
-        <Board squares={squares} onClick={handleClick} />
+        <Board onClick={handleClick} />
       </div>
     </div>
 
