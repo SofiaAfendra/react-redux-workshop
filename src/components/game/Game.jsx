@@ -18,7 +18,7 @@ import {
 import { withGameProps } from './withGameProps';
 import styles from './styles.module.css';
 
-const GameComponent = ({
+const Game = ({
   player1,
   player2,
   status,
@@ -57,7 +57,7 @@ const GameComponent = ({
   </div>
 );
 
-export const Game = compose(
+export default compose(
   withModelProps({
     player1,
     player2,
@@ -73,4 +73,4 @@ export const Game = compose(
     setXIsNext,
   }),
   withGameProps,
-)(GameComponent);
+)(Game);
