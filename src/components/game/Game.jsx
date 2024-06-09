@@ -8,12 +8,12 @@ import {
   winner,
   xIsNext,
   resetGame,
+  resetPlayers,
   setPlayer1,
   setPlayer2,
   setSquares,
   setWinner,
   setXIsNext,
-  resetPlayers,
 } from 'models';
 import { withGameProps } from './withGameProps';
 import styles from './styles.module.css';
@@ -22,13 +22,13 @@ import styles from './styles.module.css';
 const Game = ({
   player1,
   player2,
+  player1Ref,
+  player2Ref,
   status,
   handleClick,
   handlePlayer1,
   handlePlayer2,
   handleReset,
-  player1Ref,
-  player2Ref,
 }) => (
   <div className={styles.gameWrapper}>
     <div className={styles.boardAndStatusWrapper}>

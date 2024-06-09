@@ -74,11 +74,11 @@ tic-tac-toe/
 │   │       └── ...
 │   ├── models/
 │   │   └── game/
-│   │   |   ├── actions.js
-│   │   |   ├── reducer.js
-│   │   |   ├── selectors.js
-│   │   |   └── ...
-|   |   └── players/
+│   │   │   ├── actions.js
+│   │   │   ├── reducer.js
+│   │   │   ├── selectors.js
+│   │   │   └── ...
+|   │   └── players/
 │   │       ├── actions.js
 │   │       ├── reducer.js
 │   │       ├── selectors.js
