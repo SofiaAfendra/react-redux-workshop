@@ -21,14 +21,14 @@ Middlewares are functions that have access to the Redux store's dispatch functio
 
 3. Inside `store.js`, implement the `makeStore` function. This function should run the `persistState` function with the `PERSIST_KEY` key and return a configured Redux store using `configureStore`. Ensure to include the `persistStateMiddleware` in the middleware setup.
 
-## Covers
+**Covers:**
 
 - [Redux Middleware](https://redux.js.org/advanced/middleware)
 - [Redux Persist](https://github.com/rt2zz/redux-persist)
 
 ## File Structure
 
-The project has the following file structure:
+The project should have the following file structure:
 
 ```bash
 tic-tac-toe/
