@@ -67,11 +67,14 @@ tic-tac-toe/
 │   │       ├── persistState.js
 │   │       └── ...
 │   ├── models/
-│   │   └── game/
-│   │       ├── actions.js
-│   │       ├── reducer.js
-│   │       ├── selectors.js
-│   │       └── ...
+│   │   ├── game/
+│   │   │   ├── index.js
+│   │   │   ├── actions.js
+│   │   │   └── reducer.js
+│   │   ├── players/
+│   │   │   ├── index.js
+│   │   │   ├── actions.js
+│   │   │   └── reducer.js
 │   ├── store/
 │   │   ├── rootReducer.js
 │   │   └── store.js
