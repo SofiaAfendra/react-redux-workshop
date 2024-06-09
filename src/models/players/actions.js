@@ -8,8 +8,8 @@ const setPlayer2 = (player) => ({
   payload: player,
 });
 
-const resetPlayerState = () => ({
+const resetPlayers = () => ({
   type: 'RESET_PLAYERS',
 });
 
-export { setPlayer1, setPlayer2, resetPlayerState };
+export { setPlayer1, setPlayer2, resetPlayers };

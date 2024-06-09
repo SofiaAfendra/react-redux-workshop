@@ -21,4 +21,4 @@ export const makeStore = (persistKey) => {
   });
 };
 
-export const store = makeStore(config.PERSIST_KEY);
+export const store = makeStore(config.REDUX_PERSIST_KEY);
