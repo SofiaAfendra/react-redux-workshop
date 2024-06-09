@@ -12,6 +12,7 @@ import {
   setXIsNext,
   setSquares,
   resetGame,
+  resetPlayers,
 } from 'models';
 
 export const useGameStore = () => {
@@ -36,7 +37,10 @@ export const useGameStore = () => {
     (squares) => dispatch(setSquares(squares)),
     [dispatch],
   );
-  const resetGameAction = useCallback(() => dispatch(resetGame()), [dispatch]);
+  const resetGameAction = useCallback(() => {
+    dispatch(resetGame());
+    dispatch(resetPlayers());
+  }, [dispatch]);
   return {
     player1: useSelector(player1),
     player2: useSelector(player2),
