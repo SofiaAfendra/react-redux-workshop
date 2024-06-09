@@ -6,7 +6,9 @@ import {
   player2,
   winner,
   xIsNext,
+  squares,
   resetGame,
+  resetPlayers,
   setPlayer1,
   setPlayer2,
   setSquares,
@@ -31,7 +33,7 @@ const GameComponent = ({
     <div className={styles.boardAndStatusWrapper}>
       <div>{status}</div>
       <div className={styles.boardWrapper}>
-        <Board  onClick={handleClick} />
+        <Board onClick={handleClick} />
       </div>
     </div>
 
@@ -60,8 +62,10 @@ export const Game = compose(
     player1,
     player2,
     winner,
+    squares,
     xIsNext,
     resetGame,
+    resetPlayers,
     setPlayer1,
     setPlayer2,
     setSquares,
