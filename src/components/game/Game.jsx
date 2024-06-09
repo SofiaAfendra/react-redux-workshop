@@ -16,7 +16,6 @@ const Game = ({
   player2,
   player1Ref,
   player2Ref,
-  squares,
   status,
   handleClick,
   handlePlayer1,
@@ -27,7 +26,7 @@ const Game = ({
     <div className={styles.boardAndStatusWrapper}>
       <div>{status}</div>
       <div className={styles.boardWrapper}>
-        <Board squares={squares} onClick={handleClick} />
+        <Board onClick={handleClick} />
       </div>
     </div>
 
