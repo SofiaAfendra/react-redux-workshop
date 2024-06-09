@@ -15,6 +15,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
     setWinner,
     setXIsNext,
     resetGame,
+    resetPlayers,
   } = props;
 
   const player1Ref = useRef(null);
@@ -63,6 +64,7 @@ export const withGameProps = (WrappedComponent) => (props) => {
     }
 
     resetGame();
+    resetPlayers();
   };
 
   const status = winner
