@@ -1,3 +1,3 @@
 export const config = {
-  PERSIST_KEY: 'tick tack toe',
+  PERSIST_KEY: 'tic tac toe',
 };
