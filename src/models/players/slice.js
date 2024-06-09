@@ -5,8 +5,8 @@ const initialState = {
   player2: '',
 };
 
-export const playerSlice = createSlice({
-  name: 'player',
+export const playersSlice = createSlice({
+  name: 'players',
   initialState,
   reducers: {
     setPlayer1: (state, action) => {
@@ -21,5 +21,5 @@ export const playerSlice = createSlice({
   },
 });
 
-export const playerReducer = playerSlice.reducer;
-export const playerSliceName = playerSlice.name;
+export const playerReducer = playersSlice.reducer;
+export const playerSliceName = playersSlice.name;

@@ -4,9 +4,9 @@ import { withModelProps } from 'libraries';
 import {
   player1,
   player2,
+  squares,
   winner,
   xIsNext,
-  squares,
   resetGame,
   resetPlayers,
   setPlayer1,
@@ -21,13 +21,13 @@ import styles from './styles.module.css';
 const Game = ({
   player1,
   player2,
+  player1Ref,
+  player2Ref,
   status,
   handleClick,
   handlePlayer1,
   handlePlayer2,
   handleReset,
-  player1Ref,
-  player2Ref,
 }) => (
   <div className={styles.gameWrapper}>
     <div className={styles.boardAndStatusWrapper}>
@@ -61,8 +61,8 @@ export default compose(
   withModelProps({
     player1,
     player2,
-    winner,
     squares,
+    winner,
     xIsNext,
     resetGame,
     resetPlayers,
